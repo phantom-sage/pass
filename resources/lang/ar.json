@@ -1,0 +1,21 @@
+{
+  "Login"    : "تسجيل الدخول",
+  "Register" : "انشاء حساب",
+  "E-Mail Address": "البريد الالكتروني",
+  "Password": "كلمة المرور",
+  "Remember Me": "تذكرني",
+  "Forgot Your Password?": "نسيت كلمة المرور?",
+  "Name" : "اﻻسم",
+  "Confirm Password" : "تاكيد كلمة المرور",
+  "Logout" : "تسجيل خروج",
+  "Full Name": "الاسم رباعي",
+  "Work Place": "مكان العمل",
+  "Phone":"رقم الهاتف",
+  "Age":"تاريخ الميلاد",
+  "Gender":"الجنس",
+  "Qualification":"المؤهلات",
+  "Organization" : "اسم المنظمة",
+  "Proposal" : "نبذة",
+  "First Name": "الاسم الاول",
+  "Last Name":"الاسم الاخير"
+}
