@@ -25,7 +25,7 @@ class VolunteerRequestController extends Controller
      */
     public function create(Volunteer $volunteer)
     {
-        return view("requests.volunteer",compact('volunteer'));
+        ddd('do it yourself');
     }
 
     /**
@@ -41,52 +41,9 @@ class VolunteerRequestController extends Controller
 
        VolunteerRequest::create($validated);
 
-      return redirect()->back();
+      ddd('done');
 
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\VolunteerRequest  $volunteerRequest
-     * @return \Illuminate\Http\Response
-     */
-    public function show(VolunteerRequest $volunteerRequest)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\VolunteerRequest  $volunteerRequest
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(VolunteerRequest $volunteerRequest)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\VolunteerRequest  $volunteerRequest
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, VolunteerRequest $volunteerRequest)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\VolunteerRequest  $volunteerRequest
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(VolunteerRequest $volunteerRequest)
-    {
-        //
-    }
+  
 }

@@ -19,7 +19,7 @@ class NewsController extends Controller
         ->select('name_'.$locale.' as name', 'description_'.$locale.' as description','video','image')
         ->get();
 
-          return view('news.index',compact('news'));
+        ddd($news);
     }
 
     /**

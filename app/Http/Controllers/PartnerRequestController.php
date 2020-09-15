@@ -25,7 +25,7 @@ class PartnerRequestController extends Controller
      */
      public function create(Partner $partner)
      {
-         return view("requests.partner",compact('partner'));
+         ddd('as you said you don\'t need view xd');
      }
 
     /**
@@ -38,53 +38,10 @@ class PartnerRequestController extends Controller
     {
         $validated = $request->validated();
         $validated['partner_id'] = $partner->id;
-        
+
         PartnerRequest::create($validated);
-       return redirect()->back();
+       ddd("done");
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\PartnerRequest  $partnerRequest
-     * @return \Illuminate\Http\Response
-     */
-    public function show(PartnerRequest $partnerRequest)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\PartnerRequest  $partnerRequest
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(PartnerRequest $partnerRequest)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\PartnerRequest  $partnerRequest
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, PartnerRequest $partnerRequest)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\PartnerRequest  $partnerRequest
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(PartnerRequest $partnerRequest)
-    {
-        //
-    }
+  
 }
