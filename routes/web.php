@@ -14,8 +14,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    $projects = [
+        ['id' => 1, 'title' => 'Project 1', 'description' => 'project description'],
+        ['id' => 2, 'title' => 'Project 2', 'description' => 'project description'],
+        ['id' => 3, 'title' => 'Project 3', 'description' => 'project description']
+    ];
+    return view('welcome', [
+        'projects' => $projects
+    ]);
+})->name('home');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
