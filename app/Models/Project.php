@@ -11,11 +11,15 @@ class Project extends Model
 
     public function comments()
    {
-       return $this->morphMany(Comment::class, 'commentable');
+       return $this->hasMany(Comment::class);
    }
 
    public function likes()
   {
-      return $this->morphMany(Like::class, 'likeable');
+      return $this->hasMany(Like::class);
+  }
+  public function shares()
+  {
+     return $this->hasMany(Share::class);
   }
 }

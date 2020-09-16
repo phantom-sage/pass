@@ -13,10 +13,10 @@
             <div class="dimmer"></div>
               <div class="panel-content">
               <i class="voyager-bag"></i>
-              <h4>{{$story->name}}</h4>
-                <p>comment:55</p>
-                <p>comment:55</p>
-                <p>comment:55</p>
+              <h4>{{$story->name_en}}</h4>
+                <p>Comment:{{$story->comments()->count()}}</p>
+                <p>Like:{{$story->likes()->count()}}</p>
+                <p>Share:{{$story->shares()->count()}}</p>
             </div>
           </div>
     </div>

@@ -23,8 +23,16 @@ class Comment extends Model
         return $this->belongsTo(User::class, 'user_id');
     }
 
-    public function commentable()
+    public function news()
     {
-        return $this->morphTo();
+        return $this->bslongsTo(News::class);
+    }
+    public function project()
+    {
+        return $this->bslongsTo(Project::class);
+    }
+    public function story()
+    {
+        return $this->bslongsTo(Story::class);
     }
   }
