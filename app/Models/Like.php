@@ -10,20 +10,12 @@ class Like extends Model
     use HasFactory;
 
     public function user()
-    {
-        return $this->belongsTo(User::class);
-    }
+     {
+         return $this->belongsTo(User::class);
+     }
 
-    public function project()
-    {
-        return $this->bslongsTo(Project::class);
-    }
-    public function news()
-    {
-        return $this->bslongsTo(News::class);
-    }
-    public function story()
-    {
-        return $this->bslongsTo(Story::class);
-    }
+     public function likeable()
+     {
+         return $this->morphTo();
+     }
 }

@@ -30,6 +30,10 @@ class CommentFactory extends Factory
           'user_id' => function () {
             return User::inRandomOrder()->first()->id;
         },
+      
+          'project_id' => function () {
+            return Project::inRandomOrder()->first()->id;
+        },
           "body" =>$this->faker->paragraph
         ];
     }

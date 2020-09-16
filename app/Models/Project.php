@@ -10,16 +10,17 @@ class Project extends Model
     use HasFactory;
 
     public function comments()
-   {
-       return $this->hasMany(Comment::class);
-   }
+    {
+        return $this->morphMany(Comment::class, 'commentable');
+    }
+
 
    public function likes()
   {
-      return $this->hasMany(Like::class);
+      return $this->morphMany(Like::class, 'likeable');
   }
   public function shares()
   {
-     return $this->hasMany(Share::class);
+       return $this->morphMany(Share::class, 'shareable');
   }
 }

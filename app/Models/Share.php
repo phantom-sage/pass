@@ -9,16 +9,8 @@ class Share extends Model
 {
     use HasFactory;
 
-    public function project()
+    public function likeable()
     {
-        return $this->bslongsTo(Project::class);
-    }
-    public function news()
-    {
-        return $this->bslongsTo(News::class);
-    }
-    public function story()
-    {
-        return $this->bslongsTo(Story::class);
+        return $this->morphTo();
     }
 }

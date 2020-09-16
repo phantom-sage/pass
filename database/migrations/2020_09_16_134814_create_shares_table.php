@@ -15,10 +15,9 @@ class CreateSharesTable extends Migration
     {
         Schema::create('shares', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('project_id')->constrained('projects')->nullable();
-            $table->foreignId('news_id')->constrained('news')->nullable();
-            $table->foreignId('story_id')->constrained('stories')->nullable();
-            $table->integer("counter")->default(0);
+            $table->integer('shareable_id')->unsigned();
+            $table->string('shareable_type');
+            $table->integer('counter')->default(0);
             $table->timestamps();
         });
     }

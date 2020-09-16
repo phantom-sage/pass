@@ -8,17 +8,17 @@ use Illuminate\Database\Eloquent\Model;
 class News extends Model
 {
    use HasFactory;
-    public function comments()
-    {
-      return $this->hasMany(Comment::class);
-    }
+   public function comments()
+   {
+     return $this->morphMany(Comment::class, 'commentable');
+   }
 
-    public function likes()
-    {
-      return $this->hasMany(Like::class);
-    }
+   public function likes()
+   {
+     return $this->morphMany(Like::class, 'likeable');
+   }
     public function shares()
     {
-       return $this->hasMany(Share::class);
+       return $this->morphMany(Share::class, 'shareable');
     }
 }
