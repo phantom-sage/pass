@@ -5,6 +5,7 @@ use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\StoryController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\FileController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\PartnerController;
 use App\Http\Controllers\VolunteerController;
 use App\Http\Controllers\LikeController;
@@ -52,9 +53,9 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 */
 Route::group(['middleware' => 'auth:web', 'prefix' => 'users'], function () {
 
-      Route::post("/project/{project}/comment",[CommentController::class,'storeProject'])->name("saveProjectComment");
-      Route::post("/news/{news}/comment",[CommentController::class,'storeNews'])->name("saveNewsComment");
-      Route::post("/story/{story}/comment",[CommentController::class,'storeStory'])->name("saveStoryComment");
+      Route::post("/project/{project}/comment/{id?}",[CommentController::class,'storeProject'])->name("saveProjectComment");
+      Route::post("/news/{news}/comment/{id?}",[CommentController::class,'storeNews'])->name("saveNewsComment");
+      Route::post("/story/{story}/comment/{id?}",[CommentController::class,'storeStory'])->name("saveStoryComment");
 });
 
 /*
@@ -73,7 +74,7 @@ Route::prefix('users')->group(function () {
   Route::get("/stories",[StoryController::class,'index'])->name("story");
   Route::get("/news",[NewsController::class,'index'])->name("news");
   Route::get("/files",[FileController::class,'index'])->name("files");
-  Route::get('/files/{file}/download', [FileController::class,'getDownload'])->name('download');
+  Route::get("/contacts",[ContactController::class,'index'])->name("contacts");
   Route::get("/partners",[PartnerController::class,'index'])->name("partners");
   Route::get("/volunteers",[VolunteerController::class,'index'])->name("volunteers");
   /*
@@ -107,7 +108,7 @@ Route::prefix('users')->group(function () {
 | admin panel
 |--------------------------------------------------------------------------
 |
-| Here is where admin can interact with the website adding 
+| Here is where admin can interact with the website adding
 |
 */
 Route::group(['prefix' => 'admin'], function () {
