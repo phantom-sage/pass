@@ -2,6 +2,7 @@
 
 namespace App\Widgets;
 use App\Models\Project;
+use App\Models\Comment;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use TCG\Voyager\Facades\Voyager;
@@ -23,14 +24,13 @@ class ProjectDimmer extends BaseDimmer
     {
         $count = Project::all()->count();
         $string = "Project";
-
         return view('voyager::dimmer', array_merge($this->config, [
             'icon'   => 'voyager-bag',
             'title'  => "{$count} {$string}",
             'text'   => __('voyager::dimmer.project_text', ['count' => $count, 'string' => Str::lower($string)]),
             'button' => [
                 'text' =>"View all projects",
-                'link' => route('voyager.projects.index'),
+                'link' => route('voyager.projects'),
             ],
             'image' => asset('img/02.jpg'),
         ]));

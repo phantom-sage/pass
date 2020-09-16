@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Message;
 use Illuminate\Http\Request;
+use App\Mail\SendMessage;
 
 class MessageController extends Controller
 {
@@ -14,7 +15,9 @@ class MessageController extends Controller
      */
     public function index()
     {
-        //
+
+      return view('vendor.voyager.messages.edit-add');
+
     }
 
     /**

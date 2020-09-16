@@ -11,6 +11,8 @@ use App\Http\Controllers\VolunteerController;
 use App\Http\Controllers\LikeController;
 use App\Http\Controllers\VolunteerRequestController;
 use App\Http\Controllers\PartnerRequestController;
+use App\Http\Controllers\VoyagerSiteController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -113,4 +115,9 @@ Route::prefix('users')->group(function () {
 */
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
+    Route::get("/reports/projects",[VoyagerSiteController::class,'projects'])->name("voyager.projects");
+    Route::get("/reports/news",[VoyagerSiteController::class,'news'])->name("voyager.news");
+    Route::get("/reports/stories",[VoyagerSiteController::class,'stories'])->name("voyager.stories");
+
+
 });

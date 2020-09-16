@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\PartnerRequest;
 use Illuminate\Http\Request;
 use App\Http\Requests\StorePartnerRequest;
+use App\Mail\PartnerReply;
 use App\Models\Partner;
+
 class PartnerRequestController extends Controller
 {
     /**
@@ -15,7 +17,7 @@ class PartnerRequestController extends Controller
      */
     public function index()
     {
-        //
+    
     }
 
     /**
@@ -43,5 +45,5 @@ class PartnerRequestController extends Controller
        ddd("done");
     }
 
-  
+
 }
