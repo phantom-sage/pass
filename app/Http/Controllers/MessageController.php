@@ -15,8 +15,12 @@ class MessageController extends Controller
      */
     public function index()
     {
-
-      return view('vendor.voyager.messages.edit-add');
+      
+      // if(!$user->email==null){
+      //      $user->message=$request->input('message');
+      //
+      //    \Mail::to($user->email)->send(new SendMessage($user));
+      //  }
 
     }
 

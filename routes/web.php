@@ -118,6 +118,10 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get("/reports/projects",[VoyagerSiteController::class,'projects'])->name("voyager.projects");
     Route::get("/reports/news",[VoyagerSiteController::class,'news'])->name("voyager.news");
     Route::get("/reports/stories",[VoyagerSiteController::class,'stories'])->name("voyager.stories");
+    Route::get("/message/create",[VoyagerSiteController::class,'createUserEmail'])->name("voyager.createUserEmail");
+    Route::post("/message",[VoyagerSiteController::class,'sendUserEmail'])->name("voyager.sendUserEmail");
+    Route::get("/message/users/create",[VoyagerSiteController::class,'createUsersEmail'])->name("voyager.createUsersEmail");
+    Route::post("/message/users",[VoyagerSiteController::class,'sendUsersEmail'])->name("voyager.sendUsersEmail");
 
 
 });
