@@ -1,9 +1,7 @@
 @extends('layouts.master')
 @section('content')
 <h1><i class="voyager-chat"></i> Messages</h1>
-@if(Session::has('message'))
-<p class="alert alert-success">{{Session::get('message')}} </p>
-@endif
+
 <form class="form" action="{{route('voyager.sendUserEmail')}}" method="post">
   @csrf
   <div class="form-group ">

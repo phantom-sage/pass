@@ -16,11 +16,11 @@ class SendMessage extends Mailable
      *
      * @return void
      */
-     public $user;
+     public $message;
 
-     public function __construct($user){
+     public function __construct($message){
 
-         $this->user = $user;
+         $this->message = $message;
 
      }
 

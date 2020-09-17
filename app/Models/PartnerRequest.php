@@ -11,6 +11,7 @@ class PartnerRequest extends Model
    protected $fillable = [
                          "full_name",
                          "organization",
+                         "organization_area",
                          "email",
                          "proposal",
                          "partner_id"
@@ -20,6 +21,6 @@ class PartnerRequest extends Model
       {
         return $this->belongsTo(Partner::class);
       }
-      
+
 
 }
