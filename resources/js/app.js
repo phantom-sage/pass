@@ -40,4 +40,9 @@ $(window).ready(function(){
     $("#slider-4").hide();
     //$("#sButton1").addClass("bg-purple-800");
     loopSlider();
+
+    const bePartnerBtn = $("#bePartnerBtn");
+
+    bePartnerBtn.click(() => $("#bePartnerModal").removeClass('hidden'));
+    $("#bePartnerModalCancelBtn").click(() => $("#bePartnerModal").addClass("hidden"));
 });

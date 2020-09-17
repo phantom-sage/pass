@@ -14,12 +14,15 @@ class FileController extends Controller
      */
     public function index()
     {
-      $locale= app()->getLocale();
-      $files = DB::table('files')
-      ->select('name_'.$locale.' as name','file' )
-      ->get();
+        $locale= app()->getLocale();
+        $files = DB::table('files')
+        ->select('name_'.$locale.' as name','file' )
+        ->get();
 
-        ddd($files);
+
+        return view('file.index', [
+            'files' => $files,
+        ]);
     }
 
   

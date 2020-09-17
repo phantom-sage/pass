@@ -27,8 +27,8 @@ class StoryFactory extends Factory
         "name_ar"        =>$this->faker->word ."_AR",
         "story_en"        =>$this->faker->word ."_EN",
         "story_ar"        =>$this->faker->word ."_AR",
-        "description_en" =>$this->faker->paragraph(15) ."_EN" ,
-        "description_ar" =>$this->faker->paragraph(15) ."_AR"
+        "description_en" =>$this->faker->paragraph(1) ."_EN" ,
+        "description_ar" =>$this->faker->paragraph(1) ."_AR"
       ];
     }
 }

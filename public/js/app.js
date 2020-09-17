@@ -30266,6 +30266,13 @@ $(window).ready(function () {
   $("#slider-4").hide(); //$("#sButton1").addClass("bg-purple-800");
 
   loopSlider();
+  var bePartnerBtn = $("#bePartnerBtn");
+  bePartnerBtn.click(function () {
+    return $("#bePartnerModal").removeClass('hidden');
+  });
+  $("#bePartnerModalCancelBtn").click(function () {
+    return $("#bePartnerModal").addClass("hidden");
+  });
 });
 
 /***/ }),

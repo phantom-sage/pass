@@ -19,7 +19,9 @@ class NewsController extends Controller
         ->select('name_'.$locale.' as name', 'description_'.$locale.' as description','video','image')
         ->get();
 
-        ddd($news);
+        return view('new.index', [
+            'news' => $news,
+        ]);
     }
 
     /**

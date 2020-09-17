@@ -23,7 +23,10 @@ class FileFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'name_en' => $this->faker->name,
+            'name_ar' => $this->faker->name,
+            'file' => asset('img/03.jpg'),
+            'date' => $this->faker->date(),
         ];
     }
 }
