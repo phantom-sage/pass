@@ -23,7 +23,9 @@ class PartnerFactory extends Factory
     public function definition()
     {
         return [
-            //
+          "name_en" =>$this->faker->name ."En",
+          "name_ar" =>$this->faker->name ."AR",
+          "logo" => "img/01.jpg"
         ];
     }
 }

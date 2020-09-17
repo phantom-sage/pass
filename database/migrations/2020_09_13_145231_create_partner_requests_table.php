@@ -17,6 +17,7 @@ class CreatePartnerRequestsTable extends Migration
           $table->id();
           $table->string("full_name");
           $table->string("organization");
+          $table->string("organization_area");
           $table->string("email");
           $table->longText("proposal");
           $table->longText('replay')->nullable();

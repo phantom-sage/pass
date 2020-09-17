@@ -26,6 +26,7 @@ class StorePartnerRequest extends FormRequest
       return [
             "full_name"    =>['required','max:255'],
             "organization" =>['required'],
+            "organization_area"=>['required'],
             "email"        =>['required','email'],
             "proposal"     =>['required']
         ];
