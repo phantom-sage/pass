@@ -39,16 +39,16 @@
                             <x-jet-nav-link href="{{ route('home') }}" :active="request()->routeIs('/')">
                                 {{ __('Home') }}
                             </x-jet-nav-link>
-                            <x-jet-nav-link href="/" :active="request()->routeIs('/')">
+                            <x-jet-nav-link href="{{ route('projects') }}" :active="request()->routeIs('/')">
                                 {{ __('Projects') }}
                             </x-jet-nav-link>
-                            <x-jet-nav-link href="/" :active="request()->routeIs('/')">
+                            <x-jet-nav-link href="{{ route('story') }}" :active="request()->routeIs('/')">
                                 {{ __('Stories') }}
                             </x-jet-nav-link>
-                            <x-jet-nav-link href="/" :active="request()->routeIs('/')">
+                            <x-jet-nav-link href="{{ route('news') }}" :active="request()->routeIs('/')">
                                 {{ __('News') }}
                             </x-jet-nav-link>
-                            <x-jet-nav-link href="/" :active="request()->routeIs('/')">
+                            <x-jet-nav-link href="{{ route('files') }}" :active="request()->routeIs('/')">
                                 {{ __('Reports') }}
                             </x-jet-nav-link>
                             <x-jet-nav-link href="/" :active="request()->routeIs('/')">
@@ -71,10 +71,10 @@
                                             {{ __('More links') }}
                                         </div>
 
-                                        <x-jet-dropdown-link href="/">
+                                        <x-jet-dropdown-link href="{{ route('partners') }}">
                                             {{ __('Partenership') }}
                                         </x-jet-dropdown-link>
-                                        <x-jet-dropdown-link href="/">
+                                        <x-jet-dropdown-link href="{{ route('volunteers') }}">
                                             {{ __('Volunteer') }}
                                         </x-jet-dropdown-link>
 
@@ -151,6 +151,9 @@
 
             </div>
         </nav>
+
+        <!-- Page Heading -->
+        @yield('page_header')
 
         <!-- Page Content -->
         <main>

@@ -19,7 +19,9 @@ class PartnerController extends Controller
       $partners = DB::table('partners')
                           ->select('id','name_'.$locale.' as name','logo')
                           ->get();
-      ddd($partners);
+      return view('partner.index', [
+          'partners' => $partners,
+      ]);
     }
 
     /**
