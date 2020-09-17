@@ -22,14 +22,14 @@
                                     {{ $project->description }}
                                 </p>
                             </div>
-                            <hr>
-                            <div class="px-6 pt-4 pb-2">
-                                @if($project->video)
+                            @if($project->video)
+                                <hr>
+                                <div class="px-6 pt-4 pb-2">
                                     <button class="px-5 mr-2 bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
                                         <a href="{{ $project->video }}">See Video</a>
                                     </button>
-                                @endif
-                            </div>
+                                </div>
+                            @endif
                         </div>
                     </div>
                 @endforeach

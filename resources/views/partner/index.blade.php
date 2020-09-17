@@ -6,7 +6,7 @@
                 {{ __('Partners') }}
             </h2>
             <button id="bePartnerBtn" class="float-right px-5 mr-2 bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
-                <a href="#">Be a partner</a>
+                Be a partner
             </button>
             <div class="clearfix"></div>
         </div>
@@ -18,8 +18,8 @@
             <div class="flex flex-wrap">
                 @foreach($partners as $partner)
                     <div class="w-full sm:w-full md:w-6/12 lg:w-4/12 xl:w-4/12">
-                        <div class="max-w-sm rounded overflow-hidden shadow-lg block mx-auto my-3 hover:shadow-xl transition ease-out duration-500 sm:m-3 md:m-3 lg:m-3">
-                            <img class="w-full rounded-lg" src="{{ asset('img/01.jpg') }}" alt="Sunset in the mountains">
+                        <div class="max-w-sm rounded-lg overflow-hidden shadow-lg block mx-auto my-3 hover:shadow-xl transition ease-out duration-500 sm:m-3 md:m-3 lg:m-3">
+                            <img class="w-64 h-64 mx-auto rounded-full" src="{{ asset('img/01.jpg') }}" alt="Sunset in the mountains">
                             <div class="px-6 py-4">
                                 <div class="font-bold text-xl mb-2">{{ $partner->name }}</div>
                             </div>
