@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Comment;
+use App\Models\Contact;
 use App\Models\File;
 use App\Models\News;
 use App\Models\Partner;
@@ -29,5 +30,6 @@ class DatabaseSeeder extends Seeder
         News::factory(constant('NUMBER_OF_MODELS_CREATED'))->create();
         Partner::factory(constant('NUMBER_OF_MODELS_CREATED'))->create();
         File::factory(constant('NUMBER_OF_MODELS_CREATED'))->create();
+        Contact::factory(constant('NUMBER_OF_MODELS_CREATED'))->create();
     }
 }

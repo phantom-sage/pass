@@ -51,7 +51,7 @@
                             <x-jet-nav-link href="{{ route('files') }}" :active="request()->routeIs('/')">
                                 {{ __('Reports') }}
                             </x-jet-nav-link>
-                            <x-jet-nav-link href="/" :active="request()->routeIs('/')">
+                            <x-jet-nav-link href="{{ route('contacts') }}" :active="request()->routeIs('/')">
                                 {{ __('About') }}
                             </x-jet-nav-link>
                             <div class="hidden sm:flex sm:items-center sm:ml-6">
@@ -120,25 +120,25 @@
                     <x-jet-responsive-nav-link href="/" :active="request()->routeIs('/')">
                         {{ __('Home') }}
                     </x-jet-responsive-nav-link>
-                    <x-jet-responsive-nav-link href="/" :active="request()->routeIs('/')">
+                    <x-jet-responsive-nav-link href="{{ route('projects') }}" :active="request()->routeIs('/')">
                         {{ __('Projects') }}
                     </x-jet-responsive-nav-link>
-                    <x-jet-responsive-nav-link href="/" :active="request()->routeIs('/')">
+                    <x-jet-responsive-nav-link href="{{ route('story') }}" :active="request()->routeIs('/')">
                         {{ __('Stories') }}
                     </x-jet-responsive-nav-link>
-                    <x-jet-responsive-nav-link href="/" :active="request()->routeIs('/')">
+                    <x-jet-responsive-nav-link href="{{ route('news') }}" :active="request()->routeIs('/')">
                         {{ __('News') }}
                     </x-jet-responsive-nav-link>
-                    <x-jet-responsive-nav-link href="/" :active="request()->routeIs('/')">
+                    <x-jet-responsive-nav-link href="{{ route('files') }}" :active="request()->routeIs('/')">
                         {{ __('Reports') }}
                     </x-jet-responsive-nav-link>
-                    <x-jet-responsive-nav-link href="/" :active="request()->routeIs('/')">
+                    <x-jet-responsive-nav-link href="{{ route('contacts') }}" :active="request()->routeIs('/')">
                         {{ __('About') }}
                     </x-jet-responsive-nav-link>
-                    <x-jet-responsive-nav-link href="/" :active="request()->routeIs('/')">
+                    <x-jet-responsive-nav-link href="{{ route('volunteers') }}" :active="request()->routeIs('/')">
                         {{ __('Volunteer') }}
                     </x-jet-responsive-nav-link>
-                    <x-jet-responsive-nav-link href="/" :active="request()->routeIs('/')">
+                    <x-jet-responsive-nav-link href="{{ route('partners') }}" :active="request()->routeIs('/')">
                         {{ __('Partenership') }}
                     </x-jet-responsive-nav-link>
                     <x-jet-responsive-nav-link href="/register" :active="request()->routeIs('/register')">

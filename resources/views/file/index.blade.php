@@ -15,11 +15,18 @@
         @foreach($files as $file)
         <div class="w-full sm:w-full md:w-6/12 lg:w-4/12 xl:w-4/12">
             <div class="max-w-sm rounded overflow-hidden shadow-lg block mx-auto my-3 hover:shadow-xl transition ease-out duration-500 sm:m-3 md:m-3 lg:m-3">
-                <img class="w-full" src="{{ asset('img/02.jpg') }}" alt="Sunset in the mountains">
+                {{--<img class="w-full" src="{{ asset('img/02.jpg') }}" alt="Sunset in the mountains">--}}
                 <div class="px-6 py-4">
                     <div class="font-bold text-xl mb-2">{{ $file->name }}</div>
                 </div>
-                <div class="divider-y divide-gray-400"></div>
+                <div class="divider-x divide-black"></div>
+                <button class="float-right px-4 py-2 bg-white text-gray-800 border rounded m-3 shadow-md">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class="w-5 h-5 inline">
+                        <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z"/>
+                    </svg>
+                    Download
+                </button>
+                <div class="clearfix"></div>
                 {{--<div class="px-6 pt-4 pb-2">--}}
                     {{--{{ $file->date }}--}}
                 {{--</div>--}}
