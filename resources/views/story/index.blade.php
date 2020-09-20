@@ -2,9 +2,10 @@
 @section('page_header')
     <header class="bg-white shadow">
         <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-            <h2 class="font-black text-xl text-gray-800 leading-tight">
-                {{ __('Success Stories') }}
+            <h2 @if(app()->getLocale() === 'ar') style="direction: rtl;" @endif class="font-black text-xl text-gray-800 leading-tight @if(app()->getLocale() === 'ar') cairo-font float-right @endif">
+                {{ __('story.success') }}
             </h2>
+            @if(app()->getLocale() === 'ar') <div class="clearfix"></div> @endif
         </div>
     </header>
 @endsection
@@ -15,16 +16,21 @@
                 @foreach($stories as $story)
                     <div class="w-full sm:w-full md:w-6/12 lg:w-4/12 xl:w-4/12">
                         <div class="max-w-sm rounded overflow-hidden shadow-lg block mx-auto my-3 hover:shadow-xl transition ease-out duration-500 sm:m-3 md:m-3 lg:m-3">
-                            <img class="w-full" src="{{ asset('img/03.jpg') }}" alt="Sunset in the mountains">
+                            <img class="w-full transition ease-in-out duration-500 transform hover:scale-105" src="{{ asset('img/03.jpg') }}" alt="Sunset in the mountains">
                             <div class="px-6 py-4">
-                                <div class="font-bold text-xl mb-2">{{ $story->name }}</div>
-                                <p class="text-gray-400 text-base">
+                                <div style="direction: @if(\App::getLocale() === 'ar') rtl @endif;" class="font-bold text-xl mb-2 @if(\App::getLocale() === 'ar') float-right @endif">
+                                    {{ $story->name }}
+                                </div>
+                                @if(\App::getLocale() === 'ar') <div class="clearfix"></div> @endif
+                                <p style="direction: @if(\App::getLocale() === 'ar') rtl @endif;" class="text-gray-400 text-base @if(\App::getLocale() === 'ar') float-right @endif">
                                     {{ $story->description }}
                                 </p>
+                                @if(\App::getLocale() === 'ar') <div class="clearfix"></div> @endif
                                 <hr class="my-2">
-                                <p class="text-gray-900 text-bold">
+                                <p style="direction: @if(\App::getLocale() === 'ar') rtl @endif;" class="text-gray-900 text-bold @if(\App::getLocale() === 'ar') float-right @endif">
                                     {{ $story->story }}
                                 </p>
+                                @if(\App::getLocale() === 'ar') <div class="clearfix"></div> @endif
                             </div>
                             <hr>
                             <div class="px-6 pt-4 pb-2">
@@ -50,8 +56,8 @@
     </div>
     <div class="container mx-auto"><hr></div>
     <footer class="py-3">
-        <h4 class="text-center text-gray-900 text-black">
-            Powered by <a href="#" class="text-black font-black border-b border-dashed border-gray-700">NSD</a>
-        </h4>
+        <h4 style="direction: @if(app()->getLocale() === 'ar') rtl @else ltr @endif;" class="text-center text-gray-900 text-black @if(app()->getLocale() === 'ar') cairo-font mr-5 float-right @endif">
+            {{ __('welcomepage.poweredby') }}
+        </h4>@if(app()->getLocale() === 'ar') <div class="clearfix"></div> @endif
     </footer>
 @endsection

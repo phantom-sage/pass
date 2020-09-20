@@ -2,9 +2,10 @@
 @section('page_header')
 <header class="bg-white shadow">
     <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-        <h2 class="font-black text-xl text-gray-800 leading-tight">
-            {{ __('Reports') }}
+        <h2 @if(app()->getLocale() === 'ar') style="direction: rtl;" @endif class="font-black text-xl text-gray-800 leading-tight @if(app()->getLocale() === 'ar') cairo-font float-right @endif">
+            {{ __('reports.header') }}
         </h2>
+        @if(app()->getLocale() === 'ar') <div class="clearfix"></div> @endif
     </div>
 </header>
 @endsection
@@ -17,14 +18,17 @@
             <div class="max-w-sm rounded overflow-hidden shadow-lg block mx-auto my-3 hover:shadow-xl transition ease-out duration-500 sm:m-3 md:m-3 lg:m-3">
                 {{--<img class="w-full" src="{{ asset('img/02.jpg') }}" alt="Sunset in the mountains">--}}
                 <div class="px-6 py-4">
-                    <div class="font-bold text-xl mb-2">{{ $file->name }}</div>
+                    <div @if(app()->getLocale() === 'ar') style="direction: rtl;" @endif class="font-bold text-xl mb-2 @if(app()->getLocale() === 'ar') float-right @endif">
+                        {{ $file->name }}
+                    </div>
+                    @if(app()->getLocale() === 'ar') <div class="clearfix"></div> @endif
                 </div>
                 <div class="divider-x divide-black"></div>
-                <button class="float-right px-4 py-2 bg-white text-gray-800 border rounded m-3 shadow-md">
+                <button class="float-right @if(app()->getLocale() === 'ar') float-left @endif px-4 py-2 bg-white text-gray-800 border rounded m-3 shadow-md">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class="w-5 h-5 inline">
                         <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z"/>
                     </svg>
-                    Download
+                    {{ __('reports.download') }}
                 </button>
                 <div class="clearfix"></div>
                 {{--<div class="px-6 pt-4 pb-2">--}}
@@ -46,8 +50,8 @@
 </div>
 <div class="container mx-auto"><hr></div>
 <footer class="py-3">
-    <h4 class="text-center text-gray-900 text-black">
-        Powered by <a href="#" class="text-black font-black border-b border-dashed border-gray-700">NSD</a>
-    </h4>
+    <h4 style="direction: @if(app()->getLocale() === 'ar') rtl @else ltr @endif;" class="text-center text-gray-900 text-black @if(app()->getLocale() === 'ar') float-right @endif">
+        {{ __('welcomepage.poweredby') }}
+    </h4>@if(app()->getLocale() === 'ar') <div class="clearfix"></div> @endif
 </footer>
 @endsection
