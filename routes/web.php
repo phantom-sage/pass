@@ -13,6 +13,7 @@ use App\Http\Controllers\ShareController;
 use App\Http\Controllers\VolunteerRequestController;
 use App\Http\Controllers\PartnerRequestController;
 use App\Http\Controllers\VoyagerSiteController;
+use Illuminate\Support\Facades\DB;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,11 +27,13 @@ use App\Http\Controllers\VoyagerSiteController;
 */
 
 Route::get('/', function () {
-    $projects = [
-        ['id' => 1, 'title' => 'Project 1', 'description' => 'project description'],
-        ['id' => 2, 'title' => 'Project 2', 'description' => 'project description'],
-        ['id' => 3, 'title' => 'Project 3', 'description' => 'project description']
-    ];
+    $locale = app()->getLocale();
+
+    $projects = DB::table('projects')
+        ->select('id', 'name_'.$locale.' as name', 'description_'.$locale.' as description','video','image')
+        ->limit(3)
+        ->get();
+
     return view('welcome', [
         'projects' => $projects
     ]);
