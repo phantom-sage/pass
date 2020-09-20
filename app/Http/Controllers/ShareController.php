@@ -7,79 +7,51 @@ use Illuminate\Http\Request;
 
 class ShareController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
+  /**
+   * Store a newly created resource in storage.
+   *
+   * @param  \Illuminate\Http\Request  $request
+   * @param  App\Models\Story  $stroy
+   */
+  public function storeStory(Request $request,Stroy $story)
+  {
+    $share = new Share;
+    if(Auth::user()){
+      $share->user_id = Auth::id();
     }
+      $share->counter+=1;
+      $story->shares()->save($share);
+  }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+  /**
+   * Store a newly created resource in storage.
+   *
+   * @param  \Illuminate\Http\Request  $request
+   * @param  App\Models\News  $news
+   */
+  public function storeNews(Request $request,News $news)
+  {
+    $share = new Share;
+    if(Auth::user()){
+      $share->user_id = Auth::id();
     }
+      $share->counter+=1;
+      $news->shares()->save($share);
+  }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
+  /**
+   * Store a newly created resource in storage.
+   *
+   * @param  \Illuminate\Http\Request  $request
+   * @param  App\Models\Project  $project
+   */
+  public function storeProject(Request $request,Project $project)
+  {
+    $share = new Share;
+    if(Auth::user()){
+      $share->user_id = Auth::id();
     }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Share  $share
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Share $share)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Share  $share
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Share $share)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Share  $share
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Share $share)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Share  $share
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Share $share)
-    {
-        //
-    }
+      $share->counter+=1;
+      $project->shares()->save($share);
+  }
 }

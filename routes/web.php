@@ -9,6 +9,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\PartnerController;
 use App\Http\Controllers\VolunteerController;
 use App\Http\Controllers\LikeController;
+use App\Http\Controllers\ShareController;
 use App\Http\Controllers\VolunteerRequestController;
 use App\Http\Controllers\PartnerRequestController;
 use App\Http\Controllers\VoyagerSiteController;
@@ -88,6 +89,17 @@ Route::prefix('users')->group(function () {
   Route::post("/project/{project}/like",[LikeController::class,'storeProject'])->name("saveProjectLike");
   Route::post("/news/{news}/like",[LikeController::class,'storeNews'])->name("saveNewsLike");
   Route::post("/story/{story}/like",[LikeController::class,'storeStory'])->name("saveStoryLike");
+
+  /*
+  |--------------------------------------------------------------------------
+  | share routes
+  |--------------------------------------------------------------------------
+  |
+  */
+  Route::post("/project/{project}/share",[ShareController::class,'storeProject'])->name("saveProjectSahre");
+  Route::post("/news/{news}/share",[ShareController::class,'storeNews'])->name("saveNewsSahre");
+  Route::post("/story/{story}/share",[ShareController::class,'storeStory'])->name("saveStorySahre");
+
   /*
   |--------------------------------------------------------------------------
   | requests  routes

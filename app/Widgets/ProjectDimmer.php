@@ -30,7 +30,7 @@ class ProjectDimmer extends BaseDimmer
             'text'   => __('voyager::dimmer.project_text', ['count' => $count, 'string' => Str::lower($string)]),
             'button' => [
                 'text' =>"View all projects",
-                'link' => route('voyager.projects'),
+                'link' => route('voyager.projects.index'),
             ],
             'image' => asset('img/02.jpg'),
         ]));

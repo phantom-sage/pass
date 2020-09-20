@@ -33,6 +33,6 @@ class SendMessage extends Mailable
     public function build()
     {
       return $this->from('example@example.com')
-             ->view('emails.user');
+             ->view('emails.send');
     }
 }

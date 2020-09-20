@@ -17,10 +17,6 @@ class PartnerRequest extends Model
                          "partner_id"
                          ];
 
-      public function partner()
-      {
-        return $this->belongsTo(Partner::class);
-      }
-
+    
 
 }

@@ -29,7 +29,7 @@ class VolunteerDimmer extends BaseDimmer
             'title'  => "{$count} {$string}",
             'text'   => __('voyager::dimmer.volunteer_text', ['count' => $count, 'string' => Str::lower($string)]),
             'button' => [
-                'text' =>"view all Partners",
+                'text' =>"view all Volunteers",
                 'link' => route('voyager.volunteers.index'),
             ],
             'image' => asset('img/01.jpg'),

@@ -75,9 +75,9 @@ class VoyagerSiteController extends Controller
       $validated = $request->only('message','email');
       $message=Message::create($validated);
 
+      //ddd($message->message);
 
-
-        // \Mail::to($request->input('email'))->send(new SendMessage($request->input('message')));
+        \Mail::to($message->email)->send(new SendMessage($message));
 
       return back()->with('message','the message has been sent successfly!');
     }
