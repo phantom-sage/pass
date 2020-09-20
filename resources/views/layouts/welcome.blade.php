@@ -10,6 +10,10 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
 
+        @if(app()->getLocale() === 'ar')
+        <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700&display=swap" rel="stylesheet">
+        @endif
+
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
@@ -49,7 +53,7 @@
                                 {{ __('News') }}
                             </x-jet-nav-link>
                             <x-jet-nav-link href="{{ route('files') }}" :active="request()->routeIs('/')">
-                                {{ __('Reports') }}
+                                Reports
                             </x-jet-nav-link>
                             <x-jet-nav-link href="{{ route('contacts') }}" :active="request()->routeIs('/')">
                                 {{ __('About') }}
@@ -68,7 +72,7 @@
                                     <x-slot name="content">
                                         <!-- More links -->
                                         <div class="block px-4 py-2 text-xs text-gray-400">
-                                            {{ __('More links') }}
+                                            More links
                                         </div>
 
                                         <x-jet-dropdown-link href="{{ route('partners') }}">
@@ -130,7 +134,7 @@
                         {{ __('News') }}
                     </x-jet-responsive-nav-link>
                     <x-jet-responsive-nav-link href="{{ route('files') }}" :active="request()->routeIs('/')">
-                        {{ __('Reports') }}
+                        Reports
                     </x-jet-responsive-nav-link>
                     <x-jet-responsive-nav-link href="{{ route('contacts') }}" :active="request()->routeIs('/')">
                         {{ __('About') }}

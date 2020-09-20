@@ -37,8 +37,8 @@
     </section>
     <div class="container mx-auto"><hr></div>
     <footer class="py-3">
-        <h4 class="text-center text-gray-900 text-black">
-            Powered by <a href="#" class="text-black font-black border-b border-dashed border-gray-700">NSD</a>
-        </h4>
+        <h4 style="direction: @if(app()->getLocale() === 'ar') rtl @else ltr @endif;" class="text-center text-gray-900 text-black @if(app()->getLocale() === 'ar') float-right @endif">
+            {{ __('welcomepage.poweredby') }}
+        </h4>@if(app()->getLocale() === 'ar') <div class="clearfix"></div> @endif
     </footer>
 @endsection
