@@ -21,7 +21,6 @@ class CreatePartnerRequestsTable extends Migration
           $table->string("email");
           $table->longText("proposal");
           $table->longText('replay')->nullable();
-          $table->foreignId('partner_id')->constrained('partners');
           $table->timestamps();
         });
     }

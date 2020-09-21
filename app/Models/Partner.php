@@ -9,8 +9,5 @@ class Partner extends Model
 {
   use HasFactory;
 
-  public function partnerRequests()
-  {
-    return $this->hasMany(PartnerRequest::class);
-  }
+  
 }

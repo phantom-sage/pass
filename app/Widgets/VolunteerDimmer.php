@@ -22,14 +22,14 @@ class VolunteerDimmer extends BaseDimmer
     public function run()
     {
         $count = Volunteer::all()->count();
-        $string = "Volunteer";
+        $string = trans_choice('voyager::dimmer.volunteer', $count);
 
         return view('voyager::dimmer', array_merge($this->config, [
             'icon'   => 'voyager-bulb',
             'title'  => "{$count} {$string}",
             'text'   => __('voyager::dimmer.volunteer_text', ['count' => $count, 'string' => Str::lower($string)]),
             'button' => [
-                'text' =>"view all Volunteers",
+                'text' =>__('voyager::dimmer.volunteer_link_text'),
                 'link' => route('voyager.volunteers.index'),
             ],
             'image' => asset('img/01.jpg'),

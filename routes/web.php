@@ -111,8 +111,8 @@ Route::prefix('users')->group(function () {
   */
   Route::get("/volunteers/{volunteer}",[VolunteerRequestController::class,'create'])->name("create");
   Route::post("/volunteers/{volunteer}/request",[VolunteerRequestController::class,'store'])->name("volunteer");
-  Route::get("/partners/{partner}/create",[PartnerRequestController::class,'create'])->name("partner.create");
-  Route::post("/partners/{partner}/request",[partnerRequestController::class,'store'])->name("partner");
+  Route::get("/partners/create",[PartnerRequestController::class,'create'])->name("partner.create");
+  Route::post("/partners/request",[partnerRequestController::class,'store'])->name("partner");
 
 
 

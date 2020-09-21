@@ -22,14 +22,15 @@ class StoryDimmer extends BaseDimmer
     public function run()
     {
         $count = Story::all()->count();
-        $string = "Story";
+        $string = trans_choice('voyager::dimmer.story', $count);
+
 
         return view('voyager::dimmer', array_merge($this->config, [
             'icon'   => 'voyager-bookmark',
             'title'  => "{$count} {$string}",
             'text'   => __('voyager::dimmer.story_text', ['count' => $count, 'string' => Str::lower($string)]),
             'button' => [
-                'text' =>"view all Stories",
+                'text' =>  __('voyager::dimmer.story_link_text'),
                 'link' => route('voyager.stories.index'),
             ],
             'image' => asset('img/03.jpg'),

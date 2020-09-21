@@ -23,13 +23,13 @@ class ProjectDimmer extends BaseDimmer
     public function run()
     {
         $count = Project::all()->count();
-        $string = "Project";
+        $string = trans_choice('voyager::dimmer.project', $count);
         return view('voyager::dimmer', array_merge($this->config, [
             'icon'   => 'voyager-bag',
             'title'  => "{$count} {$string}",
             'text'   => __('voyager::dimmer.project_text', ['count' => $count, 'string' => Str::lower($string)]),
             'button' => [
-                'text' =>"View all projects",
+                'text' =>__('voyager::dimmer.project_link_text'),
                 'link' => route('voyager.projects.index'),
             ],
             'image' => asset('img/02.jpg'),

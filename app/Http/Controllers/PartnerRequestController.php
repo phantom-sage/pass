@@ -17,7 +17,7 @@ class PartnerRequestController extends Controller
      */
     public function index()
     {
-    
+
     }
 
     /**
@@ -36,11 +36,9 @@ class PartnerRequestController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StorePartnerRequest $request,Partner $partner)
+    public function store(StorePartnerRequest $request)
     {
         $validated = $request->validated();
-        $validated['partner_id'] = $partner->id;
-
         PartnerRequest::create($validated);
        ddd("done");
     }

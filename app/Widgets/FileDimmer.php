@@ -22,14 +22,15 @@ class FileDimmer extends BaseDimmer
     public function run()
     {
         $count = File::all()->count();
-        $string = "File";
+        $string = trans_choice('voyager::dimmer.file', $count);
+
 
         return view('voyager::dimmer', array_merge($this->config, [
             'icon'   => 'voyager-file-text',
             'title'  => "{$count} {$string}",
             'text'   => __('voyager::dimmer.file_text', ['count' => $count, 'string' => Str::lower($string)]),
             'button' => [
-                'text' =>"view all Files",
+                'text' =>__('voyager::dimmer.file_link_text'),
                 'link' => route('voyager.files.index'),
             ],
             'image' => asset('img/03.jpg'),

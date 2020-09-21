@@ -6,7 +6,7 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
-
+use App\Models\Message;
 class SendMessage extends Mailable
 {
     use Queueable, SerializesModels;
@@ -18,7 +18,7 @@ class SendMessage extends Mailable
      */
      public $message;
 
-     public function __construct($message){
+     public function __construct( Message $message){
 
          $this->message = $message;
 
@@ -32,7 +32,11 @@ class SendMessage extends Mailable
      */
     public function build()
     {
+  
       return $this->from('example@example.com')
-             ->view('emails.send');
+             ->view('emails.send') ->with([
+                        'email' => $this->message->email,
+                        'message' => $this->message->message,
+                    ]);
     }
 }

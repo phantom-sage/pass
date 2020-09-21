@@ -22,14 +22,15 @@ class ContactDimmer extends BaseDimmer
     public function run()
     {
         $count = Contact::all()->count();
-        $string = "Contact";
+        $string = trans_choice('voyager::dimmer.contact', $count);
+
 
         return view('voyager::dimmer', array_merge($this->config, [
             'icon'   => 'voyager-people',
             'title'  => "{$count} {$string}",
             'text'   => __('voyager::dimmer.contact_text', ['count' => $count, 'string' => Str::lower($string)]),
             'button' => [
-                'text' =>"view all Contacts",
+                'text' =>  __('voyager::dimmer.contact_link_text'),
                 'link' => route('voyager.contacts.index'),
             ],
             'image' => asset('img/01.jpg'),

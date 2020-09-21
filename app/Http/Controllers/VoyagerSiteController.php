@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Project;
 use App\Models\News;
 use App\Models\Story;
+use App\Models\User;
 use App\Models\Message;
 use App\Models\PartnerRequest;
 use App\Models\VolunteerRequest;
@@ -96,8 +97,16 @@ class VoyagerSiteController extends Controller
     ***********/
     public function sendUsersEmail(StoreMessage $request)
     {
+      $users = User::all();
       $validated = $request->only('message','email');
       $message=Message::create($validated);
+      if($message){
+        foreach ($users as $user ) {
+          if($user->email!=null){
+          \Mail::to($user->email)->send(new SendMessage($message));
+            }
+          }
+      }
       return back()->with('message','the message has been sent successfly!');
     }
 }

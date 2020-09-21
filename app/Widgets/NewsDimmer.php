@@ -22,14 +22,15 @@ class NewsDimmer extends BaseDimmer
     public function run()
     {
         $count = News::all()->count();
-        $string = "News";
+        $string = trans_choice('voyager::dimmer.news', $count);
+
 
         return view('voyager::dimmer', array_merge($this->config, [
             'icon'   => 'voyager-news',
             'title'  => "{$count} {$string}",
             'text'   => __('voyager::dimmer.news_text', ['count' => $count, 'string' => Str::lower($string)]),
             'button' => [
-                'text' =>"view all News",
+                'text' =>__('voyager::dimmer.news_link_text'),
                 'link' => route('voyager.news.index'),
             ],
             'image' => asset('img/02.jpg'),

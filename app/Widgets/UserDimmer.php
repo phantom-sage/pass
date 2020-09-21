@@ -22,14 +22,14 @@ class UserDimmer extends BaseDimmer
     public function run()
     {
         $count = User::all()->count();
-        $string = "User";
+        $string =trans_choice('voyager::dimmer.user', $count);
 
         return view('voyager::dimmer', array_merge($this->config, [
             'icon'   => 'voyager-person',
             'title'  => "{$count} {$string}",
             'text'   => __('voyager::dimmer.user_text', ['count' => $count, 'string' => Str::lower($string)]),
             'button' => [
-                'text' =>"view all Users",
+                'text' =>__('voyager::dimmer.user_link_text'),
                 'link' => route('voyager.users.index'),
             ],
             'image' => asset('img/01.jpg'),

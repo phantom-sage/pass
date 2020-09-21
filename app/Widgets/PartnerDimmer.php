@@ -22,14 +22,14 @@ class PartnerDimmer extends BaseDimmer
     public function run()
     {
         $count = Partner::all()->count();
-        $string = "Partner";
+        $string = trans_choice('voyager::dimmer.partner', $count);
 
         return view('voyager::dimmer', array_merge($this->config, [
             'icon'   => 'voyager-activity',
             'title'  => "{$count} {$string}",
             'text'   => __('voyager::dimmer.partner_text', ['count' => $count, 'string' => Str::lower($string)]),
             'button' => [
-                'text' =>"view all Partners",
+                'text' =>__('voyager::dimmer.partner_link_text'),
                 'link' => route('voyager.partners.index'),
             ],
             'image' => asset('img/03.jpg'),
