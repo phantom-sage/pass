@@ -104,8 +104,8 @@
                                             <input type="hidden" name="remember" value="true">
                                             <div class="rounded-md shadow-sm">
                                                 <div class="my-3">
-                                                    <input aria-label="Forth name" name="forth_name" type="text" required autofocus class="appearance-none rounded-none relative block w-full px-3 py-2 border @error('forth_name') border-red-700 @enderror border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5" placeholder="Forth name">
-                                                    @error('forth_name')
+                                                    <input aria-label="Full name" name="full_name" type="text" required autofocus class="appearance-none rounded-none relative block w-full px-3 py-2 border @error('full_name') border-red-700 @enderror border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5" placeholder="Forth name">
+                                                    @error('full_name')
                                                     <small>
                                                         <strong class="text-red-900 text-bold px-2">{{ $message }}</strong>
                                                     </small>

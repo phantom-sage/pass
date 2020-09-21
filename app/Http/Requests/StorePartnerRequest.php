@@ -24,7 +24,7 @@ class StorePartnerRequest extends FormRequest
     public function rules()
     {
       return [
-            "forth_name"    => ['string', 'required', 'min:8', 'max:255'],
+            "full_name"    => ['string', 'required', 'min:8', 'max:255'],
             'business_area' => ['string', 'required', 'min:8', 'max:255'],
             "organization_name" => ['string', 'required', 'min:8', 'max:255'],
             "email"        =>['required','email'],
