@@ -20,16 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e82d7ec0-254a-4a34-9107-1a6d6d3985f4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/lang/ar/navbarlayout.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/lang/en/navbarlayout.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PartnerRequestController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PartnerRequestController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/StorePartnerRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/StorePartnerRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/ar/volunteerpage.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/ar/volunteerpage.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/en/welcomepage.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/welcomepage.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Middleware/SetLocale.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/welcome.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/partner/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partner/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/volunteer/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/volunteer/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -281,7 +276,7 @@
       <workItem from="1600518475424" duration="7893000" />
       <workItem from="1600592773321" duration="2296000" />
       <workItem from="1600666473623" duration="634000" />
-      <workItem from="1600678161237" duration="2448000" />
+      <workItem from="1600678161237" duration="2684000" />
     </task>
     <servers />
   </component>

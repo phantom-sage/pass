@@ -42,6 +42,9 @@
                         <div @if(app()->getLocale() === 'ar') style="direction: rtl;" @endif class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                             <x-jet-nav-link href="{{ route('home') }}" :active="request()->routeIs('/')">
                                 {{ __('navbarlayout.home') }}
+{{--                        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">--}}
+{{--                            <x-jet-nav-link href="{{ route('home',app()->getLocale()) }}" :active="request()->routeIs('/',)">--}}
+{{--                                {{ __('Home') }}--}}
                             </x-jet-nav-link>
                             <x-jet-nav-link href="{{ route('projects') }}" :active="request()->routeIs('/')">
                                 {{ __('navbarlayout.projects') }}
