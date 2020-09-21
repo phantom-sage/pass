@@ -20,10 +20,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e82d7ec0-254a-4a34-9107-1a6d6d3985f4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/lang/ar/navbarlayout.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/lang/en/navbarlayout.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/current-projects.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/current-projects.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PartnerRequestController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PartnerRequestController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/StorePartnerRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/StorePartnerRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/ar/volunteerpage.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/ar/volunteerpage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/en/welcomepage.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/welcomepage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/welcome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/partner/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partner/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/volunteer/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/volunteer/index.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -273,7 +279,9 @@
       <workItem from="1600437676910" duration="123000" />
       <workItem from="1600512397730" duration="5851000" />
       <workItem from="1600518475424" duration="7893000" />
-      <workItem from="1600592773321" duration="718000" />
+      <workItem from="1600592773321" duration="2296000" />
+      <workItem from="1600666473623" duration="634000" />
+      <workItem from="1600678161237" duration="2448000" />
     </task>
     <servers />
   </component>
@@ -320,9 +328,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1600407091817" />
-    <state x="895" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1600524464336">
+    <state x="895" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1600678268204">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="895" y="230" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1600524464336" />
+    <state x="895" y="230" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1600678268204" />
   </component>
 </project>

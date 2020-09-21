@@ -18,15 +18,19 @@
                         <div class="max-w-sm rounded overflow-hidden shadow-lg block mx-auto my-3 hover:shadow-xl transition ease-out duration-500 sm:m-3 md:m-3 lg:m-3">
                             <img class="w-full transition ease-in-out duration-500 transform hover:scale-105" src="{{ asset('img/02.jpg') }}" alt="Sunset in the mountains">
                             <div class="px-6 py-4">
-                                <div class="font-bold text-xl mb-2">{{ $project->name }}</div>
-                                <p class="text-gray-700 text-base">
+                                <div @if(app()->getLocale() === 'ar') style="direction: rtl;" @endif class="font-bold text-xl mb-2 @if(app()->getLocale() === 'ar') cairo-font float-right @endif">
+                                    {{ $project->name }}
+                                </div>
+                                @if(app()->getLocale() === 'ar') <div class="clearfix"></div> @endif
+                                <p @if(app()->getLocale() === 'ar') style="direction: rtl;" @endif class="text-gray-700 text-base @if(app()->getLocale() === 'ar') cairo-font float-right @endif">
                                     {{ $project->description }}
                                 </p>
+                                @if(app()->getLocale() === 'ar') <div class="clearfix"></div> @endif
                             </div>
                             <hr>
                             <div class="px-6 pt-4 pb-2">
                                 <a href="#" class="text-uppercase bg-blue-700 px-4 py-2 float-right font-black text-white shadow-sm hover:shadow-lg transition ease-in-out duration-75">
-                                    See more
+                                    {{ __('volunteerpage.bevolunttertext') }}
                                 </a>
                                 <div class="clearfix"></div>
                                 <div class="divider-y divider-gray-400"></div>
