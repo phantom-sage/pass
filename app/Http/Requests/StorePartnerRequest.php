@@ -25,10 +25,10 @@ class StorePartnerRequest extends FormRequest
     {
       return [
             "full_name"    => ['string', 'required', 'min:8', 'max:255'],
-            'business_area' => ['string', 'required', 'min:8', 'max:255'],
-            "organization_name" => ['string', 'required', 'min:8', 'max:255'],
-            "email"        =>['required','email'],
-            "partnership_proposal"     =>['required', 'string', 'min:8']
+            "organization" => ['string', 'required', 'min:8', 'max:255'],
+            'organization_area' => ['string', 'required', 'min:8', 'max:255'],
+            'proposal'          =>['string','required','min:10'],
+            "email"        =>['required','email']
         ];
     }
 }
