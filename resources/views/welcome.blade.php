@@ -36,10 +36,10 @@
         <div class="container mx-auto">
             <div class="flex flex-wrap justify-between">
                 <button class="px-5 ml-2 bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
-                    <a href="{{ route('volunteers') }}">Become a volunteer</a>
+                    <a href="{{ route('volunteers',app()->getLocale()) }}">Become a volunteer</a>
                 </button>
                 <button class="px-5 mr-2 bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
-                    <a href="{{ route('partners') }}">Be a partner</a>
+                    <a href="{{ route('partners',app()->getLocale()) }}">Be a partner</a>
                 </button>
             </div>
         </div>

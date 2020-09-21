@@ -9,7 +9,7 @@
                     <p class="font-bold text-sm uppercase">Services</p>
                     <p class="text-3xl font-bold">Hello world</p>
                     <p class="text-2xl mb-10 leading-none">Carousel with TailwindCSS and jQuery</p>
-                    <a href="{{ route('news') }}" class="bg-purple-800 py-4 px-8 text-white font-bold uppercase text-xs rounded hover:bg-gray-200 hover:text-gray-800">Read more</a>
+                    <a href="{{ route('news',app()->getLocale()) }}" class="bg-purple-800 py-4 px-8 text-white font-bold uppercase text-xs rounded hover:bg-gray-200 hover:text-gray-800">Read more</a>
                 </div>
             </div> <!-- container -->
             <br>
@@ -21,7 +21,7 @@
                 <p class="font-bold text-sm uppercase">Services</p>
                 <p class="text-3xl font-bold">Hello world</p>
                 <p class="text-2xl mb-10 leading-none">Carousel with TailwindCSS and jQuery</p>
-                <a href="{{ route('news') }}" class="bg-purple-800 py-4 px-8 text-white font-bold uppercase text-xs rounded hover:bg-gray-200 hover:text-gray-800">Read more</a>
+                <a href="{{ route('news',app()->getLocale()) }}" class="bg-purple-800 py-4 px-8 text-white font-bold uppercase text-xs rounded hover:bg-gray-200 hover:text-gray-800">Read more</a>
             </div> <!-- container -->
             <br>
         </div>

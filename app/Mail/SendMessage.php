@@ -32,11 +32,8 @@ class SendMessage extends Mailable
      */
     public function build()
     {
-  
+
       return $this->from('example@example.com')
-             ->view('emails.send') ->with([
-                        'email' => $this->message->email,
-                        'message' => $this->message->message,
-                    ]);
+             ->view('emails.send') ;
     }
 }

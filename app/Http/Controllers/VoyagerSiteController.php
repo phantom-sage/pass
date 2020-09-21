@@ -10,6 +10,7 @@ use App\Models\User;
 use App\Models\Message;
 use App\Models\PartnerRequest;
 use App\Models\VolunteerRequest;
+use Illuminate\Mail\Mailable;
 use App\Mail\SendMessage;
 use App\Http\Requests\StoreMessage;
 

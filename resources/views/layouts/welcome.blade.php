@@ -33,29 +33,29 @@
                     <div class="flex">
                         <!-- Logo -->
                         <div class="flex-shrink-0 flex items-center">
-                            <a href="{{ route('home') }}">
+                            <a href="{{ route('home',app()->getLocale()) }}">
                                 <x-jet-application-mark class="block h-9 w-auto" />
                             </a>
                         </div>
 
                         <!-- Navigation Links -->
                         <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                            <x-jet-nav-link href="{{ route('home',app()->getLocale()) }}" :active="request()->routeIs('/',)">
+                            <x-jet-nav-link href="{{ route('home',app()->getLocale()) }}" :active="request()->routeIs('/')">
                                 {{ __('Home') }}
                             </x-jet-nav-link>
-                            <x-jet-nav-link href="{{ route('projects') }}" :active="request()->routeIs('/')">
+                            <x-jet-nav-link href="{{ route('projects',app()->getLocale()) }}" :active="request()->routeIs('/')">
                                 {{ __('Projects') }}
                             </x-jet-nav-link>
-                            <x-jet-nav-link href="{{ route('story') }}" :active="request()->routeIs('/')">
+                            <x-jet-nav-link href="{{ route('story',app()->getLocale()) }}" :active="request()->routeIs('/',app()->getLocale())">
                                 {{ __('Stories') }}
                             </x-jet-nav-link>
-                            <x-jet-nav-link href="{{ route('news') }}" :active="request()->routeIs('/')">
+                            <x-jet-nav-link href="{{ route('news',app()->getLocale()) }}" :active="request()->routeIs('/',app()->getLocale())">
                                 {{ __('News') }}
                             </x-jet-nav-link>
-                            <x-jet-nav-link href="{{ route('files') }}" :active="request()->routeIs('/')">
+                            <x-jet-nav-link href="{{ route('files',app()->getLocale()) }}" :active="request()->routeIs('/',app()->getLocale())">
                                 Reports
                             </x-jet-nav-link>
-                            <x-jet-nav-link href="{{ route('contacts') }}" :active="request()->routeIs('/')">
+                            <x-jet-nav-link href="{{ route('contacts',app()->getLocale()) }}" :active="request()->routeIs('/',app()->getLocale())">
                                 {{ __('About') }}
                             </x-jet-nav-link>
                             <div class="hidden sm:flex sm:items-center sm:ml-6">
@@ -75,10 +75,10 @@
                                             More links
                                         </div>
 
-                                        <x-jet-dropdown-link href="{{ route('partners') }}">
+                                        <x-jet-dropdown-link href="{{ route('partners',app()->getLocale()) }}">
                                             {{ __('Partenership') }}
                                         </x-jet-dropdown-link>
-                                        <x-jet-dropdown-link href="{{ route('volunteers') }}">
+                                        <x-jet-dropdown-link href="{{ route('volunteers',app()->getLocale() ) }}">
                                             {{ __('Volunteer') }}
                                         </x-jet-dropdown-link>
 
@@ -124,25 +124,25 @@
                     <x-jet-responsive-nav-link href="/" :active="request()->routeIs('/')">
                         {{ __('Home') }}
                     </x-jet-responsive-nav-link>
-                    <x-jet-responsive-nav-link href="{{ route('projects') }}" :active="request()->routeIs('/')">
+                    <x-jet-responsive-nav-link href="{{ route('projects',app()->getLocale()) }}" :active="request()->routeIs('/',app()->getLocale())">
                         {{ __('Projects') }}
                     </x-jet-responsive-nav-link>
-                    <x-jet-responsive-nav-link href="{{ route('story') }}" :active="request()->routeIs('/')">
+                    <x-jet-responsive-nav-link href="{{ route('story',app()->getLocale()) }}" :active="request()->routeIs('/',app()->getLocale())">
                         {{ __('Stories') }}
                     </x-jet-responsive-nav-link>
-                    <x-jet-responsive-nav-link href="{{ route('news') }}" :active="request()->routeIs('/')">
+                    <x-jet-responsive-nav-link href="{{ route('news',app()->getLocale()) }}" :active="request()->routeIs('/',app()->getLocale())">
                         {{ __('News') }}
                     </x-jet-responsive-nav-link>
-                    <x-jet-responsive-nav-link href="{{ route('files') }}" :active="request()->routeIs('/')">
+                    <x-jet-responsive-nav-link href="{{ route('files',app()->getLocale()) }}" :active="request()->routeIs('/',app()->getLocale())">
                         Reports
                     </x-jet-responsive-nav-link>
-                    <x-jet-responsive-nav-link href="{{ route('contacts') }}" :active="request()->routeIs('/')">
+                    <x-jet-responsive-nav-link href="{{ route('contacts',app()->getLocale()) }}" :active="request()->routeIs('/',app()->getLocale())">
                         {{ __('About') }}
                     </x-jet-responsive-nav-link>
-                    <x-jet-responsive-nav-link href="{{ route('volunteers') }}" :active="request()->routeIs('/')">
+                    <x-jet-responsive-nav-link href="{{ route('volunteers',app()->getLocale()) }}" :active="request()->routeIs('/',app()->getLocale())">
                         {{ __('Volunteer') }}
                     </x-jet-responsive-nav-link>
-                    <x-jet-responsive-nav-link href="{{ route('partners') }}" :active="request()->routeIs('/')">
+                    <x-jet-responsive-nav-link href="{{ route('partners',app()->getLocale()) }}" :active="request()->routeIs('/',app()->getLocale())">
                         {{ __('Partenership') }}
                     </x-jet-responsive-nav-link>
                     <x-jet-responsive-nav-link href="/register" :active="request()->routeIs('/register')">
