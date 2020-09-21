@@ -99,7 +99,7 @@
                                                 Be a partner for blah blah blah
                                             </h2>
                                         </div>
-                                        <form class="mt-8" action="{{ route('partner') }}" method="POST" enctype="multipart/form-data">
+                                        <form class="mt-8" action="{{ route('partner',app()->getLocale()) }}" method="POST" enctype="multipart/form-data">
                                             @csrf
                                             <input type="hidden" name="remember" value="true">
                                             <div class="rounded-md shadow-sm">
