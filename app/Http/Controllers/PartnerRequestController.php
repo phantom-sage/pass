@@ -40,7 +40,7 @@ class PartnerRequestController extends Controller
     {
         $validated = $request->validated();
         PartnerRequest::create($validated);
-       ddd("done");
+        ddd("done");
     }
 
 

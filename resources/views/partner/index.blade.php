@@ -2,7 +2,7 @@
 @section('page_header')
     <header class="bg-white shadow">
         <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-            <h2 @if(app()->getLocale() === 'ar') style="direction: rtl;" @endif class="font-black text-xl text-gray-800 leading-tight @if(app()->getLocale() === 'ar') cairo-font float-right @endif">
+            <h2 @if(app()->getLocale() === 'ar') style="direction: rtl;" @endif class="font-black text-xl text-gray-800 leading-tight @if(app()->getLocale() === 'ar') cairo-font float-right mb-4 @endif">
                 {{ __('partnerspage.header') }}
             </h2>
             @if(app()->getLocale() === 'ar') <div class="clearfix"></div> @endif
@@ -99,7 +99,8 @@
                                                 Be a partner for blah blah blah
                                             </h2>
                                         </div>
-                                        <form class="mt-8" action="#" method="POST" enctype="multipart/form-data">
+                                        <form class="mt-8" action="{{ route('partner') }}" method="POST" enctype="multipart/form-data">
+                                            @csrf
                                             <input type="hidden" name="remember" value="true">
                                             <div class="rounded-md shadow-sm">
                                                 <div class="my-3">

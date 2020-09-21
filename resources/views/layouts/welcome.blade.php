@@ -32,37 +32,40 @@
                 <div class="flex justify-between h-16">
                     <div class="flex">
                         <!-- Logo -->
-                        <div class="flex-shrink-0 flex items-center">
+                        <div class="flex-shrink-0 flex items-center @if(app()->getLocale() === 'ar') order-last @endif">
                             <a href="{{ route('home',app()->getLocale()) }}">
                                 <x-jet-application-mark class="block h-9 w-auto" />
                             </a>
                         </div>
 
                         <!-- Navigation Links -->
-                        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                            <x-jet-nav-link href="{{ route('home',app()->getLocale()) }}" :active="request()->routeIs('/')">
-                                {{ __('Home') }}
+                        <div @if(app()->getLocale() === 'ar') style="direction: rtl;" @endif class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                            <x-jet-nav-link href="{{ route('home',app()->getLocale()) }}" :active="request()->routeIs('/',app()->getLocale())">
+                                {{ __('navbarlayout.home') }}
+{{--                        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">--}}
+{{--                            <x-jet-nav-link href="{{ route('home',app()->getLocale()) }}" :active="request()->routeIs('/')">--}}
+{{--                                {{ __('Home') }}--}}
                             </x-jet-nav-link>
-                            <x-jet-nav-link href="{{ route('projects',app()->getLocale()) }}" :active="request()->routeIs('/')">
-                                {{ __('Projects') }}
+                            <x-jet-nav-link href="{{ route('projects',app()->getLocale()) }}" :active="request()->routeIs('/',app()->getLocale())">
+                                {{ __('navbarlayout.projects') }}
                             </x-jet-nav-link>
                             <x-jet-nav-link href="{{ route('story',app()->getLocale()) }}" :active="request()->routeIs('/',app()->getLocale())">
-                                {{ __('Stories') }}
+                                {{ __('navbarlayout.stories') }}
                             </x-jet-nav-link>
                             <x-jet-nav-link href="{{ route('news',app()->getLocale()) }}" :active="request()->routeIs('/',app()->getLocale())">
-                                {{ __('News') }}
+                                {{ __('navbarlayout.news') }}
                             </x-jet-nav-link>
                             <x-jet-nav-link href="{{ route('files',app()->getLocale()) }}" :active="request()->routeIs('/',app()->getLocale())">
-                                Reports
+                                {{ __('navbarlayout.reports') }}
                             </x-jet-nav-link>
                             <x-jet-nav-link href="{{ route('contacts',app()->getLocale()) }}" :active="request()->routeIs('/',app()->getLocale())">
-                                {{ __('About') }}
+                                {{ __('navbarlayout.about') }}
                             </x-jet-nav-link>
                             <div class="hidden sm:flex sm:items-center sm:ml-6">
                                 <x-jet-dropdown align="right" width="48">
                                     <x-slot name="trigger">
                                         <button class="flex text-sm border-2 border-transparent rounded focus:outline-none focus:border-gray-300 transition duration-150 ease-in-out">
-                                            More
+                                            {{ __('navbarlayout.more') }}
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class="w-3 h-3 text-gray-700 ml-1 mt-1">
                                                 <polygon points="9 16.172 2.929 10.101 1.515 11.515 10 20 10.707 19.293 18.485 11.515 17.071 10.101 11 16.172 11 0 9 0"/>
                                             </svg>
@@ -72,30 +75,30 @@
                                     <x-slot name="content">
                                         <!-- More links -->
                                         <div class="block px-4 py-2 text-xs text-gray-400">
-                                            More links
+                                            {{ __('navbarlayout.morelinks') }}
                                         </div>
 
                                         <x-jet-dropdown-link href="{{ route('partners',app()->getLocale()) }}">
-                                            {{ __('Partenership') }}
+                                            {{ __('navbarlayout.partenership') }}
                                         </x-jet-dropdown-link>
-                                        <x-jet-dropdown-link href="{{ route('volunteers',app()->getLocale() ) }}">
-                                            {{ __('Volunteer') }}
+                                        <x-jet-dropdown-link href="{{ route('volunteers',app()->getLocale()) }}">
+                                            {{ __('navbarlayout.volunteer') }}
                                         </x-jet-dropdown-link>
 
                                         <div class="border-t border-gray-100"></div>
                                         @if (Route::has('login'))
                                             @auth
-                                                <x-jet-dropdown-link href="/dashboard">
-                                                    {{ __('Dashboard') }}
-                                                </x-jet-dropdown-link>
+{{--                                                <x-jet-dropdown-link href="/dashboard">--}}
+{{--                                                    {{ __('Dashboard') }}--}}
+{{--                                                </x-jet-dropdown-link>--}}
                                             @else
                                                 <x-jet-dropdown-link href="/login">
-                                                    {{ __('Login') }}
+                                                    {{ __('navbarlayout.login') }}
                                                 </x-jet-dropdown-link>
 
                                                 @if (Route::has('register'))
                                                     <x-jet-dropdown-link href="/register">
-                                                        {{ __('Register') }}
+                                                        {{ __('navbarlayout.register') }}
                                                     </x-jet-dropdown-link>
                                                 @endif
                                             @endif
@@ -120,38 +123,39 @@
 
             <!-- Responsive Navigation Menu -->
             <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
-                <div class="pt-2 pb-3 space-y-1">
-                    <x-jet-responsive-nav-link href="/" :active="request()->routeIs('/')">
-                        {{ __('Home') }}
+                <div @if(app()->getLocale() === 'ar') style="direction: rtl;" @endif class="pt-2 pb-3 space-y-1 float-right">
+                    <x-jet-responsive-nav-link href="/" :active="request()->routeIs('/',app()->getLocale())">
+                        {{ __('navbarlayout.home') }}
                     </x-jet-responsive-nav-link>
                     <x-jet-responsive-nav-link href="{{ route('projects',app()->getLocale()) }}" :active="request()->routeIs('/',app()->getLocale())">
-                        {{ __('Projects') }}
+                        {{ __('navbarlayout.projects') }}
                     </x-jet-responsive-nav-link>
                     <x-jet-responsive-nav-link href="{{ route('story',app()->getLocale()) }}" :active="request()->routeIs('/',app()->getLocale())">
-                        {{ __('Stories') }}
+                        {{ __('navbarlayout.stories') }}
                     </x-jet-responsive-nav-link>
                     <x-jet-responsive-nav-link href="{{ route('news',app()->getLocale()) }}" :active="request()->routeIs('/',app()->getLocale())">
-                        {{ __('News') }}
+                        {{ __('navbarlayout.news') }}
                     </x-jet-responsive-nav-link>
                     <x-jet-responsive-nav-link href="{{ route('files',app()->getLocale()) }}" :active="request()->routeIs('/',app()->getLocale())">
-                        Reports
+                        {{ __('navbarlayout.reports') }}
                     </x-jet-responsive-nav-link>
                     <x-jet-responsive-nav-link href="{{ route('contacts',app()->getLocale()) }}" :active="request()->routeIs('/',app()->getLocale())">
-                        {{ __('About') }}
+                        {{ __('navbarlayout.about') }}
                     </x-jet-responsive-nav-link>
                     <x-jet-responsive-nav-link href="{{ route('volunteers',app()->getLocale()) }}" :active="request()->routeIs('/',app()->getLocale())">
-                        {{ __('Volunteer') }}
+                        {{ __('navbarlayout.volunteer') }}
                     </x-jet-responsive-nav-link>
                     <x-jet-responsive-nav-link href="{{ route('partners',app()->getLocale()) }}" :active="request()->routeIs('/',app()->getLocale())">
-                        {{ __('Partenership') }}
+                        {{ __('navbarlayout.partenership') }}
                     </x-jet-responsive-nav-link>
                     <x-jet-responsive-nav-link href="/register" :active="request()->routeIs('/register')">
-                        {{ __('Register') }}
+                        {{ __('navbarlayout.register') }}
                     </x-jet-responsive-nav-link>
                     <x-jet-responsive-nav-link href="/login" :active="request()->routeIs('/login')">
-                        {{ __('Login') }}
+                        {{ __('navbarlayout.login') }}
                     </x-jet-responsive-nav-link>
                 </div>
+                @if(app()->getLocale() === 'ar') <div class="clearfix"></div> @endif
 
             </div>
         </nav>
