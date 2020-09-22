@@ -31,6 +31,8 @@ class ProjectController extends Controller
           ->select('name_'.$locale.' as name', 'description_'.$locale.' as description','video','image')
           ->where('id','=',$project->id)
           ->get();
-      dd($project);
+      return view('project.show', [
+          'project' => $project
+      ]);
     }
 }
