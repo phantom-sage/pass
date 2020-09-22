@@ -51,9 +51,13 @@ class NewsController extends Controller
      * @param  \App\Models\News  $news
      * @return \Illuminate\Http\Response
      */
-    public function show(News $news)
+    public function show($locale,News $news)
     {
-        //
+      $news = DB::table('news')
+          ->select('name_'.$locale.' as name', 'description_'.$locale.' as description','video','image')
+          ->where('id','=',$news->id)
+          ->get();
+          ddd($news);
     }
 
     /**

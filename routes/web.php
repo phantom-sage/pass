@@ -81,8 +81,11 @@ Route::group([
 
     Route::prefix('users')->group(function () {
       Route::get("/projects",[ProjectController::class,'index'])->name("projects");
+      Route::get("/projects/{project}/show",[ProjectController::class,'show'])->name("projects.show");
       Route::get("/stories",[StoryController::class,'index'])->name("story");
+      Route::get("/stories/{story}/show",[StoryController::class,'show'])->name("story.show");
       Route::get("/news",[NewsController::class,'index'])->name("news");
+      Route::get("/news/{news}/show",[NewsController::class,'show'])->name("news.show");
       Route::get("/files",[FileController::class,'index'])->name("files");
       Route::get("/contacts",[ContactController::class,'index'])->name("contacts");
       Route::get("/partners",[PartnerController::class,'index'])->name("partners");

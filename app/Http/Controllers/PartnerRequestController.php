@@ -41,10 +41,10 @@ class PartnerRequestController extends Controller
         $validated = $request->validated();
 
       $partner =  PartnerRequest::create($validated);
-          ddd($partner);
+
         @// TODO: translate this t arbic
         $message = "your request of joining up pass partners was send successfly!";
-        return redirect()->back(['message',$message]);
+        return redirect()->back()->with(['message',$message]);
     }
 
 

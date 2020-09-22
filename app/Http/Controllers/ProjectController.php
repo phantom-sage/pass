@@ -25,5 +25,12 @@ class ProjectController extends Controller
         ]);
     }
 
-  
+    public function show($locale ,Project $project)
+    {
+      $project = DB::table('projects')
+          ->select('name_'.$locale.' as name', 'description_'.$locale.' as description','video','image')
+          ->where('id','=',$project->id)
+          ->get();
+      dd($project);
+    }
 }
