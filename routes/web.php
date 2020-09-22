@@ -27,8 +27,8 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::post('set-locale', function(Request $request) {
-    app()->setLocale($request->language);
+Route::get('set-locale/{locale}', function($locale) {
+    app()->setLocale($locale);
     return redirect(app()->getLocale());
 })->name('set-locale');
 

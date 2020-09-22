@@ -28,15 +28,26 @@
         @livewire('top-nav')
         <section class="my-5">
             <div class="container mx-auto">
-                <div>
-                    <form method="POST" action="{{ route('set-locale') }}" enctype="multipart/form-data">
-                        @csrf
-                        <select name="language" class="border px-5 mx-auto block">
-                            <option value="ar" @if(app()->getLocale() === 'ar') selected @endif>AR</option>
-                            <option value="en" @if(app()->getLocale() === 'en') selected @endif>EN</option>
-                        </select>
-                        <button class="mx-auto block m-3 px-5 py-2 bg-blue-700 text-white" type="submit">SET</button>
-                    </form>
+                <div x-data="{ open: false }" class="relative inline-block text-left">
+                    <div>
+                        <span class="rounded-md shadow-sm">
+                          <button @click="open = true" type="button" class="inline-flex justify-center w-full rounded-md border border-gray-300 px-4 py-2 bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800 transition ease-in-out duration-150" id="options-menu" aria-haspopup="true" aria-expanded="true">
+                            Language
+                              <!-- Heroicon name: chevron-down -->
+                            <svg class="-mr-1 ml-2 h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                              <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                          </button>
+                        </span>
+                    </div>
+                    <div x-show="open" @click.away="open = false" class="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg">
+                        <div class="rounded-md bg-white shadow-xs">
+                            <div class="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
+                                <a href="{{ route('set-locale', ['locale' => 'ar']) }}" class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900" role="menuitem">AR</a>
+                                <a href="{{ route('set-locale', ['locale' => 'en']) }}" class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900" role="menuitem">EN</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -75,6 +86,34 @@
                             <x-jet-nav-link href="{{ route('contacts',app()->getLocale()) }}" :active="request()->routeIs('/',app()->getLocale())">
                                 {{ __('navbarlayout.about') }}
                             </x-jet-nav-link>
+
+                            <div class="hidden sm:flex sm:items-center sm:ml-6">
+                                <x-jet-dropdown align="right" width="48">
+                                    <x-slot name="trigger">
+                                        <button class="flex text-sm border-2 border-transparent rounded focus:outline-none focus:border-gray-300 transition duration-150 ease-in-out">
+                                            Language
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class="w-3 h-3 text-gray-700 ml-1 mt-1">
+                                                <polygon points="9 16.172 2.929 10.101 1.515 11.515 10 20 10.707 19.293 18.485 11.515 17.071 10.101 11 16.172 11 0 9 0"/>
+                                            </svg>
+                                        </button>
+                                    </x-slot>
+
+                                    <x-slot name="content">
+                                        <!-- More links -->
+                                        <div class="block px-4 py-2 text-xs text-gray-400">
+                                            Language
+                                        </div>
+
+                                        <x-jet-dropdown-link href="{{ route('set-locale', ['locale' => 'ar']) }}">
+                                            AR
+                                        </x-jet-dropdown-link>
+                                        <x-jet-dropdown-link href="{{ route('set-locale', ['locale' => 'en']) }}">
+                                            EN
+                                        </x-jet-dropdown-link>
+                                    </x-slot>
+                                </x-jet-dropdown>
+                            </div>
+
                             <div class="hidden sm:flex sm:items-center sm:ml-6">
                                 <x-jet-dropdown align="right" width="48">
                                     <x-slot name="trigger">
@@ -167,6 +206,12 @@
                     </x-jet-responsive-nav-link>
                     <x-jet-responsive-nav-link href="/login" :active="request()->routeIs('/login')">
                         {{ __('navbarlayout.login') }}
+                    </x-jet-responsive-nav-link>
+                    <x-jet-responsive-nav-link href="{{ route('set-locale', ['locale' => 'ar']) }}">
+                        AR
+                    </x-jet-responsive-nav-link>
+                    <x-jet-responsive-nav-link href="{{ route('set-locale', ['locale' => 'en']) }}">
+                        EN
                     </x-jet-responsive-nav-link>
                 </div>
                 @if(app()->getLocale() === 'ar') <div class="clearfix"></div> @endif
