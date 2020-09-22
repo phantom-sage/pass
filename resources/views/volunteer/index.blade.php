@@ -29,8 +29,8 @@
                             </div>
                             <hr>
                             <div class="px-6 pt-4 pb-2">
-                                <a href="#" class="text-uppercase bg-blue-700 px-4 py-2 float-right font-black text-white shadow-sm hover:shadow-lg transition ease-in-out duration-75">
-                                    {{ __('volunteerpage.bevolunttertext') }}
+                                <a class="text-uppercase bg-blue-700 px-4 py-2 float-right font-black text-white shadow-sm hover:shadow-lg transition ease-in-out duration-75">
+                                    {{ __('volunteerpage.bevolunteertext') }}
                                 </a>
                                 <div class="clearfix"></div>
                                 <div class="divider-y divider-gray-400"></div>

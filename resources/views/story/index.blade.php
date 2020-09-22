@@ -32,13 +32,31 @@
                                 </p>
                                 @if(\App::getLocale() === 'ar') <div class="clearfix"></div> @endif
                             </div>
-                            <hr>
-                            <div class="px-6 pt-4 pb-2">
-                                @if($story->video)
+                            @if($story->video)
+                                <div class="px-6 pt-4 pb-2">
+                                    <hr>
                                     <button class="px-5 mr-2 bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
                                         <a href="{{ $story->video }}">See Video</a>
                                     </button>
-                                @endif
+                                </div>
+                            @endif
+                            <hr class="my-4">
+                            <div class="px-6 pt-4 pb-2 mx-auto text-center">
+                                <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
+                                    250
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class="w-3 h-3 inline-block mb-1 ml-2"><path d="M12.3 3.7l4 4L4 20H0v-4L12.3 3.7zm1.4-1.4L16 0l4 4-2.3 2.3-4-4z"/></svg>
+                                </span>
+                                <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
+                                    500
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class="w-3 h-3 inline-block mb-1 ml-2"><path d="M12.3 3.7l4 4L4 20H0v-4L12.3 3.7zm1.4-1.4L16 0l4 4-2.3 2.3-4-4z"/></svg>
+                                </span>
+                                <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class="w-5 h-5 inline-block mb-1"><path d="M4 10c0-1.1.9-2 2-2h8c1.1 0 2 .9 2 2v8c0 1.1-.9 2-2 2H6c-1.1 0-2-.9-2-2v-8zm2 0v8h8v-8h-2V8H8v2H6zm3-6.17V16h2V3.83l3.07 3.07 1.42-1.41L10 0l-.7.7-4.8 4.8 1.42 1.4L9 3.84z"/></svg>
+                                </span>
+                            </div>
+                            <hr class="my-2">
+                            <div class="px-6 pt-4 pb-2 mx-auto text-center mb-2">
+                                <a class="bg-blue-600 text-white px-4 py-2 border rounded shadow-sm" href="#">See More</a>
                             </div>
                         </div>
                     </div>

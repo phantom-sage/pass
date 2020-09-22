@@ -15,6 +15,11 @@
 @endsection
 @section('content')
     <div class="container mx-auto">
+        @error('partnership_proposal')
+        <small>
+            <strong class="text-red-900 text-bold px-2">{{ $message }}</strong>
+        </small>
+        @enderror
         @if(count($partners) > 0)
             <div class="flex flex-wrap">
                 @foreach($partners as $partner)
