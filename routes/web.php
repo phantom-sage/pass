@@ -14,6 +14,7 @@ use App\Http\Controllers\VolunteerRequestController;
 use App\Http\Controllers\PartnerRequestController;
 use App\Http\Controllers\VoyagerSiteController;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +26,11 @@ use Illuminate\Support\Facades\DB;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::post('set-locale', function(Request $request) {
+    app()->setLocale($request->language);
+    return redirect(app()->getLocale());
+})->name('set-locale');
 
 Route::get('/', function () {
     return redirect(app()->getLocale());

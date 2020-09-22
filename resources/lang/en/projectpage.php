@@ -1,5 +1,5 @@
 <?php
 return [
-    'header' => 'News',
+    'header' => 'Projects',
     'seemore' => 'See More'
 ];
