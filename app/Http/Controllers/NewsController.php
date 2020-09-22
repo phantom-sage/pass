@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\News;
 use Illuminate\Http\Request;
-use DB;
+
 class NewsController extends Controller
 {
     /**
@@ -15,10 +15,7 @@ class NewsController extends Controller
     public function index()
     {
         $locale= app()->getLocale();
-        $news = DB::table('news')
-        ->select('id','name_'.$locale.' as name', 'description_'.$locale.' as description','video','image')
-        ->get();
-
+        $news = News::all();
         return view('new.index', [
             'news' => $news,
         ]);
@@ -53,10 +50,7 @@ class NewsController extends Controller
      */
     public function show($locale,News $news)
     {
-      $news = DB::table('news')
-          ->select('id','name_'.$locale.' as name', 'description_'.$locale.' as description','video','image')
-          ->where('id','=',$news->id)
-          ->get();
+
           ddd($news);
     }
 
