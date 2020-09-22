@@ -119,8 +119,8 @@ Route::group([
       |--------------------------------------------------------------------------
       |
       */
-      Route::get("/volunteers/{volunteer}",[VolunteerRequestController::class,'create'])->name("create");
       Route::post("/volunteers/{volunteer}/request",[VolunteerRequestController::class,'store'])->name("volunteer");
+      Route::post("/partner/request",[PartnerRequestController::class,'store'])->name("partner");
 
 
 

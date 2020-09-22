@@ -104,29 +104,29 @@
                                                 Be a partner for blah blah blah
                                             </h2>
                                         </div>
-                                        <form class="mt-8" action="{{ route('partner') }}" method="POST" enctype="multipart/form-data">
+                                        <form class="mt-8" action="{{ route('partner',app()->getLocale()) }}" method="POST" enctype="multipart/form-data">
                                             @csrf
                                             <input type="hidden" name="remember" value="true">
                                             <div class="rounded-md shadow-sm">
                                                 <div class="my-3">
-                                                    <input aria-label="Forth name" name="forth_name" type="text" required autofocus class="appearance-none rounded-none relative block w-full px-3 py-2 border @error('forth_name') border-red-700 @enderror border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5" placeholder="Forth name">
-                                                    @error('forth_name')
+                                                    <input aria-label="Full name" name="full_name" type="text" required autofocus class="appearance-none rounded-none relative block w-full px-3 py-2 border @error('full_name') border-red-700 @enderror border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5" placeholder="Forth name">
+                                                    @error('full_name')
                                                     <small>
                                                         <strong class="text-red-900 text-bold px-2">{{ $message }}</strong>
                                                     </small>
                                                     @enderror
                                                 </div>
                                                 <div  class="my-3">
-                                                    <input aria-label="Business area" name="business_area" type="text" required class="appearance-none rounded-none relative block w-full px-3 py-2 border @error('business_area') border-red-700 @enderror border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5" placeholder="Business area">
-                                                    @error('business_area')
+                                                    <input aria-label="Business area" name="organization_area" type="text" required class="appearance-none rounded-none relative block w-full px-3 py-2 border @error('organization_area') border-red-700 @enderror border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5" placeholder="Business area">
+                                                    @error('organization_area')
                                                     <small>
                                                         <strong class="text-red-900 text-bold px-2">{{ $message }}</strong>
                                                     </small>
                                                     @enderror
                                                 </div>
                                                 <div  class="my-3">
-                                                    <input aria-label="Organization name" name="organization_name" type="text" required class="appearance-none rounded-none relative block w-full px-3 py-2 border @error('organization_name') border-red-700 @enderror border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5" placeholder="Organization name">
-                                                    @error('organization_name')
+                                                    <input aria-label="Organization name" name="organization" type="text" required class="appearance-none rounded-none relative block w-full px-3 py-2 border @error('organization') border-red-700 @enderror border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5" placeholder="Organization name">
+                                                    @error('organization')
                                                     <small>
                                                         <strong class="text-red-900 text-bold px-2">{{ $message }}</strong>
                                                     </small>
@@ -141,8 +141,8 @@
                                                     @enderror
                                                 </div>
                                                 <div  class="my-3">
-                                                    <textarea aria-label="Partnership Proposal" name="partnership_proposal" required class="appearance-none rounded-none relative block w-full px-3 py-2 border @error('partnership_proposal') @enderror border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5" placeholder="Partnership Proposal"></textarea>
-                                                    @error('partnership_proposal')
+                                                    <textarea aria-label="Partnership Proposal" name="proposal" required class="appearance-none rounded-none relative block w-full px-3 py-2 border @error('proposal') @enderror border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5" placeholder="Partnership Proposal"></textarea>
+                                                    @error('proposal')
                                                     <small>
                                                         <strong class="text-red-900 text-bold px-2">{{ $message }}</strong>
                                                     </small>

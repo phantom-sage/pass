@@ -39,8 +39,12 @@ class PartnerRequestController extends Controller
     public function store(StorePartnerRequest $request)
     {
         $validated = $request->validated();
-        PartnerRequest::create($validated);
-        ddd("done");
+
+      $partner =  PartnerRequest::create($validated);
+          ddd($partner);
+        @// TODO: translate this t arbic
+        $message = "your request of joining up pass partners was send successfly!";
+        return redirect()->back(['message',$message]);
     }
 
 

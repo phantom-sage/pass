@@ -43,6 +43,7 @@ class VoyagerSiteController extends Controller
                              'organization_area')
 
                              ->orderBy('replay')->get();
+                             
       return view('requests.partner-request',compact('partnersRequests'));
     }
     public function partnerRequestView(PartnerRequest $partnerRequest)
