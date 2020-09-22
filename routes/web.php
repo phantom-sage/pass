@@ -86,16 +86,26 @@ Route::group([
     */
 
     Route::prefix('users')->group(function () {
-      Route::get("/projects",[ProjectController::class,'index'])->name("projects");
-      Route::get("/projects/{project}/show",[ProjectController::class,'show'])->name("projects.show");
-      Route::get("/stories",[StoryController::class,'index'])->name("story");
-      Route::get("/stories/{story}/show",[StoryController::class,'show'])->name("story.show");
-      Route::get("/news",[NewsController::class,'index'])->name("news");
-      Route::get("/news/{news}/show",[NewsController::class,'show'])->name("news.show");
-      Route::get("/files",[FileController::class,'index'])->name("files");
-      Route::get("/contacts",[ContactController::class,'index'])->name("contacts");
-      Route::get("/partners",[PartnerController::class,'index'])->name("partners");
-      Route::get("/volunteers",[VolunteerController::class,'index'])->name("volunteers");
+      Route::get("/projects",
+      [ProjectController::class,'index'])->name("projects");
+      Route::get("/projects/{project}/show",
+      [ProjectController::class,'show'])->name("project.show");
+      Route::get("/stories",
+      [StoryController::class,'index'])->name("story");
+      Route::get("/stories/{story}/show",
+      [StoryController::class,'show'])->name("story.show");
+      Route::get("/news",
+      [NewsController::class,'index'])->name("news");
+      Route::get("/news/{news}/show",
+      [NewsController::class,'show'])->name("news.show");
+      Route::get("/files",
+      [FileController::class,'index'])->name("files");
+      Route::get("/contacts",
+      [ContactController::class,'index'])->name("contacts");
+      Route::get("/partners",
+      [PartnerController::class,'index'])->name("partners");
+      Route::get("/volunteers",
+      [VolunteerController::class,'index'])->name("volunteers");
       /*
       |--------------------------------------------------------------------------
       | like routes
@@ -103,8 +113,8 @@ Route::group([
       |
       */
       Route::post("/project/{project}/like",[LikeController::class,'storeProject'])->name("saveProjectLike");
-      Route::post("/news/{news}/like",[LikeController::class,'storeNews'])->name("saveNewsLike");
-      Route::post("/story/{story}/like",[LikeController::class,'storeStory'])->name("saveStoryLike");
+      Route::post("/news/{news}/like",      [LikeController::class,'storeNews'])->name("saveNewsLike");
+      Route::post("/story/{story}/like",    [LikeController::class,'storeStory'])->name("saveStoryLike");
 
       /*
       |--------------------------------------------------------------------------
@@ -113,8 +123,8 @@ Route::group([
       |
       */
       Route::post("/project/{project}/share",[ShareController::class,'storeProject'])->name("saveProjectSahre");
-      Route::post("/news/{news}/share",[ShareController::class,'storeNews'])->name("saveNewsSahre");
-      Route::post("/story/{story}/share",[ShareController::class,'storeStory'])->name("saveStorySahre");
+      Route::post("/news/{news}/share",      [ShareController::class,'storeNews'])->name("saveNewsSahre");
+      Route::post("/story/{story}/share",    [ShareController::class,'storeStory'])->name("saveStorySahre");
 
       /*
       |--------------------------------------------------------------------------
@@ -123,7 +133,7 @@ Route::group([
       |
       */
       Route::post("/volunteers/{volunteer}/request",[VolunteerRequestController::class,'store'])->name("volunteer");
-      Route::post("/partner/request",[PartnerRequestController::class,'store'])->name("partner");
+      Route::post("/partner/request",               [PartnerRequestController::class,'store'])->name("partner");
 
 
 
@@ -148,12 +158,12 @@ Route::group([
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
     Route::get("/reports/projects",[VoyagerSiteController::class,'projects'])->name("voyager.projects");
-    Route::get("/reports/news",[VoyagerSiteController::class,'news'])->name("voyager.news");
-    Route::get("/reports/stories",[VoyagerSiteController::class,'stories'])->name("voyager.stories");
-    Route::get("/message/create",[VoyagerSiteController::class,'createUserEmail'])->name("voyager.createUserEmail");
-    Route::post("/message",[VoyagerSiteController::class,'sendUserEmail'])->name("voyager.sendUserEmail");
+    Route::get("/reports/news",    [VoyagerSiteController::class,'news'])->name("voyager.news");
+    Route::get("/reports/stories", [VoyagerSiteController::class,'stories'])->name("voyager.stories");
+    Route::get("/message/create",  [VoyagerSiteController::class,'createUserEmail'])->name("voyager.createUserEmail");
+    Route::post("/message",        [VoyagerSiteController::class,'sendUserEmail'])->name("voyager.sendUserEmail");
     Route::get("/message/users/create",[VoyagerSiteController::class,'createUsersEmail'])->name("voyager.createUsersEmail");
-    Route::post("/message/users",[VoyagerSiteController::class,'sendUsersEmail'])->name("voyager.sendUsersEmail");
+    Route::post("/message/users",  [VoyagerSiteController::class,'sendUsersEmail'])->name("voyager.sendUsersEmail");
     Route::get("/requests/partners",[VoyagerSiteController::class,'partnersRequests'])->name("voyager.partnersRequests");
     Route::get("/requests/partners/view/{partnerRequest}",[VoyagerSiteController::class,'partnerRequestView'])->name("voyager.partnerRequestView");
     Route::get("/requests/volunteers",[VoyagerSiteController::class,'volunteersRequests'])->name("voyager.volunteersRequests");

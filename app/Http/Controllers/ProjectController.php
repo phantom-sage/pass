@@ -17,7 +17,7 @@ class ProjectController extends Controller
         //// TODO: ,'video' don't forget to get the video after refreshing the database
         $locale= app()->getLocale();
         $projects = DB::table('projects')
-            ->select('name_'.$locale.' as name', 'description_'.$locale.' as description','video','image')
+            ->select('id','name_'.$locale.' as name', 'description_'.$locale.' as description','video','image')
             ->get();
 
         return view('project.index', [
@@ -28,7 +28,7 @@ class ProjectController extends Controller
     public function show($locale ,Project $project)
     {
       $project = DB::table('projects')
-          ->select('name_'.$locale.' as name', 'description_'.$locale.' as description','video','image')
+          ->select('id','name_'.$locale.' as name', 'description_'.$locale.' as description','video','image')
           ->where('id','=',$project->id)
           ->get();
       dd($project);
