@@ -16,7 +16,7 @@ class NewsController extends Controller
     {
         $locale= app()->getLocale();
         $news = DB::table('news')
-        ->select('name_'.$locale.' as name', 'description_'.$locale.' as description','video','image')
+        ->select('id','name_'.$locale.' as name', 'description_'.$locale.' as description','video','image')
         ->get();
 
         return view('new.index', [
@@ -54,7 +54,7 @@ class NewsController extends Controller
     public function show($locale,News $news)
     {
       $news = DB::table('news')
-          ->select('name_'.$locale.' as name', 'description_'.$locale.' as description','video','image')
+          ->select('id','name_'.$locale.' as name', 'description_'.$locale.' as description','video','image')
           ->where('id','=',$news->id)
           ->get();
           ddd($news);
