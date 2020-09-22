@@ -3,7 +3,7 @@
     <header class="bg-white shadow">
         <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
             <h2 @if(app()->getLocale() === 'ar') style="direction: rtl;" @endif class="font-black text-xl text-gray-800 leading-tight @if(app()->getLocale() === 'ar') cairo-font float-right @endif">
-                {{ __('project.header') }}
+                {{ __('projectpage.header') }}
             </h2>
             @if(app()->getLocale() === 'ar') <div class="clearfix"></div> @endif
         </div>
@@ -51,7 +51,9 @@
                             </div>
                             <hr class="my-2">
                             <div class="px-6 pt-4 pb-2 mx-auto text-center mb-2">
-                                <a class="bg-blue-600 text-white px-4 py-2 border rounded shadow-sm" href="#">See More</a>
+                                <a class="@if(app()->getLocale() === 'ar') cairo-font @endif bg-blue-600 text-white px-4 py-2 border rounded shadow-sm" href="#">
+                                    {{ __('projectpage.seemore') }}
+                                </a>
                             </div>
                         </div>
                     </div>
