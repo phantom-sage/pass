@@ -21,7 +21,6 @@ class SendMessage extends Mailable
      public function __construct( Message $message){
 
          $this->message = $message;
-
      }
 
 
@@ -33,7 +32,6 @@ class SendMessage extends Mailable
     public function build()
     {
 
-      return $this->from('example@example.com')
-             ->view('emails.send') ;
+      return $this->view('emails.send') ;
     }
 }

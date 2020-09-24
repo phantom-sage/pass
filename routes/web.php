@@ -69,9 +69,14 @@ Route::group([
     */
     Route::group(['middleware' => 'auth:web', 'prefix' => 'users'], function () {
 
-          Route::post("/project/{project}/comment/{id?}",[CommentController::class,'storeProject'])->name("saveProjectComment");
-          Route::post("/news/{news}/comment/{id?}",[CommentController::class,'storeNews'])->name("saveNewsComment");
-          Route::post("/story/{story}/comment/{id?}",[CommentController::class,'storeStory'])->name("saveStoryComment");
+          Route::post("/project/{project}/comment",[CommentController::class,'storeProject'])->name("saveProjectComment");
+          Route::post("/project/{project}/comment/{comment}",[CommentController::class,'storeProjectReply'])->name("storeProjectReply");
+          Route::post("/news/{news}/comment",[CommentController::class,'storeNews'])->name("saveNewsComment");
+          Route::post("/news/{news}/comment/{comment}",[CommentController::class,'storeNewsReply'])->name("storeNewsReply");
+
+          Route::post("/story/{story}/comment",[CommentController::class,'storeStory'])->name("saveStoryComment");
+          Route::post("/story/{story}/comment/{comment}",[CommentController::class,'storeStoryReply'])->name("storeStoryReply");
+
     });
 
     /*
