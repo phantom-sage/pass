@@ -50,8 +50,10 @@ class NewsController extends Controller
      */
     public function show($locale,News $news)
     {
-
-          ddd($news);
+        $new = News::find($news->id)->first();
+        return view('new.show', [
+            'new' => $new
+        ]);
     }
 
     /**

@@ -20,8 +20,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e82d7ec0-254a-4a34-9107-1a6d6d3985f4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/views/new/show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/NewsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/NewsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/StoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/StoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/ar/newspage.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/ar/newspage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/ar/storypage.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/ar/storypage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/en/newspage.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/newspage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/en/storypage.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/storypage.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/project/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/project/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/story/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/story/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/story/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/story/show.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -276,7 +285,7 @@
       <workItem from="1600678161237" duration="15169000" />
       <workItem from="1600774901737" duration="11568000" />
       <workItem from="1600871617317" duration="3718000" />
-      <workItem from="1600920204380" duration="607000" />
+      <workItem from="1600920204380" duration="2319000" />
     </task>
     <servers />
   </component>
@@ -315,10 +324,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1372" height="299" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1600702389951" />
-    <state x="1111" y="447" key="NewPhpFileDialog" timestamp="1600876065799">
+    <state x="1111" y="447" key="NewPhpFileDialog" timestamp="1600921681360">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1111" y="447" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1600876065799" />
+    <state x="1111" y="447" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1600921681360" />
     <state x="461" y="165" key="SettingsEditor" timestamp="1600407091817">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -327,5 +336,16 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="895" y="230" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1600689994711" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/resources/views/welcome.blade.php</url>
+          <line>29</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

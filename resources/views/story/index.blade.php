@@ -64,7 +64,7 @@
                             </div>
                             <hr class="my-2">
                             <div class="px-6 pt-4 pb-2 mx-auto text-center mb-2">
-                                <a class="@if(app()->getLocale() === 'ar') cairo-font @endif bg-blue-600 text-white px-4 py-2 border rounded shadow-sm" href="#">
+                                <a class="@if(app()->getLocale() === 'ar') cairo-font @endif bg-blue-600 text-white px-4 py-2 border rounded shadow-sm" href="{{ route('story.show', ['locale' => app()->getLocale(), 'story' => $story]) }}">
                                     {{ __('storypage.seemore') }}
                                 </a>
                             </div>
