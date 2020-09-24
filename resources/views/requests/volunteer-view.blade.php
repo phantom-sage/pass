@@ -21,7 +21,7 @@
                   <p> <strong>Phone Number</strong>{{ $volunteerRequest->phone}}</p>
                   <!-- qualifications must be changed to an ordinary texxt -->
                   <p> <strong>qualifications</strong>{!! $volunteerRequest->qualification!!}</p>
-                    <button type="button" name="reply"  class="btn  btn-success">Reply</button>
+                    <button type="button" name="reply"  class="btn  btn-success"><a href="{{route('voyager.createUserEmail')}}">Reply</a></button>
                 </div>
            </div>
 

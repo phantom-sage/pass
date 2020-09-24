@@ -5,8 +5,8 @@
     <title></title>
   </head>
   <body>
-    Hello Mr.{{$message->email}}
 
-    Pass say's : {{$message->message}}
+
+<p class="text-muted">aha ya man</p>
   </body>
 </html>
