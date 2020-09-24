@@ -35,7 +35,7 @@ class CommentController extends Controller
              $comment = new Comment;
             $comment->user_id=Auth::id();
             $comment->body = $request->only('body');
-            $comment->parent_id = $id;
+
             $project->comments()->save($comment);
             ddd($project,$comment);
     }
@@ -68,7 +68,7 @@ class CommentController extends Controller
             $comment = new Comment;
             $comment->user_id=Auth::id();
             $comment->body = $request->only('body');
-            $comment->parent_id = $id;
+
             $news->comments()->save($comment);
     }
 
@@ -99,7 +99,7 @@ class CommentController extends Controller
             $comment = new Comment;
             $comment->user_id=Auth::id();
             $comment->body = $request->only('body');
-            $comment->parent_id = $id;
+
             $story->comments()->save($comment);
     }
 

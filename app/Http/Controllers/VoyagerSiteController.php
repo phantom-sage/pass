@@ -10,7 +10,7 @@ use App\Models\User;
 use App\Models\Message;
 use App\Models\PartnerRequest;
 use App\Models\VolunteerRequest;
-use Illuminate\Mail\Mailable;
+use Illuminate\Support\Facades\Mail;
 use App\Mail\SendMessage;
 use App\Http\Requests\StoreMessage;
 
@@ -43,7 +43,7 @@ class VoyagerSiteController extends Controller
                              'organization_area')
 
                              ->orderBy('replay')->get();
-                             
+
       return view('requests.partner-request',compact('partnersRequests'));
     }
     public function partnerRequestView(PartnerRequest $partnerRequest)
@@ -80,7 +80,7 @@ class VoyagerSiteController extends Controller
 
       //ddd($message->message);
 
-        \Mail::to($message->email)->send(new SendMessage($message));
+        Mail::to($message->email)->send(new SendMessage($message));
 
       return back()->with('message','the message has been sent successfly!');
     }
@@ -105,7 +105,7 @@ class VoyagerSiteController extends Controller
       if($message){
         foreach ($users as $user ) {
           if($user->email!=null){
-          \Mail::to($user->email)->send(new SendMessage($message));
+          Mail::to($user->email)->send(new SendMessage($message));
             }
           }
       }

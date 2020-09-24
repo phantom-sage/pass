@@ -92,7 +92,7 @@ Route::group([
 
     Route::prefix('users')->group(function () {
       Route::get("/projects",
-      [ProjectController::class,'index'])->name("projects");saveStoryComment
+      [ProjectController::class,'index'])->name("projects");
       Route::get("/projects/{project}/show",
       [ProjectController::class,'show'])->name("project.show");
       Route::get("/stories",
