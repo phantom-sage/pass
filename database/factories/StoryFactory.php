@@ -24,11 +24,11 @@ class StoryFactory extends Factory
     {
       return [
         "name_en"        =>$this->faker->word ."_EN",
-        "name_ar"        =>$this->faker->word ."_AR",
+        "name_ar"        =>'اسم القصة بالعربي' ."_AR",
         "story_en"        =>$this->faker->word ."_EN",
-        "story_ar"        =>$this->faker->word ."_AR",
+        "story_ar"        =>'القصة بالعربي' ."_AR",
         "description_en" =>$this->faker->paragraph(1) ."_EN" ,
-        "description_ar" =>$this->faker->paragraph(1) ."_AR"
+        "description_ar" =>'وصف القصة بالعربي' ."_AR"
       ];
     }
 }

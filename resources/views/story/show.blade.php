@@ -1,3 +1,4 @@
+{{ $story }}
 @extends('layouts.welcome')
 @section('page_header')
     <header class="bg-white shadow">

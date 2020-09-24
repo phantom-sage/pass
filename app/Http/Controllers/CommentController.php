@@ -101,6 +101,7 @@ class CommentController extends Controller
             $comment->body = $request->only('body');
 
             $story->comments()->save($comment);
+
     }
 
     /**
