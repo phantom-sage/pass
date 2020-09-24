@@ -1,7 +1,8 @@
 <?php
 return [
-    'success' => 'قصص مشاريع ناجحة',
+    'header' => 'قصص مشاريع ناجحة',
     'seemore' => 'رؤية المزيد',
     'commentBodyLabelText' => 'محتوى الكومنت',
-    'submitCommentButtonText' => 'تعليق'
+    'submitCommentButtonText' => 'تعليق',
+    'comments' => 'التعليقات'
 ];

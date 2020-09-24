@@ -24,7 +24,7 @@ class PartnerFactory extends Factory
     {
         return [
           "name_en" =>$this->faker->name ."En",
-          "name_ar" =>$this->faker->name ."AR",
+          "name_ar" =>'اسم الشريك بالعربي',
           "logo" => "img/01.jpg"
         ];
     }

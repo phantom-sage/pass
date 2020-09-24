@@ -37,7 +37,10 @@ class CommentController extends Controller
             $comment->body = $request->input('body');
 
             $project->comments()->save($comment);
-            return redirect()->back();
+            return redirect()->route('project.show', [
+                'locale' => $locale,
+                'project' => $project->id
+            ])->with('commentSaveStatus', 'comment saved successfully.');
     }
 
     /**
@@ -70,6 +73,11 @@ class CommentController extends Controller
             $comment->body =  $request->input('body');
 
             $news->comments()->save($comment);
+
+        return redirect()->route('news.show', [
+            'locale' => $locale,
+            'news' => $news
+        ])->with('commentSaveStatus', 'comment saved successfully.');
     }
 
     /**
@@ -101,6 +109,11 @@ class CommentController extends Controller
             $comment->body =  $request->input('body');
 
             $story->comments()->save($comment);
+
+        return redirect()->route('story.show', [
+            'locale' => $locale,
+            'story' => $story
+        ])->with('commentSaveStatus', 'comment saved successfully.');
 
     }
 

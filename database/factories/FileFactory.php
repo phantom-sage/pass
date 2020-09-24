@@ -24,7 +24,7 @@ class FileFactory extends Factory
     {
         return [
             'name_en' => $this->faker->name,
-            'name_ar' => $this->faker->name,
+            'name_ar' => 'اسم الملف بالعربي',
             'file' => asset('img/03.jpg'),
             'date' => $this->faker->date(),
         ];

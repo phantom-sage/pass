@@ -44,12 +44,4 @@
             no contacts coming soon
         @endif
     </div>
-    <div class="container mx-auto">
-        <hr class="mx-auto my-3">
-        <footer class="py-3">
-            <h4 style="direction: @if(app()->getLocale() === 'ar') rtl @else ltr @endif;" class="text-center text-gray-900 text-black @if(app()->getLocale() === 'ar') cairo-font mr-5 float-right @endif">
-                {{ __('welcomepage.poweredby') }}
-            </h4>@if(app()->getLocale() === 'ar') <div class="clearfix"></div> @endif
-        </footer>
-    </div>
 @endsection
