@@ -73,6 +73,7 @@ class VoyagerSiteController extends Controller
     {
       return view("emails.user");
     }
+    
     public function sendUserEmail(StoreMessage $request)
     {
       $validated = $request->only('message','email');
@@ -100,12 +101,12 @@ class VoyagerSiteController extends Controller
     public function sendUsersEmail(StoreMessage $request)
     {
       $users = User::all();
-      $validated = $request->only('message','email');
+      $validated = $request->only('message');
       $message=Message::create($validated);
       if($message){
         foreach ($users as $user ) {
           if($user->email!=null){
-          Mail::to($user->email)->send(new SendMessage($message,$user));
+          Mail::to($user->email)->send(new SendMessage($message));
             }
           }
       }

@@ -5,10 +5,8 @@
     <title></title>
   </head>
   <body>
-<small>
-   "Hello Mr." .{{ddd($email)}}
-</small>
 
-<p class="text-muted">{{$message}}</p>
+
+<p class="text-muted">aha ya man</p>
   </body>
 </html>

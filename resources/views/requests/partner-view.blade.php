@@ -19,7 +19,7 @@
                   <p> <strong>O-business area :</strong>{{ $partnerRequest->organization_area}}</p>
                   <p> <strong>E-Mail Address :</strong>{{ $partnerRequest->email}}</p>
                   <p> <strong>Proposal :</strong>{!! $partnerRequest->proposal!!}</p>
-                    <button type="button" name="reply"  class="btn  btn-success"><a href="">Reply</a></button>
+                    <button type="button" name="reply"  class="btn  btn-success"><a href="{{route('voyager.createUserEmail')}}">Reply</a></button>
                 </div>
               </div>
 

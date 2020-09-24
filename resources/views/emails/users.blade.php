@@ -2,7 +2,7 @@
 @section('content')
 <h1><i class="voyager-chat"></i> Messages</h1>
 
-<form class="form" action="{{route('voyager.sendUserEmail')}}" method="post">
+<form class="form" action="{{route('voyager.sendUsersEmail')}}" method="post">
   @csrf
   <div class="form-group ">
     <label for="Message">Message</label>
