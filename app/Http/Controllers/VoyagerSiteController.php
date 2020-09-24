@@ -105,7 +105,7 @@ class VoyagerSiteController extends Controller
       if($message){
         foreach ($users as $user ) {
           if($user->email!=null){
-          Mail::to($user->email)->send(new SendMessage($message));
+          Mail::to($user->email)->send(new SendMessage($message,$user));
             }
           }
       }

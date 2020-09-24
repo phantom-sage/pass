@@ -5,8 +5,10 @@
     <title></title>
   </head>
   <body>
-    Hello Mr.{{$message->email}}
+<small>
+   "Hello Mr." .{{ddd($email)}}
+</small>
 
-    Pass say's : {{$message->message}}
+<p class="text-muted">{{$message}}</p>
   </body>
 </html>

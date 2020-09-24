@@ -13,7 +13,10 @@ class Project extends Model
     {
         return $this->morphMany(Comment::class, 'commentable');
     }
-
+    public function parentComments()
+   {
+       return $this->comments()->where('parent_id','=', 0);
+   }
 
    public function likes()
   {
