@@ -51,12 +51,16 @@ class CommentController extends Controller
      */
     public function storeProjectReply(StoreCommentRequest $request,$locale,Project $project,Comment $comment)
     {//
-         $comment = new Comment;
-        $comment->user_id=Auth::id();
-        $comment->body =  $request->input('body');
-        $comment->parent_id = $comment->id;
-        $project->comments()->save($comment);
-        ddd($project,$comment);
+         $new_comment = new Comment;
+        $new_comment->user_id=Auth::id();
+        $new_comment->body =  $request->input('body');
+        $new_comment->parent_id = $comment->id;
+        $project->comments()->save($new_comment);
+
+        return redirect()->route('project.show', [
+            'locale' => $locale,
+            'project' => $project->id
+        ])->with('commentReplaySaveStatus', 'comment replay saved successfully.');
     }
 
     /**
@@ -89,11 +93,16 @@ class CommentController extends Controller
      */
     public function storeNewsReply(StoreCommentRequest $request,$locale,News $news,Comment $comment)
     {
-            $comment = new Comment;
-            $comment->user_id=Auth::id();
-            $comment->body =  $request->input('body');
-            $comment->parent_id = $comment->id;
-            $news->comments()->save($comment);
+        $new_comment = new Comment;
+        $new_comment->user_id=Auth::id();
+        $new_comment->body =  $request->input('body');
+        $new_comment->parent_id = $comment->id;
+        $news->comments()->save($new_comment);
+
+        return redirect()->route('news.show', [
+            'locale' => $locale,
+            'news' => $news
+        ])->with('commentSaveStatus', 'comment saved successfully.');
     }
 
     /**
@@ -104,11 +113,11 @@ class CommentController extends Controller
      */
     public function storeStory(StoreCommentRequest $request,$locale,Story $story)
     {
-            $comment = new Comment;
-            $comment->user_id=Auth::id();
-            $comment->body =  $request->input('body');
+        $comment = new Comment;
+        $comment->user_id=Auth::id();
+        $comment->body =  $request->input('body');
 
-            $story->comments()->save($comment);
+        $story->comments()->save($comment);
 
         return redirect()->route('story.show', [
             'locale' => $locale,
@@ -126,11 +135,16 @@ class CommentController extends Controller
      */
     public function storeStoryReply(StoreCommentRequest $request,$locale,Story $story,Comment $comment)
     {
-            $comment = new Comment;
-            $comment->user_id=Auth::id();
-            $comment->body =  $request->input('body');
-            $comment->parent_id = $comment->id;
-            $story->comments()->save($comment);
+        $new_comment = new Comment;
+        $new_comment->user_id=Auth::id();
+        $new_comment->body =  $request->input('body');
+        $new_comment->parent_id = $comment->id;
+        $story->comments()->save($new_comment);
+
+        return redirect()->route('story.show', [
+            'locale' => $locale,
+            'story' => $story
+        ])->with('commentSaveStatus', 'comment saved successfully.');
     }
 
 

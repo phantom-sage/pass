@@ -20,34 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e82d7ec0-254a-4a34-9107-1a6d6d3985f4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/inc/comments.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CommentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CommentController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/FileFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/FileFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/NewsFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/NewsFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/PartnerFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/PartnerFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/ProjectFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/ProjectFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/StoryFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/StoryFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/ar/navbarlayout.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/ar/navbarlayout.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/ar/newspage.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/ar/newspage.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/ar/projectpage.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/ar/projectpage.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/ar/storypage.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/ar/storypage.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/en/navbarlayout.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/navbarlayout.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/en/newspage.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/newspage.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/en/projectpage.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/projectpage.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/en/storypage.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/storypage.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/contactus/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/contactus/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/file/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/file/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/welcome.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/new/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/new/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/new/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/new/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/partner/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partner/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/project/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/project/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/project/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/project/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/story/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/story/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/story/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/story/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/volunteer/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/volunteer/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -303,7 +280,7 @@
       <workItem from="1600678161237" duration="15169000" />
       <workItem from="1600774901737" duration="11568000" />
       <workItem from="1600871617317" duration="3718000" />
-      <workItem from="1600920204380" duration="18172000" />
+      <workItem from="1600920204380" duration="24029000" />
     </task>
     <servers />
   </component>

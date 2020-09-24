@@ -64,6 +64,15 @@
               </span>
             </div>
         @endif
+        <!-- saving comment replay status session -->
+        @if(session('commentReplaySaveStatus'))
+            <div x-data="{ open: true }" x-show="open" class="my-5 shadow-lg bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert">
+                <strong class="font-bold">{{ session('commentReplaySaveStatus') }}</strong>
+                <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
+                    <svg @click="open = false" class="fill-current h-6 w-6 text-green-500" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><title>Close</title><path d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z"/></svg>
+              </span>
+            </div>
+        @endif
     </div>
     <hr class="my-2">
     <div class="mx-auto container"><h3 class="@if(app()->getLocale() === 'ar') cairo-font @endif text-center text-xl text-gray-700 font-semibold m-3">{{ __('projectpage.comments') }}</h3></div>
@@ -77,15 +86,44 @@
                             <path d="M0 2C0 .9.9 0 2 0h16a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm7 4v2a3 3 0 1 0 6 0V6a3 3 0 1 0-6 0zm11 9.14A15.93 15.93 0 0 0 10 13c-2.91 0-5.65.78-8 2.14V18h16v-2.86z"/>
                         </svg>
                         <strong>
-                            {{ $comment->user_id }}:
+                            {{ $comment->owner->name }}:
                             <br />
                             <small class="ml-5">{{ $comment->created_at }}</small>
                         </strong><br />
                         <li class="inline-block ml-5 my-4">{{ $comment->body }}</li><br />
+                        <!-- comments replays -->
+                        @if(count($comment->allRepliesWithOwner) > 0)
+                            <ol>
+                                @foreach($comment->allRepliesWithOwner as $replay)
+                                    <li class="my-4">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class="h-5 w-5 border rounded-full shadow-sm inline-block">
+                                            <path d="M5 5a5 5 0 0 1 10 0v2A5 5 0 0 1 5 7V5zM0 16.68A19.9 19.9 0 0 1 10 14c3.64 0 7.06.97 10 2.68V20H0v-3.32z"/>
+                                        </svg>
+                                        <strong>
+                                            {{ $replay->owner->name }}
+                                        </strong>
+                                        <br />
+                                        <small class="ml-5">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class="h-3 w-3 inline-block">
+                                                <path d="M15 2h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4c0-1.1.9-2 2-2h2V0h2v2h6V0h2v2zM3 6v12h14V6H3zm6 5V9h2v2h2v2h-2v2H9v-2H7v-2h2z"/>
+                                            </svg>
+                                            {{ $replay->created_at }}
+                                        </small>
+                                        <br />
+                                        <span class="ml-5">{{ $replay->body }}</span>
+                                    </li>
+                                @endforeach
+                            </ol>
+                        @endif
                         <!-- replay -->
-                        <form action="{{ route('re') }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('storeProjectReply', ['locale' => app()->getLocale(), 'project' => $project, 'comment' => $comment]) }}" method="POST" enctype="multipart/form-data">
                             @csrf
-                            <textarea name="replay" required class="border"></textarea>
+                            <textarea name="body" required class="border @error('body') border-red-600 @enderror"></textarea>
+                            <small class="text-red-700">
+                                @error('body')
+                                {{ $message }}
+                                @enderror
+                            </small>
                             <button type="submit">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class="h-6 w-6 inline-block">
                                     <path d="M15 17v-2.99A4 4 0 0 0 11 10H8v5L2 9l6-6v5h3a6 6 0 0 1 6 6v3h-2z"/>
@@ -107,7 +145,7 @@
                             </div>
                             <div class="w-full mx-3">
                                 <textarea name="body" class="p-3 placeholder:text-gray-700 w-full border rounded" required placeholder="Enter your comment here"></textarea>
-                                 <small class="text-red-700">
+                                <small class="text-red-700">
                                 @error('body')
                                     {{ $message }}
                                 @enderror
