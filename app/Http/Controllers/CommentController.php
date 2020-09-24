@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use App\Models\Comment;
@@ -32,12 +31,13 @@ class CommentController extends Controller
      */
     public function storeProject(StoreCommentRequest $request,$locale,Project $project)
     {//
+      ddd($locale);
              $comment = new Comment;
             $comment->user_id=Auth::id();
             $comment->body = $request->only('body');
 
             $project->comments()->save($comment);
-            ddd($project,$comment);
+            return redirct()->back();
     }
 
     /**
