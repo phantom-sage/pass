@@ -64,6 +64,7 @@
                     <li>{{ $comment->body }}</li>
                 @endforeach
                 <form action="{{ route('saveStoryComment', ['locale' => app()->getLocale(), 'story' => $new]) }}" method="POST" enctype="multipart/form-data">
+                    @csrf
                     <div class="flex flex-wrap">
                         <div class="w-full mx-3">
                             <label @if(app()->getLocale() === 'ar') style="direction: rtl;" @endif class="font-semibold text-xl mb-3 @if(app()->getLocale() === 'ar') float-right cairo-font @endif">{{ __('newspage.commentBodyLabelText') }}</label>
@@ -79,12 +80,18 @@
             </ul>
         @else
             <form action="{{ route('saveStoryComment', ['locale' => app()->getLocale(), 'story' => $new]) }}" method="POST" enctype="multipart/form-data">
+                @csrf
                 <div class="flex flex-wrap">
                     <div class="w-full mx-3">
                         <label @if(app()->getLocale() === 'ar') style="direction: rtl;" @endif class="font-semibold text-xl mb-3 @if(app()->getLocale() === 'ar') float-right cairo-font @endif">{{ __('newspage.commentBodyLabelText') }}</label>
                         @if(app()->getLocale() === 'ar') <div class="clearfix"></div> @endif
                     </div>
-                    <div class="w-full mx-3"><textarea class="p-3 placeholder:text-gray-700 w-full border rounded" required placeholder="Enter your comment here"></textarea></div>
+                    <div class="w-full mx-3">
+                        <textarea name="body" class="p-3 placeholder:text-gray-700 w-full border rounded" required placeholder="Enter your comment here"></textarea>
+                        @error('body')
+                            {{ $message }}
+                        @enderror
+                    </div>
                     <div class="w-full">
                         <button type="submit" @if(app()->getLocale() === 'ar') style="direction: rtl;" @endif class="@if(app()->getLocale() === 'ar') float-right cairo-font @endif font-semibold mx-3 mt-3 bg-blue-700 text-white px-5 py-3 rounded shadow-sm">{{ __('newspage.submitCommentButtonText') }}</button>
                         @if(app()->getLocale() === 'ar') <div class="clearfix"></div> @endif
