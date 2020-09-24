@@ -7,7 +7,7 @@
   <div class="form-group ">
     <label for="Message">Message</label>
     <textarea name="message" rows="8"  class="form-control
-    @error('last_name') is-invalid @enderror "
+    @error('message') is-invalid @enderror "
     cols="60" placeholder="Enter Yout Message">
     {{old('message')}}</textarea>
           @error('message')

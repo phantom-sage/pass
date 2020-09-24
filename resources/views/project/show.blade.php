@@ -63,7 +63,7 @@
                 @foreach($project->comments as $comment)
                     <li>{{ $comment->body }}</li>
                 @endforeach
-                <form action="{{ route('saveProjectComment', ['locale' => app()->getLocale(), 'project' => $project]) }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('saveProjectComment', ['locale'=> app()->getLocale(), 'project' => $project]) }}" method="POST" enctype="multipart/form-data">
                     <div class="flex flex-wrap">
                         <div class="w-full mx-3">
                             <label @if(app()->getLocale() === 'ar') style="direction: rtl;" @endif class="font-semibold text-xl mb-3 @if(app()->getLocale() === 'ar') float-right cairo-font @endif">{{ __('projectpage.commentBodyLabelText') }}</label>
@@ -78,7 +78,12 @@
                 </form>
             </ul>
         @else
+<<<<<<< HEAD
             <form action="{{ route('saveProjectComment', ['locale' => app()->getLocale(), 'project' => $project]) }}" method="POST" enctype="multipart/form-data">
+=======
+            <form action="{{ route('saveProjectComment', ['locale'=>app()->getLocale(), 'project' => $project]) }}" method="POST" enctype="multipart/form-data">
+@csrf
+>>>>>>> e362ec40a6fee5b4fe1e9369b1dfc97581e3d828
                 <div class="flex flex-wrap">
                     <div class="w-full mx-3">
                         <label @if(app()->getLocale() === 'ar') style="direction: rtl;" @endif class="font-semibold text-xl mb-3 @if(app()->getLocale() === 'ar') float-right cairo-font @endif">{{ __('projectpage.commentBodyLabelText') }}</label>
