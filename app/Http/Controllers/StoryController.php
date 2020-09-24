@@ -24,7 +24,9 @@ class StoryController extends Controller
 
     public function show($locale,Story $story)
     {
-
-          ddd($story);
+        $story = Story::find($story->id)->first();
+        return view('story.show', [
+            'story' => $story
+        ]);
     }
 }

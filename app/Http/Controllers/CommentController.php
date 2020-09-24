@@ -48,12 +48,12 @@ class CommentController extends Controller
      */
     public function storeProjectReply(StoreCommentRequest $request,$locale,Project $project,Comment $comment)
     {//
-             $comment = new Comment;
-            $comment->user_id=Auth::id();
-            $comment->body = $request->only('body');
-            $comment->parent_id = $comment->id;
-            $project->comments()->save($comment);
-            ddd($project,$comment);
+         $comment = new Comment;
+        $comment->user_id=Auth::id();
+        $comment->body = $request->only('body');
+        $comment->parent_id = $comment->id;
+        $project->comments()->save($comment);
+        ddd($project,$comment);
     }
 
     /**

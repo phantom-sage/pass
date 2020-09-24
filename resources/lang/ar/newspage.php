@@ -1,5 +1,7 @@
 <?php
 return [
     'header' => 'آخر الأخبار',
-    'seemore' => 'رؤية المزيد'
+    'seemore' => 'رؤية المزيد',
+    'commentBodyLabelText' => 'محتوى التعليق',
+    'submitCommentButtonText' => 'تعليق'
 ];
