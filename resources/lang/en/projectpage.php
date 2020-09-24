@@ -3,5 +3,6 @@ return [
     'header' => 'Projects',
     'seemore' => 'See More',
     'commentBodyLabelText' => 'Comment body',
-    'submitCommentButtonText' => 'Comment'
+    'submitCommentButtonText' => 'Comment',
+    'comments' => 'Comments'
 ];

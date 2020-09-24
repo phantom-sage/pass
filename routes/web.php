@@ -28,6 +28,10 @@ use Illuminate\Http\Request;
 |
 */
 
+Route::post('/re', function (Request $request) {
+    return $request->all();
+})->name('re');
+
 Route::get('set-locale/{locale}', function($locale) {
     app()->setLocale($locale);
     return redirect(app()->getLocale());

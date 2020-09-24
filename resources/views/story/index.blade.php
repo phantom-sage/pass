@@ -19,11 +19,19 @@
                             <img class="w-full transition ease-in-out duration-500 transform hover:scale-105" src="{{ asset('img/02.jpg') }}" alt="Sunset in the mountains">
                             <div class="px-6 py-4">
                                 <div style="direction: @if(\App::getLocale() === 'ar') rtl @else ltr @endif;" class="font-bold text-xl mb-2 @if(\App::getLocale() === 'ar') float-right @endif">
-                                    {{ $story->name_en }}
+                                    @if(app()->getLocale() === 'ar')
+                                        {{ $story->name_ar }}
+                                    @else
+                                        {{ $story->name_en }}
+                                    @endif
                                 </div>
                                 @if(\App::getLocale() === 'ar') <div class="clearfix"></div> @endif
                                 <p style="direction: @if(\App::getLocale() === 'ar') rtl @else ltr @endif;" class="text-gray-700 text-base @if(\App::getLocale() === 'ar') float-right @endif">
-                                    {{ $story->description_en }}
+                                    @if(app()->getLocale() === 'ar')
+                                        {{ $story->description_ar }}
+                                    @else
+                                        {{ $story->description_en }}
+                                    @endif
                                 </p>
                                 @if(\App::getLocale() === 'ar') <div class="clearfix"></div> @endif
                             </div>
@@ -59,7 +67,7 @@
                             </div>
                             <hr class="my-2">
                             <div class="px-6 pt-4 pb-2 mx-auto text-center mb-2">
-                                <a class="@if(app()->getLocale() === 'ar') cairo-font @endif bg-blue-600 text-white px-4 py-2 border rounded shadow-sm" href="{{route('project.show',['locale'=>app()->getLocale(),'project'=>$story->id])}}">
+                                <a class="@if(app()->getLocale() === 'ar') cairo-font @endif bg-blue-600 text-white px-4 py-2 border rounded shadow-sm" href="{{route('story.show',['locale'=>app()->getLocale(),'story'=>$story->id])}}">
                                     {{ __('storypage.seemore') }}
                                 </a>
                             </div>
@@ -77,10 +85,4 @@
             </div>
         @endif
     </div>
-    <div class="container mx-auto"><hr></div>
-    <footer class="py-3">
-        <h4 style="direction: @if(app()->getLocale() === 'ar') rtl @else ltr @endif;" class="text-center text-gray-900 text-black @if(app()->getLocale() === 'ar') cairo-font mr-5 float-right @endif">
-            {{ __('welcomepage.poweredby') }}
-        </h4>@if(app()->getLocale() === 'ar') <div class="clearfix"></div> @endif
-    </footer>
 @endsection

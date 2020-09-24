@@ -23,10 +23,10 @@ class NewsFactory extends Factory
     public function definition()
     {
       return [
-        "name_en"        =>$this->faker->word ."_EN",
-        "name_ar"        =>$this->faker->word ."_AR",
-        "description_en" =>$this->faker->paragraph(1) ."_EN" ,
-        "description_ar" =>$this->faker->paragraph(1) ."_AR"
+        "name_en"        =>$this->faker->word,
+        "name_ar"        =>'عنوان الخبر بالعربي' ,
+        "description_en" =>$this->faker->paragraph(1),
+        "description_ar" =>'محتوى الخبر بالعربي'
       ];
     }
 }

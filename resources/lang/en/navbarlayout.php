@@ -11,5 +11,8 @@ return [
     'partenership' => 'Partenership',
     'volunteer' => 'Volunteer',
     'login' => 'Login',
-    'register' => 'Register'
+    'register' => 'Register',
+    'language' => 'Language',
+    'ar' => 'AR',
+    'en' => 'EN'
 ];

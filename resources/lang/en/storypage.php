@@ -1,7 +1,8 @@
 <?php
 return [
-    'success' => 'Success Stories',
+    'header' => 'Success Stories',
     'seemore' => 'See More',
     'commentBodyLabelText' => 'Comment Body',
-    'submitCommentButtonText' => 'Comment'
+    'submitCommentButtonText' => 'Comment',
+    'comments' => 'Comments'
 ];
