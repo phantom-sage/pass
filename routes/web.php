@@ -13,6 +13,7 @@ use App\Http\Controllers\ShareController;
 use App\Http\Controllers\VolunteerRequestController;
 use App\Http\Controllers\PartnerRequestController;
 use App\Http\Controllers\VoyagerSiteController;
+use App\Http\Controllers\CommentController;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 

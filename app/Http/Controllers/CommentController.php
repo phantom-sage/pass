@@ -30,7 +30,7 @@ class CommentController extends Controller
      * @param  \Illuminate\Http\Request\StoreCommentRequest  $request
      *@param  App\Models\Project  $project
      */
-    public function storeProject(StoreCommentRequest $request,Project $project)
+    public function storeProject(StoreCommentRequest $request,$locale,Project $project)
     {//
              $comment = new Comment;
             $comment->user_id=Auth::id();
@@ -46,7 +46,7 @@ class CommentController extends Controller
      * @param  \Illuminate\Http\Request\StoreCommentRequest  $request
      *@param  App\Models\Project  $project
      */
-    public function storeProjectReply(StoreCommentRequest $request,Project $project,Comment $comment)
+    public function storeProjectReply(StoreCommentRequest $request,$locale,Project $project,Comment $comment)
     {//
              $comment = new Comment;
             $comment->user_id=Auth::id();
@@ -63,7 +63,7 @@ class CommentController extends Controller
      *@param  App\Models\News  $news
      *@param  App\Models\Comment  $comment
      */
-    public function storeNews(StoreCommentRequest $request,News $news,$id = 0)
+    public function storeNews(StoreCommentRequest $request,News $news)
     {
             $comment = new Comment;
             $comment->user_id=Auth::id();
@@ -94,7 +94,7 @@ class CommentController extends Controller
      * @param  \Illuminate\Http\Request\StoreCommentRequest  $request
      *@param  App\Models\Story  $story
      */
-    public function storeStory(StoreCommentRequest $request,Story $story,$id = 0)
+    public function storeStory(StoreCommentRequest $request,Story $story)
     {
             $comment = new Comment;
             $comment->user_id=Auth::id();

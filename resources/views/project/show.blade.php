@@ -78,7 +78,8 @@
                 </form>
             </ul>
         @else
-            <form action="{{ route('saveProjectComment', ['locale', app()->getLocale(), 'project' => $project]) }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('saveProjectComment', ['locale'=>app()->getLocale(), 'project' => $project]) }}" method="POST" enctype="multipart/form-data">
+@csrf
                 <div class="flex flex-wrap">
                     <div class="w-full mx-3">
                         <label @if(app()->getLocale() === 'ar') style="direction: rtl;" @endif class="font-semibold text-xl mb-3 @if(app()->getLocale() === 'ar') float-right cairo-font @endif">{{ __('projectpage.commentBodyLabelText') }}</label>
