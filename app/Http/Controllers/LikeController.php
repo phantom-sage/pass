@@ -27,6 +27,7 @@ class LikeController extends Controller
       }
         $like->counter+=1;
         $story->likes()->save($like);
+
     }
 
     /**
@@ -59,6 +60,11 @@ class LikeController extends Controller
       }
         $like->counter+=1;
         $project->likes()->save($like);
+
+        return redirect()->route('project.show', [
+            'locale' => app()->getLocale(),
+            'project' => $project->id
+        ])->with('commentReplaySaveStatus', 'comment replay saved successfully.');
     }
 
 }
