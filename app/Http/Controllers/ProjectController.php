@@ -25,7 +25,9 @@ class ProjectController extends Controller
 
     public function show($locale ,Project $project)
     {
-
-      dd($project);
+        $project = Project::find($project)->first();
+        return view('project.show', [
+            'project' => $project
+        ]);
     }
 }

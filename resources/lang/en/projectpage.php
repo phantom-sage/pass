@@ -1,5 +1,7 @@
 <?php
 return [
     'header' => 'Projects',
-    'seemore' => 'See More'
+    'seemore' => 'See More',
+    'commentBodyLabelText' => 'Comment body',
+    'submitCommentButtonText' => 'Comment'
 ];

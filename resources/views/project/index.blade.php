@@ -19,11 +19,11 @@
                             <img class="w-full transition ease-in-out duration-500 transform hover:scale-105" src="{{ asset('img/02.jpg') }}" alt="Sunset in the mountains">
                             <div class="px-6 py-4">
                                 <div style="direction: @if(\App::getLocale() === 'ar') rtl @else ltr @endif;" class="font-bold text-xl mb-2 @if(\App::getLocale() === 'ar') float-right @endif">
-                                    {{ $project->name }}
+                                    {{ $project->name_en }}
                                 </div>
                                 @if(\App::getLocale() === 'ar') <div class="clearfix"></div> @endif
                                 <p style="direction: @if(\App::getLocale() === 'ar') rtl @else ltr @endif;" class="text-gray-700 text-base @if(\App::getLocale() === 'ar') float-right @endif">
-                                    {{ $project->description }}
+                                    {{ $project->description_en }}
                                 </p>
                                 @if(\App::getLocale() === 'ar') <div class="clearfix"></div> @endif
                             </div>
@@ -38,13 +38,13 @@
                             <hr class="my-4">
                             <div class="px-6 pt-4 pb-2 mx-auto text-center">
                                 <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-                                    250
+                                    {{ count($project->comments) }}
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-5 h-5 inline-block mb-1 ml-2">
                                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
                                     </svg>
                                 </span>
                                 <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-                                    500
+                                    {{ count($project->likes) }}
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 inline-block mb-1 ml-2">
                                       <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" />
                                     </svg>
@@ -59,8 +59,7 @@
                             </div>
                             <hr class="my-2">
                             <div class="px-6 pt-4 pb-2 mx-auto text-center mb-2">
-                                <a class="@if(app()->getLocale() === 'ar') cairo-font @endif bg-blue-600 text-white px-4 py-2 border rounded shadow-sm" href="{{ route('projects.show', ['locale' => app()->getLocale(), 'project' => $project->id]) }}">
-                                <a class="@if(app()->getLocale() === 'ar') cairo-font @endif bg-blue-600 text-white px-4 py-2 border rounded shadow-sm" href="{{route('project.show',['locale'=>app()->getLocale(),'project'=>$project->id])}}">
+                                <a class="@if(app()->getLocale() === 'ar') cairo-font @endif bg-blue-600 text-white px-4 py-2 border rounded shadow-sm" href="{{ route('project.show', ['locale' => app()->getLocale(), 'project' => $project->id]) }}">
                                     {{ __('projectpage.seemore') }}
                                 </a>
                             </div>
