@@ -55,49 +55,98 @@
                 </div>
             </div>
         </div>
-    </div>
-
-    <div class="container mx-auto">
-        @if(count($new->comments) > 0)
-            <ul>
-                @foreach($new->comments as $comment)
-                    <li>{{ $comment->body }}</li>
-                @endforeach
-                <form action="{{ route('saveStoryComment', ['locale' => app()->getLocale(), 'story' => $new]) }}" method="POST" enctype="multipart/form-data">
-                    @csrf
-                    <div class="flex flex-wrap">
-                        <div class="w-full mx-3">
-                            <label @if(app()->getLocale() === 'ar') style="direction: rtl;" @endif class="font-semibold text-xl mb-3 @if(app()->getLocale() === 'ar') float-right cairo-font @endif">{{ __('newspage.commentBodyLabelText') }}</label>
-                            @if(app()->getLocale() === 'ar') <div class="clearfix"></div> @endif
-                        </div>
-                        <div class="w-full mx-3"><textarea class="p-3 placeholder:text-gray-700 w-full border rounded" required placeholder="Enter your comment here"></textarea></div>
-                        <div class="w-full">
-                            <button type="submit" @if(app()->getLocale() === 'ar') style="direction: rtl;" @endif class="@if(app()->getLocale() === 'ar') float-right cairo-font @endif font-semibold mx-3 mt-3 bg-blue-700 text-white px-5 py-3 rounded shadow-sm">{{ __('newspage.submitCommentButtonText') }}</button>
-                            @if(app()->getLocale() === 'ar') <div class="clearfix"></div> @endif
-                        </div>
-                    </div>
-                </form>
-            </ul>
-        @else
-            <form action="{{ route('saveStoryComment', ['locale' => app()->getLocale(), 'story' => $new]) }}" method="POST" enctype="multipart/form-data">
-                @csrf
-                <div class="flex flex-wrap">
-                    <div class="w-full mx-3">
-                        <label @if(app()->getLocale() === 'ar') style="direction: rtl;" @endif class="font-semibold text-xl mb-3 @if(app()->getLocale() === 'ar') float-right cairo-font @endif">{{ __('newspage.commentBodyLabelText') }}</label>
-                        @if(app()->getLocale() === 'ar') <div class="clearfix"></div> @endif
-                    </div>
-                    <div class="w-full mx-3">
-                        <textarea name="body" class="p-3 placeholder:text-gray-700 w-full border rounded" required placeholder="Enter your comment here"></textarea>
-                        @error('body')
-                            {{ $message }}
-                        @enderror
-                    </div>
-                    <div class="w-full">
-                        <button type="submit" @if(app()->getLocale() === 'ar') style="direction: rtl;" @endif class="@if(app()->getLocale() === 'ar') float-right cairo-font @endif font-semibold mx-3 mt-3 bg-blue-700 text-white px-5 py-3 rounded shadow-sm">{{ __('newspage.submitCommentButtonText') }}</button>
-                        @if(app()->getLocale() === 'ar') <div class="clearfix"></div> @endif
-                    </div>
-                </div>
-            </form>
+        <!-- saving comment status session -->
+        @if(session('commentSaveStatus'))
+            <div x-data="{ open: true }" x-show="open" class="my-5 shadow-lg bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert">
+                <strong class="font-bold">{{ session('commentSaveStatus') }}</strong>
+                <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
+                    <svg @click="open = false" class="fill-current h-6 w-6 text-green-500" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><title>Close</title><path d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z"/></svg>
+              </span>
+            </div>
         @endif
     </div>
+    <hr class="my-2">
+    <div class="mx-auto container"><h3 class="@if(app()->getLocale() === 'ar') cairo-font @endif text-center text-xl text-gray-700 font-semibold m-3">{{ __('newspage.comments') }}</h3></div>
+    <!-- comment form -->
+    <div class="container mx-auto" @if(app()->getLocale() === 'ar') style="direction: rtl;" @endif>
+        @if(count($new->comments) > 0)
+            <div class="flex flex-wrap">
+                <ul class="w-full ml-4 my-4">
+                    @foreach($new->comments as $comment)
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class="h-5 w-5 border rounded-full shadow-sm inline-block">--}}
+                            <path d="M0 2C0 .9.9 0 2 0h16a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm7 4v2a3 3 0 1 0 6 0V6a3 3 0 1 0-6 0zm11 9.14A15.93 15.93 0 0 0 10 13c-2.91 0-5.65.78-8 2.14V18h16v-2.86z"/>
+                        </svg>
+                        <strong>
+                            {{ $comment->user_id }}:
+                            <br />
+                            <small class="ml-5">{{ $comment->created_at }}</small>
+                        </strong><br />
+                        <li class="inline-block ml-5 my-4">{{ $comment->body }}</li><br />
+                        <!-- replay -->
+                        <form action="{{ route('re') }}" method="POST" enctype="multipart/form-data">
+                            @csrf
+                            <textarea name="replay" required class="border"></textarea>
+                            <button type="submit">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class="h-6 w-6 inline-block">
+                                    <path d="M15 17v-2.99A4 4 0 0 0 11 10H8v5L2 9l6-6v5h3a6 6 0 0 1 6 6v3h-2z"/>
+                                </svg>
+                                <strong>Reply</strong>
+                            </button>
+                        </form>
+                        <hr class="my-1">
+                    @endforeach
+                </ul>
+                <!-- comment form -->
+                <div class="w-full ml-4 my-4">
+                    <form action="{{ route('saveNewsComment', ['locale' => app()->getLocale(), 'news' => $new]) }}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        <div class="flex flex-wrap">
+                            <div class="w-full mx-3">
+                                <label @if(app()->getLocale() === 'ar') style="direction: rtl;" @endif class="font-semibold text-xl mb-3 @if(app()->getLocale() === 'ar') float-right cairo-font @endif">{{ __('projectpage.commentBodyLabelText') }}</label>
+                                @if(app()->getLocale() === 'ar') <div class="clearfix"></div> @endif
+                            </div>
+                            <div class="w-full mx-3">
+                                <textarea name="body" class="p-3 placeholder:text-gray-700 w-full border rounded" required placeholder="Enter your comment here"></textarea>
+                                <small class="text-red-700">
+                                @error('body')
+                                    {{ $message }}
+                                @enderror
+                                </small>
+                            </div>
+                            <div class="w-full">
+                                <button type="submit" @if(app()->getLocale() === 'ar') style="direction: rtl;" @endif class="mb-2 @if(app()->getLocale() === 'ar') float-right cairo-font @endif font-semibold mx-3 mt-3 bg-blue-700 text-white px-5 py-3 rounded shadow-sm">{{ __('projectpage.submitCommentButtonText') }}</button>
+                                @if(app()->getLocale() === 'ar') <div class="clearfix"></div> @endif
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        @else
+            <div class="flex flex-wrap">
+                <div class="w-full ml-4 my-4">
+                    <form action="{{ route('saveNewsComment', ['locale' => app()->getLocale(), 'news' => $new]) }}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        <div class="flex flex-wrap">
+                            <div class="w-full mx-3">
+                                <label @if(app()->getLocale() === 'ar') style="direction: rtl;" @endif class="font-semibold text-xl mb-3 @if(app()->getLocale() === 'ar') float-right cairo-font @endif">{{ __('projectpage.commentBodyLabelText') }}</label>
+                                @if(app()->getLocale() === 'ar') <div class="clearfix"></div> @endif
+                            </div>
+                            <div class="w-full mx-3">
+                                <textarea name="body" class="p-3 placeholder:text-gray-700 w-full border rounded" required placeholder="Enter your comment here"></textarea>
+                                <small class="text-red-700">
+                                @error('body')
+                                    {{ $message }}
+                                @enderror
+                                </small>
+                            </div>
+                            <div class="w-full">
+                                <button type="submit" @if(app()->getLocale() === 'ar') style="direction: rtl;" @endif class="@if(app()->getLocale() === 'ar') float-right cairo-font @endif font-semibold mx-3 mt-3 bg-blue-700 text-white px-5 py-3 rounded shadow-sm">{{ __('projectpage.submitCommentButtonText') }}</button>
+                                @if(app()->getLocale() === 'ar') <div class="clearfix"></div> @endif
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        @endif
+    </div><!-- container -->
 @endsection
