@@ -31,13 +31,13 @@ class CommentController extends Controller
      */
     public function storeProject(StoreCommentRequest $request,$locale,Project $project)
     {//
-      ddd($locale);
+
              $comment = new Comment;
             $comment->user_id=Auth::id();
-            $comment->body = $request->only('body');
+            $comment->body = $request->input('body');
 
             $project->comments()->save($comment);
-            return redirct()->back();
+            return redirect()->back();
     }
 
     /**
@@ -50,7 +50,7 @@ class CommentController extends Controller
     {//
          $comment = new Comment;
         $comment->user_id=Auth::id();
-        $comment->body = $request->only('body');
+        $comment->body =  $request->input('body');
         $comment->parent_id = $comment->id;
         $project->comments()->save($comment);
         ddd($project,$comment);
@@ -67,7 +67,7 @@ class CommentController extends Controller
     {
             $comment = new Comment;
             $comment->user_id=Auth::id();
-            $comment->body = $request->only('body');
+            $comment->body =  $request->input('body');
 
             $news->comments()->save($comment);
     }
@@ -83,7 +83,7 @@ class CommentController extends Controller
     {
             $comment = new Comment;
             $comment->user_id=Auth::id();
-            $comment->body = $request->only('body');
+            $comment->body =  $request->input('body');
             $comment->parent_id = $comment->id;
             $news->comments()->save($comment);
     }
@@ -98,7 +98,7 @@ class CommentController extends Controller
     {
             $comment = new Comment;
             $comment->user_id=Auth::id();
-            $comment->body = $request->only('body');
+            $comment->body =  $request->input('body');
 
             $story->comments()->save($comment);
     }
@@ -114,7 +114,7 @@ class CommentController extends Controller
     {
             $comment = new Comment;
             $comment->user_id=Auth::id();
-            $comment->body = $request->only('body');
+            $comment->body =  $request->input('body');
             $comment->parent_id = $comment->id;
             $story->comments()->save($comment);
     }
