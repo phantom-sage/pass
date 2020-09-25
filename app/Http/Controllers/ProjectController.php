@@ -25,7 +25,10 @@ class ProjectController extends Controller
 
     public function show($locale ,Project $project)
     {
-        $project = Project::find($project)->first();
+
+       $viewed = new PostView;
+       $viewed->counter+=1;
+       $project->views->save($viewed);
         return view('project.show', [
             'project' => $project
         ]);

@@ -31,7 +31,9 @@ class NewsController extends Controller
      */
     public function show($locale,News $news)
     {
-        $new = News::find($news->id)->first();
+      $viewed = new PostView;
+      $viewed->counter+=1;
+      $project->views->save($viewed);
         return view('new.show', [
             'new' => $new
         ]);

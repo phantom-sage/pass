@@ -24,7 +24,9 @@ class StoryController extends Controller
 
     public function show($locale,Story $story)
     {
-        $story = Story::find($story->id)->first();
+      $viewed = new PostView;
+      $viewed->counter+=1;
+      $project->views->save($viewed);
         return view('story.show', [
             'story' => $story
         ]);
