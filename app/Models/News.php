@@ -17,7 +17,7 @@ class News extends Model
     {
         return $this->comments()->where('parent_id','=', 0);
     }
-    
+
    public function likes()
    {
      return $this->morphMany(Like::class, 'likeable');
@@ -30,6 +30,6 @@ class News extends Model
 
     public function views()
     {
-         return $this->morphMany(View::class, 'viewable');
+         return $this->morphMany(PostView::class, 'viewable');
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Story;
+use App\Models\PostView;
 use Illuminate\Http\Request;
 
 class StoryController extends Controller
@@ -26,7 +27,7 @@ class StoryController extends Controller
     {
       $viewed = new PostView;
       $viewed->counter+=1;
-      $project->views->save($viewed);
+      $story->views->save($viewed);
         return view('story.show', [
             'story' => $story
         ]);

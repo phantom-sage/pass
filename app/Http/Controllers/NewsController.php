@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\News;
+use App\Models\PostView;
 use Illuminate\Http\Request;
-
+use Auth;
 class NewsController extends Controller
 {
     /**
@@ -29,11 +30,12 @@ class NewsController extends Controller
      * @param  \App\Models\News  $news
      * @return \Illuminate\Http\Response
      */
-    public function show($locale,News $news)
+    public function show($locale,News $new)
     {
       $viewed = new PostView;
       $viewed->counter+=1;
-      $project->views->save($viewed);
+      $viewed->user_id = (Auth::id()) ? Auth::id():0 ;
+      $new->views()->save($viewed);
         return view('new.show', [
             'new' => $new
         ]);

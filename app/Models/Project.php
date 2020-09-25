@@ -28,6 +28,6 @@ class Project extends Model
   }
   public function views()
   {
-       return $this->morphMany(View::class, 'viewable');
+       return $this->morphMany(PostView::class, 'viewable');
   }
 }
