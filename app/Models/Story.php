@@ -31,6 +31,6 @@ class Story extends Model
 
    public function views()
    {
-               return $this->morphMany(Seen::class, 'seenable');
+      return $this->morphMany(Seen::class, 'seenable');
    }
 }

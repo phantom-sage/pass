@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Story;
 use App\Models\Seen;
 use Illuminate\Http\Request;
-
+use Auth;
 class StoryController extends Controller
 {
     /**
@@ -25,9 +25,10 @@ class StoryController extends Controller
 
     public function show($locale,Story $story)
     {
-      $viewed = new PostView;
-      $viewed->counter+=1;
-      $story->views->save($viewed);
+      $seen = new Seen;
+      $seen->counter+=1;
+      $seen->user_id = (Auth::id()) ? Auth::id():0 ;
+       $story->views()->save($seen);
         return view('story.show', [
             'story' => $story
         ]);

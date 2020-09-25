@@ -35,7 +35,8 @@ class NewsController extends Controller
       $seen = new Seen;
       $seen->counter+=1;
       $seen->user_id = (Auth::id()) ? Auth::id():0 ;
-      $new->views()->save($seen);
+       $new->views()->save($seen);
+
         return view('new.show', [
             'new' => $new
         ]);

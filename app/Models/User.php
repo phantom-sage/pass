@@ -57,6 +57,6 @@ class User extends \TCG\Voyager\Models\User
     protected $appends = [
         'profile_photo_url',
     ];
-  
+
 
 }

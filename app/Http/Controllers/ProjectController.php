@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Project;
 use App\Models\Seen;
 use Illuminate\Http\Request;
-
+use Auth;
 class ProjectController extends Controller
 {
     /**
@@ -27,9 +27,10 @@ class ProjectController extends Controller
     public function show($locale ,Project $project)
     {
 
-       $viewed = new PostView;
-       $viewed->counter+=1;
-       $project->views->save($viewed);
+      $seen = new Seen;
+      $seen->counter+=1;
+      $seen->user_id = (Auth::id()) ? Auth::id():0 ;
+       $project->views()->save($seen);
         return view('project.show', [
             'project' => $project
         ]);
