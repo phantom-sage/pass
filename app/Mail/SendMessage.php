@@ -34,7 +34,6 @@ class SendMessage extends Mailable
 
       return $this->from('example@example.com')
                  ->view('emails.send')->with([
-
                         'msg' => $this->subject->message,
                     ]); ;
     }
