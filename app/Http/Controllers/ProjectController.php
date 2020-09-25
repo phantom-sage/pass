@@ -26,7 +26,7 @@ class ProjectController extends Controller
 
     public function show($locale ,Project $project)
     {
-
+  
       $seen = new Seen;
       $seen->counter+=1;
       $seen->user_id = (Auth::id()) ? Auth::id():0 ;

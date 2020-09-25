@@ -30,15 +30,15 @@ class NewsController extends Controller
      * @param  \App\Models\News  $news
      * @return \Illuminate\Http\Response
      */
-    public function show($locale,News $new)
+    public function show($locale,News $news)
     {
       $seen = new Seen;
       $seen->counter+=1;
       $seen->user_id = (Auth::id()) ? Auth::id():0 ;
-       $new->views()->save($seen);
+       $news->views()->save($seen);
 
         return view('new.show', [
-            'new' => $new
+            'new' => $news
         ]);
     }
 
