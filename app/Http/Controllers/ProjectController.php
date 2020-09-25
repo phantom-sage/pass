@@ -6,6 +6,7 @@ use App\Models\Project;
 use App\Models\Seen;
 use Illuminate\Http\Request;
 use Auth;
+use Session;
 class ProjectController extends Controller
 {
     /**
@@ -26,11 +27,17 @@ class ProjectController extends Controller
 
     public function show($locale ,Project $project)
     {
-  
-      $seen = new Seen;
-      $seen->counter+=1;
-      $seen->user_id = (Auth::id()) ? Auth::id():0 ;
-       $project->views()->save($seen);
+
+      $viewed= "project".$project->id;
+      if (!Session::has($viewed)) {
+        $seen = new Seen;
+        $seen->counter+=1;
+        $seen->user_id = (Auth::id()) ? Auth::id():0 ;
+         $project->views()->save($seen);
+
+             Session::put($viewed, 1);
+           }
+
         return view('project.show', [
             'project' => $project
         ]);
