@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Story;
-use App\Models\PostView;
+use App\Models\Seen;
 use Illuminate\Http\Request;
 
 class StoryController extends Controller

@@ -30,6 +30,6 @@ class News extends Model
 
     public function views()
     {
-         return $this->morphMany(PostView::class, 'viewable');
+             return $this->morphMany(Seen::class, 'seenable');
     }
 }

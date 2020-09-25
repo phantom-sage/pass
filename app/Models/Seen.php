@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class PostView extends Model
+class Seen extends Model
 {
     use HasFactory;
     public function user()
@@ -13,7 +13,7 @@ class PostView extends Model
          return $this->belongsTo(User::class);
      }
 
-     public function viewable()
+     public function seenable()
      {
          return $this->morphTo();
      }

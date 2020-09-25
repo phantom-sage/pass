@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePostViewsTable extends Migration
+class CreateSeensTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreatePostViewsTable extends Migration
      */
     public function up()
     {
-        Schema::create('post_views', function (Blueprint $table) {
+        Schema::create('seens', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained('users')->nullable();
-            $table->integer('viewable_id')->unsigned();
-            $table->string('viewable_type');
+            $table->integer('seenable_id')->unsigned();
+            $table->string('seenable_type');
             $table->integer('counter')->default(0);
             $table->timestamps();
         });
@@ -30,6 +30,6 @@ class CreatePostViewsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('post_views');
+        Schema::dropIfExists('seens');
     }
 }
