@@ -26,4 +26,8 @@ class Project extends Model
   {
        return $this->morphMany(Share::class, 'shareable');
   }
+  public function views()
+  {
+       return $this->morphMany(Seen::class, 'seenable');
+  }
 }

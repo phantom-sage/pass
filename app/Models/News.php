@@ -17,12 +17,19 @@ class News extends Model
     {
         return $this->comments()->where('parent_id','=', 0);
     }
+
    public function likes()
    {
      return $this->morphMany(Like::class, 'likeable');
    }
+
     public function shares()
     {
        return $this->morphMany(Share::class, 'shareable');
+    }
+
+    public function views()
+    {
+       return $this->morphMany(Seen::class, 'seenable');
     }
 }

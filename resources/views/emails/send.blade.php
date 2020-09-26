@@ -7,6 +7,6 @@
   <body>
 
 
-<p class="text-muted">aha ya man</p>
+<p class="text-muted"> {{$msg  }}</p>
   </body>
 </html>
