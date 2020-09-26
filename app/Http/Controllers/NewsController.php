@@ -40,9 +40,8 @@ class NewsController extends Controller
         $seen->user_id = (Auth::id()) ? Auth::id():0 ;
          $news->views()->save($seen);
 
-             Session::put($viewed, 1);
+             Session::put($viewed,1);
            }
-
         return view('new.show', [
             'new' => $news
         ]);
