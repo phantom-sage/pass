@@ -30,7 +30,7 @@
                                     @if(app()->getLocale() === 'en')
                                         {{ $new->description_en }}
                                     @else
-                                        {{ $new->descritpion_ar }}
+                                        {{ $new->description_ar }}
                                     @endif
                                 </p>
                                 @if(\App::getLocale() === 'ar') <div class="clearfix"></div> @endif

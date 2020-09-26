@@ -33,6 +33,7 @@ class NewsController extends Controller
      */
     public function show($locale,News $news)
     {
+        $new = News::find($news->id);
       $viewed= "news".$news->id;
       if (!Session::has($viewed)) {
         $seen = new Seen;
@@ -43,7 +44,7 @@ class NewsController extends Controller
              Session::put($viewed,1);
            }
         return view('new.show', [
-            'new' => $news
+            'new' => $new
         ]);
     }
 

@@ -27,7 +27,7 @@ class ProjectController extends Controller
 
     public function show($locale ,Project $project)
     {
-
+        $project = Project::find($project->id);
       $viewed= "project".$project->id;
       if (!Session::has($viewed)) {
         $seen = new Seen;

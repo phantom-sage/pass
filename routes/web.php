@@ -58,8 +58,36 @@ Route::group([
             ->limit(3)
             ->get();
 
+        $first_hot_news = DB::table('news')
+            ->select('id', 'name_'.$locale.' as name', 'description_'.$locale.' as description','video','image')
+            ->where('id', '=', 1)
+            ->limit(1)
+            ->first();
+
+        $second_hot_news = DB::table('news')
+            ->select('id', 'name_'.$locale.' as name', 'description_'.$locale.' as description','video','image')
+            ->where('id', '=', 2)
+            ->limit(1)
+            ->first();
+
+        $hot_story = DB::table('stories')
+            ->select('id', 'name_'.$locale.' as name', 'description_'.$locale.' as description','video','image')
+            ->where('id', '=', 2)
+            ->limit(1)
+            ->first();
+
+        $hot_project = DB::table('projects')
+            ->select('id', 'name_'.$locale.' as name', 'description_'.$locale.' as description','video','image')
+            ->where('id', '=', 2)
+            ->limit(1)
+            ->first();
+
         return view('welcome', [
-            'projects' => $projects
+            'projects' => $projects,
+            'first_hot_news' => $first_hot_news,
+            'second_hot_news' => $second_hot_news,
+            'hot_story' => $hot_story,
+            'hot_project' => $hot_project
         ]);
     })->name('home');
     /*

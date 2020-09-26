@@ -26,6 +26,7 @@ class StoryController extends Controller
 
     public function show($locale,Story $story)
     {
+        $story = Story::find($story->id);
       $viewed= "story".$story->id;
       if (!Session::has($viewed)) {
         $seen = new Seen;
@@ -35,8 +36,7 @@ class StoryController extends Controller
 
              Session::put($viewed, 1);
            }
-
-        return view('story.show', [
+       return view('story.show', [
             'story' => $story
         ]);
     }
