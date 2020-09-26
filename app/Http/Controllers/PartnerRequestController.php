@@ -39,12 +39,21 @@ class PartnerRequestController extends Controller
     public function store(StorePartnerRequest $request)
     {
         $validated = $request->validated();
+        $partner =  PartnerRequest::create($validated);
 
-      $partner =  PartnerRequest::create($validated);
-
-        @// TODO: translate this t arbic
-        $message = "your request of joining up pass partners was send successfly!";
-        return redirect()->back()->with(['message',$message]);
+        // This is lines added by 'phantom-sage'
+        $message = '';
+        $locale = app()->getLocale();
+        if ($locale === 'ar')
+        {
+            $message = "تم ارسال طلب الشريك بنجاح";
+        }
+        else
+        {
+            $message = "your request of joining up pass partners was send successfully";
+        }
+        $request->session()->flash('partner_request', $message);
+        return redirect()->route('partners', ['locale' => app()->getLocale()]);
     }
 
 

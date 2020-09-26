@@ -102,7 +102,7 @@ class CommentController extends Controller
         return redirect()->route('news.show', [
             'locale' => $locale,
             'news' => $news
-        ])->with('commentSaveStatus', 'comment saved successfully.');
+        ])->with('commentReplaySaveStatus', 'comment replay saved successfully.');
     }
 
     /**
@@ -144,7 +144,7 @@ class CommentController extends Controller
         return redirect()->route('story.show', [
             'locale' => $locale,
             'story' => $story
-        ])->with('commentSaveStatus', 'comment saved successfully.');
+        ])->with('commentReplaySaveStatus', 'comment replay saved successfully.');
     }
 
 

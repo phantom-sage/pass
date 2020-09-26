@@ -19,7 +19,7 @@ class LikeController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @param  App\Models\Story  $stroy
      */
-    public function storeStory(Request $request,Stroy $story)
+    public function storeStory(Request $request,Story $story)
     {
       $like = new Like();
       if(Auth::user()){
@@ -27,6 +27,11 @@ class LikeController extends Controller
       }
         $like->counter+=1;
         $story->likes()->save($like);
+
+        return redirect()->route('story.show', [
+            'locale' => app()->getLocale(),
+            'story' => $story
+        ]);
 
     }
 
@@ -38,12 +43,18 @@ class LikeController extends Controller
      */
     public function storeNews(Request $request,News $news)
     {
+
       $like = new Like();
       if(Auth::user()){
         $like->user_id = Auth::id();
       }
         $like->counter+=1;
         $news->likes()->save($like);
+
+        return redirect()->route('news.show', [
+            'locale' => app()->getLocale(),
+            'news' => $news
+        ]);
     }
 
     /**
@@ -64,7 +75,7 @@ class LikeController extends Controller
         return redirect()->route('project.show', [
             'locale' => app()->getLocale(),
             'project' => $project->id
-        ])->with('commentReplaySaveStatus', 'comment replay saved successfully.');
+        ]);
     }
 
 }

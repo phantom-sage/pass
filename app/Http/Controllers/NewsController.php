@@ -31,7 +31,7 @@ class NewsController extends Controller
      */
     public function show($locale,News $news)
     {
-        $new = News::find($news->id)->first();
+        $new = News::find($news->id);
         return view('new.show', [
             'new' => $new
         ]);
