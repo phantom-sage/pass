@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Vistor;
 use DB;
 class HomeController extends Controller
 {
@@ -11,8 +12,22 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+      $vistor = new Vistor();
+
+      $session= request()->getSession()->getId();
+      $visted=Vistor::where('session_id', $session)->first();
+      if(!$visted){
+        $vistor->session_id =$session;
+        $vistor->user_id =(auth()->check())?auth()->id():null;
+        $vistor->ip_address =request()->ip();
+        $vistor->user_agent =request()->header('User-Agent');
+        $vistor->save();
+
+      }
+      
+
       $locale = app()->getLocale();
 
       $projects = DB::table('projects')
