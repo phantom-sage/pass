@@ -10,6 +10,7 @@ use App\Models\User;
 use App\Models\Message;
 use App\Models\PartnerRequest;
 use App\Models\VolunteerRequest;
+use App\Models\Vistor;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\SendMessage;
 use App\Http\Requests\StoreMessage;
@@ -112,5 +113,20 @@ class VoyagerSiteController extends Controller
           }
       }
       return back()->with('message','the message has been sent successfly!');
+    }
+    /**
+    *
+    * show website vistors
+    *
+    * @return App\Models\Vistor $vistors
+    * @return view  repoorts\vistors
+    */
+    public function vistors()
+    {
+        $total=Vistor::all()->count();
+        $checker = Vistor::find(1)->created_at;
+        $today = Vistor::where('created_at','=',date('Y-m-d'))->count();
+      
+        return view('reports.vistors',compact('total','today'));
     }
 }

@@ -164,6 +164,7 @@ Route::group([
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
     Route::get("/reports/projects",[VoyagerSiteController::class,'projects'])->name("voyager.projects");
+    Route::get("/reports/vistors",[VoyagerSiteController::class,'vistors'])->name("voyager.vistors");
     Route::get("/reports/news",    [VoyagerSiteController::class,'news'])->name("voyager.news");
     Route::get("/reports/stories", [VoyagerSiteController::class,'stories'])->name("voyager.stories");
     Route::get("/message/create",  [VoyagerSiteController::class,'createUserEmail'])->name("voyager.createUserEmail");
