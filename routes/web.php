@@ -51,6 +51,7 @@ Route::group([
   'prefix' => '{locale}',
   'where' => ['locale' => '[a-zA-Z]{2}'],
   'middleware' => 'setlocale'], function() {
+
     Route::get('/', [HomeController::class,'index'])->name('home');
     /*
     |--------------------------------------------------------------------------
