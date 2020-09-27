@@ -60,25 +60,25 @@ Route::group([
 
         $first_hot_news = DB::table('news')
             ->select('id', 'name_'.$locale.' as name', 'description_'.$locale.' as description','video','image')
-            ->where('id', '=', 1)
+            ->where('id', '=', 14)
             ->limit(1)
             ->first();
 
         $second_hot_news = DB::table('news')
             ->select('id', 'name_'.$locale.' as name', 'description_'.$locale.' as description','video','image')
-            ->where('id', '=', 2)
+            ->where('id', '=', 14)
             ->limit(1)
             ->first();
 
         $hot_story = DB::table('stories')
             ->select('id', 'name_'.$locale.' as name', 'description_'.$locale.' as description','video','image')
-            ->where('id', '=', 2)
+            ->where('id', '=', 13)
             ->limit(1)
             ->first();
 
         $hot_project = DB::table('projects')
             ->select('id', 'name_'.$locale.' as name', 'description_'.$locale.' as description','video','image')
-            ->where('id', '=', 2)
+            ->where('id', '=', 14)
             ->limit(1)
             ->first();
 
@@ -212,7 +212,6 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get("/requests/partners/view/{partnerRequest}",[VoyagerSiteController::class,'partnerRequestView'])->name("voyager.partnerRequestView");
     Route::get("/requests/volunteers",[VoyagerSiteController::class,'volunteersRequests'])->name("voyager.volunteersRequests");
     Route::get("/requests/volunteer/view/{volunteerRequest}",[VoyagerSiteController::class,'volunteerRequestView'])->name("voyager.volunteerRequestView");
-    Route::get("/projects/volunteers",[VoyagerSiteController::class,'volunteersRequests'])->name("voyager.volunteersRequests");
 
 
 });

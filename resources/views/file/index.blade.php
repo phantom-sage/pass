@@ -25,10 +25,13 @@
                 </div>
                 <div class="divider-x divide-black"></div>
                 <button class="float-right @if(app()->getLocale() === 'ar') float-left @endif px-4 py-2 bg-white text-gray-800 border rounded m-3 shadow-md">
+              @php $download = (json_decode($file->file))[0]->download_link; @endphp
+                    <a href="{{ Voyager::image( $download ) }}" target="_blank">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class="w-5 h-5 inline">
                         <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z"/>
                     </svg>
                     {{ __('reports.download') }}
+                    </a>
                 </button>
                 <div class="clearfix"></div>
                 {{--<div class="px-6 pt-4 pb-2">--}}

@@ -14,6 +14,10 @@ class FileController extends Controller
      */
     public function index()
     {
+      $file= File::find(1);
+    // $download = (json_decode($file->file))[]->download_link;
+
+    
         $locale= app()->getLocale();
         $files = DB::table('files')
         ->select('name_'.$locale.' as name','file' )
@@ -25,5 +29,5 @@ class FileController extends Controller
         ]);
     }
 
-  
+
 }

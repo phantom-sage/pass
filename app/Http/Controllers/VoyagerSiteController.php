@@ -41,7 +41,7 @@ class VoyagerSiteController extends Controller
       $partnersRequests =
       PartnerRequest::select('id','organization',
                              'organization_area')
-
+                             ->where('replay','=',null)
                              ->orderBy('replay')->get();
 
       return view('requests.partner-request',compact('partnersRequests'));
@@ -57,9 +57,10 @@ class VoyagerSiteController extends Controller
       $volunteersRequests =
 
       VolunteerRequest::select('id','full_name',
-                             'work_place')
-                             ->where('replay','=','null')
+                             'work_place','replay')
+                             ->where('replay','=',null)
                              ->orderBy('replay')->get();
+                             ddd($volunteersRequests);
       return view('requests.volunteer-request',compact('volunteersRequests'));
     }
 
@@ -73,7 +74,7 @@ class VoyagerSiteController extends Controller
     {
       return view("emails.user");
     }
-    
+
     public function sendUserEmail(StoreMessage $request)
     {
       $validated = $request->only('message','email');
