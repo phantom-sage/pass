@@ -10,7 +10,9 @@ use App\Models\Partner;
 use App\Models\Project;
 use App\Models\Story;
 use Database\Factories\CommentFactory;
+use Database\Factories\VolunteerFactory;
 use Illuminate\Database\Seeder;
+use App\Models\Volunteer;
 
 class DatabaseSeeder extends Seeder
 {
@@ -31,5 +33,6 @@ class DatabaseSeeder extends Seeder
         Partner::factory(constant('NUMBER_OF_MODELS_CREATED'))->create();
         File::factory(constant('NUMBER_OF_MODELS_CREATED'))->create();
         Contact::factory(constant('NUMBER_OF_MODELS_CREATED'))->create();
+        Volunteer::factory(constant('NUMBER_OF_MODELS_CREATED'))->create();
     }
 }

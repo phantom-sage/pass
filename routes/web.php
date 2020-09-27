@@ -147,6 +147,9 @@ Route::group([
       [PartnerController::class,'index'])->name("partners");
       Route::get("/volunteers",
       [VolunteerController::class,'index'])->name("volunteers");
+
+      Route::get('/volunteers/{volunteer}', [VolunteerController::class, 'show'])->name('volunteer.show');
+
       /*
       |--------------------------------------------------------------------------
       | like routes

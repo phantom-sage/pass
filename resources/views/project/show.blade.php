@@ -46,7 +46,7 @@
                         {{ count($project->comments) }}
                     </span>
                     <!-- likes badge -->
-                    <form action="{{ route('saveProjectLike', ['locale' => app()->getLocale(), 'project' => $project]) }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('saveProjectLike', ['locale' => app()->getLocale(), 'project' => $project->id]) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <span class="absolute top-3 right-3 bg-white px-5 rounded-lg">
                             <button type="submit" class="px-2">

@@ -34,7 +34,7 @@
                         <!-- Logo -->
                         <div class="flex-shrink-0 flex items-center">
                             <a href="{{ route('home', app()->getLocale()) }}">
-                                <x-jet-application-mark class="block h-9 w-auto" />
+                                <img src="{{ asset('img/pass_logo.png') }}" class="block h-9 w-auto" alt="pass logo" />
                             </a>
                         </div>
 
@@ -109,6 +109,32 @@
                                     <x-jet-dropdown-link href="{{ route('volunteers',app()->getLocale()) }}">
                                         {{ __('navbarlayout.volunteer') }}
                                     </x-jet-dropdown-link>
+
+                                    @auth
+                                        <x-jet-dropdown-link href="{{ route('volunteers',app()->getLocale()) }}">
+                                            {{ __('navbarlayout.dashboard') }}
+                                        </x-jet-dropdown-link>
+                                        <hr>
+                                        <form method="POST" action="{{ route('logout') }}">
+                                            @csrf
+
+                                            <x-jet-responsive-nav-link href="{{ route('logout') }}"
+                                                                       onclick="event.preventDefault();
+                                                this.closest('form').submit();">
+                                                {{ __('Logout') }}
+                                            </x-jet-responsive-nav-link>
+                                        </form>
+                                    @endauth
+
+                                    @guest
+                                        <x-jet-dropdown-link href="/login">
+                                            {{ __('navbarlayout.login') }}
+                                        </x-jet-dropdown-link>
+                                        <x-jet-dropdown-link href="/register">
+                                            {{ __('navbarlayout.register') }}
+                                        </x-jet-dropdown-link>
+                                    @endguest
+
                                 </x-slot>
                             </x-jet-dropdown>
                             </div>

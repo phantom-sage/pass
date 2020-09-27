@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Volunteer;
-use Illuminate\Http\Request;
 use DB;
-use App\Models\Project;
+use Illuminate\View\View;
+
 class VolunteerController extends Controller
 {
     /**
@@ -17,13 +17,31 @@ class VolunteerController extends Controller
     {
         $locale= app()->getLocale();
         $volunteers = DB::table('volunteers')->select('id','name_'.$locale.' as name', 'description_'.$locale.' as description','qualification_'.$locale.' as qualification','start_at','end_at')->get();
-        $projects = DB::table('projects')->select('name_'.$locale.' as name', 'description_'.$locale.' as description','video','image')->get();
 
         return view('volunteer.index', [
-            'volunteers' => $volunteers,
-            'projects' => $projects,
+            'volunteers' => $volunteers
         ]);
     }
 
-  
+    /**
+     * Getting specific resource
+     * @param string $locale
+     * @param Volunteer $volunteer
+     * @return View
+     */
+    public function show(string $locale, Volunteer $volunteer)
+    {
+        if ($volunteer === null)
+        {
+            abort(404);
+        }
+        else
+        {
+            return view('volunteer.show', [
+                'volunteer' => $volunteer
+            ]);
+        }
+    }
+
+
 }

@@ -34,14 +34,29 @@ class VolunteerRequestController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreVolunteerRequest $request,Volunteer $volunteer)
+    public function store(StoreVolunteerRequest $request, $locale, Volunteer $volunteer)
     {
         $validated = $request->validated();
         $validated['volunteer_id'] = $volunteer->id;
 
-       VolunteerRequest::create($validated);
+        VolunteerRequest::create($validated);
 
-  
+        $message = '';
+        if ($locale === 'en')
+        {
+            $message = 'Volunteer request send successfully.';
+        }
+        else if ($locale === 'ar')
+        {
+            $message = 'تم ارسال طلب التطوع بنجاح';
+        }
+        else
+        {
+            $message = 'Volunteer request send successfully.';
+        }
+
+        $request->session()->flash('volunteer_request_message', $message);
+        return redirect()->route('volunteers', $locale);
 
     }
 
