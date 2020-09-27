@@ -18,7 +18,9 @@ class CreateVistorsTable extends Migration
                 $table->string('session_id')->unique();
                 $table->foreignId('user_id')->nullable();
                 $table->string('ip_address', 45)->nullable();
+                $table->string('vists', 45)->default(0);
                 $table->text('user_agent')->nullable();
+                $table->date('date');
                 $table->timestamps();
         });
     }

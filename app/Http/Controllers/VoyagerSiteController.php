@@ -121,12 +121,33 @@ class VoyagerSiteController extends Controller
     * @return App\Models\Vistor $vistors
     * @return view  repoorts\vistors
     */
-    public function vistors()
+    // public function vistors()
+    // {
+    //     $total=Vistor::all()->count();
+    //     $checker = Vistor::find(1)->created_at;
+    //     $today = Vistor::where('created_at','=',date('Y-m-d'))->count();
+    //
+    //     return view('reports.vistors',compact('total','today'));
+    // }
+    /**
+    *
+    * show website vistors
+    * @param App\Http\Request $request
+    * @return App\Models\Vistor $vistors
+    * @return view  repoorts\vistors
+    */
+    public function vistors(Request $request)
     {
-        $total=Vistor::all()->count();
-        $checker = Vistor::find(1)->created_at;
-        $today = Vistor::where('created_at','=',date('Y-m-d'))->count();
-      
-        return view('reports.vistors',compact('total','today'));
+      $filter=0;
+      if($request->input('date')){
+      $date=$request->input('date');
+      $filter =Vistor::where('date','=',$date)->count();
+      }
+      $total=Vistor::all()->count();
+
+      $today = Vistor::where('date','=',date('Y-m-d'))->count();
+
+
+      return view('reports.vistors',compact('total','today','filter'));
     }
 }

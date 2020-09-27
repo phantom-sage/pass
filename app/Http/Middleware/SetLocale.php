@@ -19,7 +19,7 @@ class SetLocale
      {
 
        $vistor = new Vistor();
-
+       @// TODO: if(user_id == auth()->check())?auth()->id()  )
        $session= request()->getSession()->getId();
        $visted=Vistor::where('session_id', $session)->first();
        if(!$visted){
@@ -27,6 +27,8 @@ class SetLocale
          $vistor->user_id =(auth()->check())?auth()->id():null;
          $vistor->ip_address =request()->ip();
          $vistor->user_agent =request()->header('User-Agent');
+         $vistor->date= date('Y-m-d');
+         $vistor->vists+= 1;
          $vistor->save();
 
        }

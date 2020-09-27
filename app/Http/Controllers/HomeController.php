@@ -14,7 +14,7 @@ class HomeController extends Controller
      */
     public function index(Request $request)
     {
-    dd(Vistor::all());
+  
 
 
       $locale = app()->getLocale();
