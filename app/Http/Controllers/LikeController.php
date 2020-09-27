@@ -19,7 +19,7 @@ class LikeController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @param  App\Models\Story  $stroy
      */
-    public function storeStory(Request $request,Story $story)
+    public function storeStory(Request $request,$locale, Story $story)
     {
       $like = new Like();
       if(Auth::user()){
@@ -41,7 +41,7 @@ class LikeController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @param  App\Models\News  $news
      */
-    public function storeNews(Request $request,News $news)
+    public function storeNews(Request $request, $locale, News $news)
     {
 
       $like = new Like();
@@ -63,7 +63,7 @@ class LikeController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @param  App\Models\Project  $project
      */
-    public function storeProject(Request $request,Project $project)
+    public function storeProject(Request $request, $locale, Project $project)
     {
       $like = new Like();
       if(Auth::user()){

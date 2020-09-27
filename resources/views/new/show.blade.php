@@ -46,7 +46,7 @@
                         {{ count($new->comments) }}
                     </span>
                     <!-- likes badge -->
-                    <form action="{{ route('saveNewsLike', ['locale' => app()->getLocale(), 'news' => $new]) }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('saveNewsLike', ['locale' => app()->getLocale(), 'news' => $new->id]) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <button type="submit" class="px-2">
                             <span class="absolute top-3 right-3 bg-white px-5 rounded-lg">

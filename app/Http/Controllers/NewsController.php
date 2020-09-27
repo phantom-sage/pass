@@ -31,11 +31,11 @@ class NewsController extends Controller
      * @param  \App\Models\News  $news
      * @return \Illuminate\Http\Response
      */
-    public function show($locale,News $news)
+    public function show($locale, News $news)
     {
         $new = News::find($news->id);
-      $viewed= "news".$news->id;
-      if (!Session::has($viewed)) {
+        $viewed= "news".$news->id;
+        if (!Session::has($viewed)) {
         $seen = new Seen;
         $seen->counter+=1;
         $seen->user_id = (Auth::id()) ? Auth::id():0 ;

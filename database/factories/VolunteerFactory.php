@@ -23,7 +23,14 @@ class VolunteerFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'name_en' => $this->faker->name,
+            'name_ar' => $this->faker->name,
+            'description_en' => $this->faker->company,
+            'description_ar' => $this->faker->company,
+            'qualification_en' => $this->faker->title,
+            'qualification_ar' => $this->faker->title,
+            'start_at' => $this->faker->date(),
+            'end_at' => $this->faker->date()
         ];
     }
 }

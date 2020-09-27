@@ -14,5 +14,6 @@ return [
     'register' => 'Register',
     'language' => 'Language',
     'ar' => 'AR',
-    'en' => 'EN'
+    'en' => 'EN',
+    'dashboard' => 'Dashboard'
 ];
