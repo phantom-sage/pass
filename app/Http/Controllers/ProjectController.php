@@ -17,7 +17,6 @@ class ProjectController extends Controller
     public function index()
     {
 
-        //// TODO: ,'video' don't forget to get the video after refreshing the database
         $locale= app()->getLocale();
         $projects = Project::all();
 

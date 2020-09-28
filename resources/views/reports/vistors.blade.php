@@ -18,14 +18,29 @@
                 <p>Today:{{$today}}</p>
                 <hr>
                 <p>Total Vistors:{{$total}}</p>
-                <p>history:{{"check for more"}}</p>
             </div>
           </div>
     </div>
 
 
-
+    <form class="from" action="" method="get">
+      @csrf
+      <div class="form-group">
+        <label for="filter-By-date">Filtter</label>
+        <input type="date" name="date" value="today" >
+        <button type="submit" name="button" class="btn btn-sm btn-info">check</button>
       </div>
+
+    </form>
+    <div class="row">
+      <label for="result">Result</label>
+      @if($filter>0)
+      <strong>Today's Vistorse : <small class="text-muted">{{$filter}}</small></strong>
+      @else
+      <small class="text-muted">{{"Sorry we couldn't find any result!"}}</small>
+      @endif
+    </div>
+  </div>
 
     </div>
   </div>

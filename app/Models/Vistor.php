@@ -13,5 +13,5 @@ class Vistor extends Model
      *
      * @var array
      */
-    protected $fillable = ['session_id','user_id','ip_address','user_agent'];
+    protected $fillable = ['session_id','user_id','ip_address','user_agent','date','vists'];
 }
