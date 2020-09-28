@@ -26,7 +26,7 @@
     <body class="font-sans antialiased">
         <!-- top nav -->
         @livewire('top-nav')
-        <nav @if(app()->getLocale() === 'ar') style="direction: rtl;" @endif x-data="{ open: false }" class="bg-white border-b border-gray-100">
+        <nav @if(app()->getLocale() === 'ar') style="direction: rtl;" @endif x-data="{ open: false }" class="bg-white border-b border-gray-100 @if(app()->getLocale() === 'ar') cairo-font @endif">
             <!-- Primary Navigation Menu -->
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex justify-between h-16">
@@ -121,7 +121,7 @@
                                             <x-jet-responsive-nav-link href="{{ route('logout') }}"
                                                                        onclick="event.preventDefault();
                                                 this.closest('form').submit();">
-                                                {{ __('Logout') }}
+                                                {{ __('navbarlayout.logout') }}
                                             </x-jet-responsive-nav-link>
                                         </form>
                                     @endauth

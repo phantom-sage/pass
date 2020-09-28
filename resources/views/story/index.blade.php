@@ -35,16 +35,8 @@
                                 </p>
                                 @if(\App::getLocale() === 'ar') <div class="clearfix"></div> @endif
                             </div>
-                            @if($story->video)
-                                <hr>
-                                <div class="px-6 pt-4 pb-2">
-                                    <button class="px-5 mr-2 bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
-                                        <a href="{{ $story->video }}">See Video</a>
-                                    </button>
-                                </div>
-                            @endif
-                            <hr class="my-4">
-                            <div class="px-6 pt-4 pb-2 mx-auto text-center">
+                            <hr class="my-1">
+                            <div @if(app()->getLocale() === 'ar') style="direction: rtl;" @endif class="px-6 pt-4 pb-2 mx-auto text-center">
                                 <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
                                     {{ count($story->comments) }}
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-5 h-5 inline-block mb-1 ml-2">
@@ -65,7 +57,7 @@
                                     </a>
                                 </span>
                             </div>
-                            <hr class="my-2">
+                            <hr class="my-1">
                             <div class="px-6 pt-4 pb-2 mx-auto text-center mb-2">
                                 <a class="@if(app()->getLocale() === 'ar') cairo-font @endif bg-blue-600 text-white px-4 py-2 border rounded shadow-sm" href="{{route('story.show',['locale'=>app()->getLocale(),'story'=>$story->id])}}  ">
                                     {{ __('storypage.seemore') }}
@@ -77,7 +69,7 @@
             </div>
         @else
             <div class="my-5 shadow-lg bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
-                <strong class="font-bold">No Projects!</strong>
+                <strong class="font-bold">No Stories!</strong>
                 <span class="block sm:inline">Coming soon.</span>
                 <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
                 {{--<svg class="fill-current h-6 w-6 text-red-500" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><title>Close</title><path d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z"/></svg>--}}
