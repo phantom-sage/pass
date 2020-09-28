@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use App\Models\Vistor;
 
 class SetLocale
 {
@@ -16,6 +17,19 @@ class SetLocale
      */
      public function handle($request, Closure $next)
      {
+
+       $vistor = new Vistor();
+
+       $session= request()->getSession()->getId();
+       $visted=Vistor::where('session_id', $session)->first();
+       if(!$visted){
+         $vistor->session_id =$session;
+         $vistor->user_id =(auth()->check())?auth()->id():null;
+         $vistor->ip_address =request()->ip();
+         $vistor->user_agent =request()->header('User-Agent');
+         $vistor->save();
+
+       }
          app()->setLocale($request->segment(1));
          return $next($request);
      }

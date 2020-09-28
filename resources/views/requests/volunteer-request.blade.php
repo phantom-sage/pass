@@ -10,6 +10,7 @@
 
 <div class="clearfix container-fluid row">
       @forelse($volunteersRequests as $volunteer)
+      
       <div class="col-xs-12 col-sm-6 col-md-6">
         <div class="panel widget center bgimage" style="margin-bottom:0;overflow:hidden;background-image:url('http://127.0.0.1:8000/img/02.jpg');">
         <div class="dimmer"></div>

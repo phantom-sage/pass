@@ -16,6 +16,7 @@ class ProjectController extends Controller
      */
     public function index()
     {
+
         //// TODO: ,'video' don't forget to get the video after refreshing the database
         $locale= app()->getLocale();
         $projects = Project::all();
@@ -27,6 +28,7 @@ class ProjectController extends Controller
 
     public function show($locale ,Project $project)
     {
+            dd(Auth::check()?Auth::id():null);
         $project = Project::find($project->id);
       $viewed= "project".$project->id;
       if (!Session::has($viewed)) {

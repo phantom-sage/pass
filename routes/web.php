@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\StoryController;
 use App\Http\Controllers\NewsController;
@@ -41,7 +42,7 @@ Route::get('/', function () {
     return redirect(app()->getLocale());
 });
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+Route::middleware(['auth:sanctum', 'verified'])->get('{local}/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
@@ -50,46 +51,8 @@ Route::group([
   'prefix' => '{locale}',
   'where' => ['locale' => '[a-zA-Z]{2}'],
   'middleware' => 'setlocale'], function() {
-    Route::get('/', function () {
-        $locale = app()->getLocale();
 
-        $projects = DB::table('projects')
-            ->select('id', 'name_'.$locale.' as name', 'description_'.$locale.' as description','video','image')
-            ->limit(3)
-            ->get();
-
-        $first_hot_news = DB::table('news')
-            ->select('id', 'name_'.$locale.' as name', 'description_'.$locale.' as description','video','image')
-            ->where('id', '=', 1)
-            ->limit(1)
-            ->first();
-
-        $second_hot_news = DB::table('news')
-            ->select('id', 'name_'.$locale.' as name', 'description_'.$locale.' as description','video','image')
-            ->where('id', '=', 2)
-            ->limit(1)
-            ->first();
-
-        $hot_story = DB::table('stories')
-            ->select('id', 'name_'.$locale.' as name', 'description_'.$locale.' as description','video','image')
-            ->where('id', '=', 2)
-            ->limit(1)
-            ->first();
-
-        $hot_project = DB::table('projects')
-            ->select('id', 'name_'.$locale.' as name', 'description_'.$locale.' as description','video','image')
-            ->where('id', '=', 2)
-            ->limit(1)
-            ->first();
-
-        return view('welcome', [
-            'projects' => $projects,
-            'first_hot_news' => $first_hot_news,
-            'second_hot_news' => $second_hot_news,
-            'hot_story' => $hot_story,
-            'hot_project' => $hot_project
-        ]);
-    })->name('home');
+    Route::get('/', [HomeController::class,'index'])->name('home');
     /*
     |--------------------------------------------------------------------------
     | comments Routes
@@ -202,6 +165,7 @@ Route::group([
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
     Route::get("/reports/projects",[VoyagerSiteController::class,'projects'])->name("voyager.projects");
+    Route::get("/reports/vistors",[VoyagerSiteController::class,'vistors'])->name("voyager.vistors");
     Route::get("/reports/news",    [VoyagerSiteController::class,'news'])->name("voyager.news");
     Route::get("/reports/stories", [VoyagerSiteController::class,'stories'])->name("voyager.stories");
     Route::get("/message/create",  [VoyagerSiteController::class,'createUserEmail'])->name("voyager.createUserEmail");

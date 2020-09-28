@@ -45,7 +45,11 @@
 
                     @if($story->video)
                         <hr class="my-3 bg-gray-400">
-                        <video src="{{ $story->video }}"></video>
+                        @php  $download = (json_decode($story->video))[0]->download_link; @endphp
+
+                          <video width="320" height="240" controls>
+                                <source src="{{ Voyager::image($download) }}" type="video/mp4">
+                            </video>
                 @endif
                 <!-- comments badge -->
                     <span class="absolute top-3 left-3 bg-white px-5 rounded-lg">
