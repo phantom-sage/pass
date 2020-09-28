@@ -26,7 +26,8 @@ class NewsFactory extends Factory
         "name_en"        =>$this->faker->word,
         "name_ar"        =>'عنوان الخبر بالعربي' ,
         "description_en" =>$this->faker->paragraph(1),
-        "description_ar" =>'محتوى الخبر بالعربي'
+        "description_ar" =>'محتوى الخبر بالعربي',
+          'video' => 'C:\Users\phantomsage\Downloads\Video\The amazing world of Gumball\S05\The Amazing World of Gumball S05E01.mp4'
       ];
     }
 }

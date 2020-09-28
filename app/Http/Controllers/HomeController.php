@@ -14,7 +14,7 @@ class HomeController extends Controller
      */
     public function index(Request $request)
     {
-    dd(Vistor::all());
+    //dd(Vistor::all());
 
 
       $locale = app()->getLocale();
@@ -26,25 +26,25 @@ class HomeController extends Controller
 
       $first_hot_news = DB::table('news')
           ->select('id', 'name_'.$locale.' as name', 'description_'.$locale.' as description','video','image')
-          ->where('id', '=', 14)
+          ->where('id', '=', 1)
           ->limit(1)
           ->first();
 
       $second_hot_news = DB::table('news')
           ->select('id', 'name_'.$locale.' as name', 'description_'.$locale.' as description','video','image')
-          ->where('id', '=', 14)
+          ->where('id', '=', 1)
           ->limit(1)
           ->first();
 
       $hot_story = DB::table('stories')
           ->select('id', 'name_'.$locale.' as name', 'description_'.$locale.' as description','video','image')
-          ->where('id', '=', 13)
+          ->where('id', '=', 1)
           ->limit(1)
           ->first();
 
       $hot_project = DB::table('projects')
           ->select('id', 'name_'.$locale.' as name', 'description_'.$locale.' as description','video','image')
-          ->where('id', '=', 14)
+          ->where('id', '=', 1)
           ->limit(1)
           ->first();
 

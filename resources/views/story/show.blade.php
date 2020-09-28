@@ -18,6 +18,49 @@
             <div class="w-full">
                 <div class="rounded shadow-sm border my-5 relative">
                     <img class="w-full rounded-lg mb-4" src="{{ asset('img/01.jpg') }}">
+                    <!-- comments & likes & views badges -->
+                    <div @if(app()->getLocale() === 'ar') style="direction: rtl;" @endif class="flex flex-wrap my-2 text-center">
+
+                        <!-- likes -->
+                        <div class="w-4/12 mx-auto">
+                            <!-- likes badge -->
+                            <form action="{{ route('saveStoryLike', ['locale' => app()->getLocale(), 'story' => $story->id]) }}" method="POST" enctype="multipart/form-data">
+                                @csrf
+                                <button type="submit" class="px-2">
+                            <span class="bg-white px-5 rounded-lg">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 inline-block mb-1">
+                                  <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" />
+                                </svg>
+                                {{ count($story->likes) }}
+                            </span>
+                                </button>
+                            </form>
+                        </div>
+
+                        <!-- comments -->
+                        <div class="w-4/12 mx-auto">
+                            <!-- comments badge -->
+                            <span class="bg-white px-5 rounded-lg">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-5 h-5 inline-block">
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
+                                </svg>
+                                {{ count($story->comments) }}
+                            </span>
+                        </div>
+
+                        <!-- views -->
+                        <div class="w-4/12 mx-auto">
+                            <!-- views badge -->
+                            <span class="bg-white px-5 rounded-lg">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class="w-4 h-4 inline-block">
+                                    <path d="M.2 10a11 11 0 0 1 19.6 0A11 11 0 0 1 .2 10zm9.8 4a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm0-2a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"/>
+                                </svg>
+                                {{ count($story->views) }}
+                            </span>
+                        </div>
+
+                    </div>
+                    <hr class="my-2">
                     <h2 @if(app()->getLocale() === 'ar') style="direction: rtl;" @endif class="font-semibold text-xl text-black ml-2 @if(app()->getLocale() === 'ar') float-right cairo-font mr-2 @endif">
                         @if(app()->getLocale() === 'en')
                             {{ $story->name_en }}
@@ -36,40 +79,26 @@
                     @if(app()->getLocale() === 'ar') <div class="clearfix"></div> @endif
                     <p style="direction: @if(\App::getLocale() === 'ar') rtl @else ltr @endif;" class="text-gray-700 text-lg text-center my-4">
                         @if(app()->getLocale() === 'ar')
-                            {{ $story->story_ar }}
+                            {!! $story->story_ar !!}
                         @else
-                            {{ $story->story_en }}
+                            {!! $story->story_en !!}
                         @endif
                     </p>
 
 
                     @if($story->video)
                         <hr class="my-3 bg-gray-400">
-                        @php  $download = (json_decode($story->video))[0]->download_link; @endphp
+                        <div class="flex flex-wrap">
+                            <div class="w-full mx-3">
+                                <video class="rounded w-full h-auto block mx-auto my-3" src="{{ $story->video }}" controls></video>
+                            </div>
+                        </div>
+{{--                        @php  $download = (json_decode($story->video))[0]->download_link; @endphp--}}
 
-                          <video width="320" height="240" controls>
-                                <source src="{{ Voyager::image($download) }}" type="video/mp4">
-                            </video>
+{{--                          <video width="320" height="240" controls>--}}
+{{--                                <source src="{{ Voyager::image($download) }}" type="video/mp4">--}}
+{{--                            </video>--}}
                 @endif
-                <!-- comments badge -->
-                    <span class="absolute top-3 left-3 bg-white px-5 rounded-lg">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-5 h-5 inline-block">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
-                        </svg>
-                        {{ count($story->comments) }}
-                    </span>
-                    <!-- likes badge -->
-                    <form action="{{ route('saveStoryLike', ['locale' => app()->getLocale(), 'story' => $story->id]) }}" method="POST" enctype="multipart/form-data">
-                        @csrf
-                        <button type="submit" class="px-2">
-                            <span class="absolute top-3 right-3 bg-white px-5 rounded-lg">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 inline-block mb-1">
-                                  <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" />
-                                </svg>
-                                {{ count($story->likes) }}
-                            </span>
-                        </button>
-                    </form>
                 </div>
             </div>
         </div>

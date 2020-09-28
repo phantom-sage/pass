@@ -15,5 +15,6 @@ return [
     'language' => 'Language',
     'ar' => 'AR',
     'en' => 'EN',
-    'dashboard' => 'Dashboard'
+    'dashboard' => 'Dashboard',
+    'logout' => 'Logout'
 ];

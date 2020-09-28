@@ -35,16 +35,8 @@
                                 </p>
                                 @if(\App::getLocale() === 'ar') <div class="clearfix"></div> @endif
                             </div>
-                            @if($project->video)
-                                <hr>
-                                <div class="px-6 pt-4 pb-2">
-                                    <button class="px-5 mr-2 bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
-                                        <a href="{{ $project->video }}">See Video</a>
-                                    </button>
-                                </div>
-                            @endif
-                            <hr class="my-4">
-                            <div class="px-6 pt-4 pb-2 mx-auto text-center">
+                            <hr class="my-1">
+                            <div @if(app()->getLocale() === 'ar') style="direction: rtl;" @endif class="px-6 pt-4 pb-2 mx-auto text-center">
                                 <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
                                     {{ count($project->comments) }}
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-5 h-5 inline-block mb-1 ml-2">
@@ -65,7 +57,7 @@
                                     </a>
                                 </span>
                             </div>
-                            <hr class="my-2">
+                            <hr class="my-1">
                             <div class="px-6 pt-4 pb-2 mx-auto text-center mb-2">
                                 <a class="@if(app()->getLocale() === 'ar') cairo-font @endif bg-blue-600 text-white px-4 py-2 border rounded shadow-sm" href="{{route('project.show',['locale'=>app()->getLocale(),'project'=>$project->id])}}">
                                     {{ __('projectpage.seemore') }}
