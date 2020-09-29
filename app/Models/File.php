@@ -8,8 +8,17 @@ use Illuminate\Database\Eloquent\Model;
 class File extends Model
 {
     use HasFactory;
-    public function downloades()
+    public function downloads()
     {
       return $this->hasMany(Downloade::class);
+    }
+
+
+    public function getLink($file)
+    {
+
+    return (json_decode($file->file))[0]->download_link;
+
+
     }
 }

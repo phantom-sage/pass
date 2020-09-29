@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\File;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use App\Models\Downloade;
+use Response;
 use DB;
 class FileController extends Controller
 {
@@ -14,13 +17,11 @@ class FileController extends Controller
      */
     public function index()
     {
-      $file= File::find(1);
-    // $download = (json_decode($file->file))[]->download_link;
 
-    
+
         $locale= app()->getLocale();
         $files = DB::table('files')
-        ->select('name_'.$locale.' as name','file' )
+        ->select('id','name_'.$locale.' as name','file' )
         ->get();
 
 
@@ -29,5 +30,25 @@ class FileController extends Controller
         ]);
     }
 
+    public function download($locale,File $file)
+    {
 
+        $url = storage_path('app/public/'.$file->getLink($file)) ;
+        $download = Downloade::where('file_id', $file->id)->first();
+
+        if ($download ) {
+          $download->counter+=1;
+          $download->update();
+        }else{
+
+          $download = new Downloade();
+          $download->file_id=$file->id;
+          $download->counter+=1;
+          $download->save();
+        }
+           return Response::download($url);
+
+
+
+    }
 }

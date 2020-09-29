@@ -16,7 +16,7 @@ class CreateDownloadesTable extends Migration
         Schema::create('downloades', function (Blueprint $table) {
             $table->id();
             $table->foreignId('file_id')->constrained('files');
-            $table->string('counter')->default(0);
+            $table->integer('counter')->default(0);
             $table->timestamps();
         });
     }

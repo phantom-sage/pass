@@ -141,6 +141,7 @@ Route::group([
       */
       Route::post("/volunteers/{volunteer}/request",[VolunteerRequestController::class,'store'])->name("volunteer");
       Route::post("/partner/request",               [PartnerRequestController::class,'store'])->name("partner");
+      Route::get("/files/download/{file}",               [FileController::class,'download'])->name("download");
 
 
 
@@ -168,6 +169,7 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get("/reports/vistors",[VoyagerSiteController::class,'vistors'])->name("voyager.vistors");
     Route::get("/reports/news",    [VoyagerSiteController::class,'news'])->name("voyager.news");
     Route::get("/reports/stories", [VoyagerSiteController::class,'stories'])->name("voyager.stories");
+    Route::get("/reports/files", [VoyagerSiteController::class,'files'])->name("voyager.files");
     Route::get("/message/create",  [VoyagerSiteController::class,'createUserEmail'])->name("voyager.createUserEmail");
     Route::post("/message",        [VoyagerSiteController::class,'sendUserEmail'])->name("voyager.sendUserEmail");
     Route::get("/message/users/create",[VoyagerSiteController::class,'createUsersEmail'])->name("voyager.createUsersEmail");
