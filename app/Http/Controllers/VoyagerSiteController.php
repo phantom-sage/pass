@@ -7,6 +7,7 @@ use App\Models\Project;
 use App\Models\News;
 use App\Models\Story;
 use App\Models\User;
+use App\Models\File;
 use App\Models\Message;
 use App\Models\PartnerRequest;
 use App\Models\VolunteerRequest;
@@ -149,5 +150,10 @@ class VoyagerSiteController extends Controller
 
 
       return view('reports.vistors',compact('total','today','filter'));
+    }
+    public function files()
+    {
+      $files =File::all();
+      return view('reports.files',compact('files'));
     }
 }

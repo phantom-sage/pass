@@ -15,6 +15,7 @@ class CreateSharesTable extends Migration
     {
         Schema::create('shares', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->nullable();
             $table->integer('shareable_id')->unsigned();
             $table->string('shareable_type');
             $table->integer('counter')->default(0);

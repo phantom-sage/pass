@@ -37,7 +37,7 @@ class HomeController extends Controller
           ->first();
 
       $hot_story = DB::table('stories')
-          ->select('id', 'name_'.$locale.' as name', 'description_'.$locale.' as description','video','image')
+          ->select('id', 'story_'.$locale.' as name', 'description_'.$locale.' as description','video','image')
           ->where('id', '=', 1)
           ->limit(1)
           ->first();

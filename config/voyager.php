@@ -144,14 +144,14 @@ return [
         ],
 
         'widgets' => [
-          "App\\Widgets\\ProjectDimmer",
-          "App\\Widgets\\UserDimmer",
-          "App\\Widgets\\StoryDimmer",
-          "App\\Widgets\\NewsDimmer",
-          "App\\Widgets\\ContactDimmer",
-          "App\\Widgets\\VolunteerDimmer",
-          "App\\Widgets\\PartnerDimmer",
-          "App\\Widgets\\FileDimmer",
+          // "App\\Widgets\\ProjectDimmer",
+          // "App\\Widgets\\UserDimmer",
+          // "App\\Widgets\\StoryDimmer",
+          // "App\\Widgets\\NewsDimmer",
+          // "App\\Widgets\\ContactDimmer",
+          // "App\\Widgets\\VolunteerDimmer",
+          // "App\\Widgets\\PartnerDimmer",
+          // "App\\Widgets\\FileDimmer",
 
         ],
 

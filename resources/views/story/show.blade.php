@@ -4,9 +4,9 @@
         <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
             <h2 @if(app()->getLocale() === 'ar') style="direction: rtl;" @endif class="text-center font-black text-xl text-gray-800 leading-tight @if(app()->getLocale() === 'ar') cairo-font @endif">
                 @if(app()->getLocale() === 'en')
-                    {{ strtoupper($story->name_en) }}
+                    {{ strtoupper($story->story_en) }}
                 @else
-                    {{ strtoupper($story->name_ar) }}
+                    {{ strtoupper($story->story_ar) }}
                 @endif
             </h2>
         </div>
