@@ -33,6 +33,7 @@ class NewsController extends Controller
      */
     public function show($locale, News $news)
     {
+      
         $new = News::find($news->id);
         $viewed= "news".$news->id;
         if (!Session::has($viewed)) {

@@ -26,13 +26,13 @@ class HomeController extends Controller
 
       $first_hot_news = DB::table('news')
           ->select('id', 'name_'.$locale.' as name', 'description_'.$locale.' as description','video','image')
-          ->where('id', '=', 1)
+          ->where('id', '=', 14)
           ->limit(1)
           ->first();
 
       $second_hot_news = DB::table('news')
           ->select('id', 'name_'.$locale.' as name', 'description_'.$locale.' as description','video','image')
-          ->where('id', '=', 1)
+          ->where('id', '=', 14)
           ->limit(1)
           ->first();
 
@@ -44,7 +44,7 @@ class HomeController extends Controller
 
       $hot_project = DB::table('projects')
           ->select('id', 'name_'.$locale.' as name', 'description_'.$locale.' as description','video','image')
-          ->where('id', '=', 1)
+          ->where('id', '=', 14)
           ->limit(1)
           ->first();
 

@@ -23,8 +23,7 @@ class StoryFactory extends Factory
     public function definition()
     {
       return [
-        "name_en"        =>$this->faker->word,
-        "name_ar"        =>'اسم القصة بالعربي',
+        
         "story_en"        =>$this->faker->word,
         "story_ar"        =>'القصة بالعربي',
         "description_en" =>$this->faker->paragraph(1),

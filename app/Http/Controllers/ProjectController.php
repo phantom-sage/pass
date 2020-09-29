@@ -33,7 +33,7 @@ class ProjectController extends Controller
       if (!Session::has($viewed)) {
         $seen = new Seen;
         $seen->counter+=1;
-        $seen->user_id = (Auth::id()) ? Auth::id():0 ;
+        $seen->user_id = (Auth::id()) ? Auth::id():null ;
          $project->views()->save($seen);
 
              Session::put($viewed, 1);

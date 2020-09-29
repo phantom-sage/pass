@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateStoriesTable extends Migration
+class CreateDownloadesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,10 @@ class CreateStoriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('stories', function (Blueprint $table) {
+        Schema::create('downloades', function (Blueprint $table) {
             $table->id();
-            $table->string("story_en");
-            $table->string("story_ar");
-            $table->longText("description_en");
-            $table->longText("description_ar");
-            $table->string("image")->nullable();
-            $table->text("video")->nullable();
+            $table->foreignId('file_id')->constrained('files');
+            $table->string('counter')->default(0);
             $table->timestamps();
         });
     }
@@ -32,6 +28,6 @@ class CreateStoriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('stories');
+        Schema::dropIfExists('downloades');
     }
 }

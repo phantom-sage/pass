@@ -15,7 +15,7 @@ class CreateSeensTable extends Migration
     {
         Schema::create('seens', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained('users')->nullable();
+            $table->foreignId('user_id')->nullable();
             $table->integer('seenable_id')->unsigned();
             $table->string('seenable_type');
             $table->integer('counter')->default(0);

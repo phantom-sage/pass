@@ -20,9 +20,9 @@
                             <div class="px-6 py-4">
                                 <div style="direction: @if(\App::getLocale() === 'ar') rtl @else ltr @endif;" class="font-bold text-xl mb-2 @if(\App::getLocale() === 'ar') float-right @endif">
                                     @if(app()->getLocale() === 'ar')
-                                        {{ $story->name_ar }}
+                                        {{ $story->story_ar }}
                                     @else
-                                        {{ $story->name_en }}
+                                        {{ $story->story_en }}
                                     @endif
                                 </div>
                                 @if(\App::getLocale() === 'ar') <div class="clearfix"></div> @endif
