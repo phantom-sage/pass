@@ -34,7 +34,7 @@
                         <!-- Logo -->
                         <div class="flex-shrink-0 flex items-center">
                             <a href="{{ route('home', app()->getLocale()) }}">
-                                <img src="{{ asset('img/pass_logo.png') }}" class="block h-9 w-auto" alt="pass logo" />
+                                <img src="{{ asset('img/pass_logo.jpg') }}" class="block h-9 w-auto" alt="pass logo" />
                             </a>
                         </div>
 
