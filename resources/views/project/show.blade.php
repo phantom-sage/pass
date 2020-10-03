@@ -78,17 +78,15 @@
                     </p>
                     @if(app()->getLocale() === 'ar') <div class="clearfix"></div> @endif
                     @if($project->video)
+                    @php  $download = (json_decode($project->video))[0]->download_link; @endphp
+
                         <hr class="my-3 bg-gray-400">
                         <div class="flex flex-wrap">
                             <div class="w-full mx-3">
-                                <video class="rounded w-full h-auto block mx-auto my-3" src="{{ $project->video }}" controls></video>
+                                <video class="rounded w-full h-auto block mx-auto my-3" src="{{ Voyager::image($download) }}" type="video/mp4" controls></video>
                             </div>
                         </div>
-{{--                        @php  $download = (json_decode($project->video))[0]->download_link; @endphp--}}
 
-{{--                          <video width="320" height="240" controls>--}}
-{{--                                <source src="{{ Voyager::image($download) }}" type="video/mp4">--}}
-{{--                            </video>--}}
                     @endif
                 </div>
             </div>

@@ -18,7 +18,7 @@ class VolunteerController extends Controller
         $locale= app()->getLocale();
         $volunteers = DB::table('volunteers')->select('id','name_'.$locale.' as name', 'description_'.$locale.' as description','qualification_'.$locale.' as qualification','start_at','end_at')
                          ->where('end_at' ,'>=', date('Y-m-d'))->get();
-                            
+
         return view('volunteer.index', [
             'volunteers' => $volunteers
         ]);
