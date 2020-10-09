@@ -19,7 +19,7 @@
                 </div>
 
                 @if(session('errors'))
-                    <div x-data="{ open: true }" x-show="open" class="mx-5 w-full my-5 shadow-lg bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+                    <div x-data="{ open: true }" x-show="open" class="mx-auto text-center w-4/12 my-5 shadow-lg bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
                         <strong class="font-bold">There's something error, please check it again.</strong>
                         <span class="absolute top-0 bottom-0 @if(app()->getLocale() === 'ar') left-0 @else right-0 @endif px-4 py-3">
                             <svg @click="open = false" class="fill-current h-6 w-6 text-red-500" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><title>Close</title><path d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z"/></svg>
@@ -28,7 +28,7 @@
                 @endif
 
                 @if(session('partner_request'))
-                    <div @if(app()->getLocale() === 'ar') style="direction: rtl;" @endif x-data="{ open: true }" x-show="open" class="mx-5 w-full my-5 shadow-lg bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert">
+                    <div @if(app()->getLocale() === 'ar') style="direction: rtl;" @endif x-data="{ open: true }" x-show="open" class="mx-auto text-center w-4/12 my-5 shadow-lg bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert">
                         <strong class="font-bold">{{ session('partner_request') }}</strong>
                         <span class="absolute top-0 bottom-0 @if(app()->getLocale() === 'ar') left-0 @else right-0 @endif px-4 py-3">
                             <svg @click="open = false" class="fill-current h-6 w-6 text-green-500" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><title>Close</title><path d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z"/></svg>
@@ -38,13 +38,13 @@
 
                 <div class="w-full">
                     <div x-show="open" class="my-4">
-                        <form action="{{ route('partner',app()->getLocale()) }}" method="POST" enctype="multipart/form-data" novalidate>
+                        <form action="{{ route('partner',app()->getLocale()) }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="flex flex-wrap">
 
                                 <!-- Full name -->
                                 <div class="w-8/12 mx-auto my-2">
-                                    <input aria-label="Full name" name="full_name" type="text" required autofocus class="appearance-none rounded-none relative block w-full px-3 py-2 border @error('full_name') border-red-700 @enderror border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5" placeholder="Full name">
+                                    <input aria-label="Full name" name="full_name" value="{{ old('full_name') }}" type="text" required autofocus class="appearance-none rounded-none relative block w-full px-3 py-2 border @error('full_name') border-red-700 @enderror border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5" placeholder="Full name">
                                     @error('full_name')
                                     <strong class="text-red-700">{{ $message }}</strong>
                                     @enderror
@@ -52,7 +52,7 @@
 
                                 <!-- Organization area -->
                                 <div class="w-8/12 mx-auto my-2">
-                                    <input aria-label="Business area" name="organization_area" type="text" required class="appearance-none rounded-none relative block w-full px-3 py-2 border @error('organization_area') border-red-700 @enderror border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5" placeholder="Business area">
+                                    <input aria-label="Business area" name="organization_area" value="{{ old('organization_area') }}" type="text" required class="appearance-none rounded-none relative block w-full px-3 py-2 border @error('organization_area') border-red-700 @enderror border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5" placeholder="Business area">
                                     @error('organization_area')
                                     <strong class="text-red-700">{{ $message }}</strong>
                                     @enderror
@@ -60,7 +60,7 @@
 
                                 <!-- Organization -->
                                 <div class="w-8/12 mx-auto my-2">
-                                    <input aria-label="Organization name" name="organization" type="text" required class="appearance-none rounded-none relative block w-full px-3 py-2 border @error('organization') border-red-700 @enderror border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5" placeholder="Organization name">
+                                    <input aria-label="Organization name" name="organization" value="{{ old('organization') }}" type="text" required class="appearance-none rounded-none relative block w-full px-3 py-2 border @error('organization') border-red-700 @enderror border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5" placeholder="Organization name">
                                     @error('organization')
                                     <strong class="text-red-700">{{ $message }}</strong>
                                     @enderror
@@ -68,7 +68,7 @@
 
                                 <!-- Email-Address -->
                                 <div class="w-8/12 mx-auto my-2">
-                                    <input aria-label="Email Address" name="email" type="email" required class="appearance-none rounded-none relative block w-full px-3 py-2 border @error('email') border-red-700 @enderror border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5" placeholder="Email Address">
+                                    <input aria-label="Email Address" name="email" value="{{ old('email') }}" type="email" required class="appearance-none rounded-none relative block w-full px-3 py-2 border @error('email') border-red-700 @enderror border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5" placeholder="Email Address">
                                     @error('email')
                                     <strong class="text-red-700">{{ $message }}</strong>
                                     @enderror

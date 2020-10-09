@@ -13,5 +13,6 @@ return [
     'beapartner' => 'اصبح شريك',
     'news' => 'آخبار',
     'hotstory' => 'قصة ساخنة',
-    'hotproject' => 'مشروع ساخن'
+    'hotproject' => 'مشروع ساخن',
+    'copyrights' => 'جميع الحقوق محفوظة 2020'
 ];

@@ -11,5 +11,6 @@ return [
     'qualification' => 'Qualification',
     'send' => 'Send',
     'male' => 'Male',
-    'female' => 'Female'
+    'female' => 'Female',
+    'other' => 'Other'
 ];

@@ -5,7 +5,7 @@ return [
     'stories' => 'قصص نجاح',
     'news' => 'آخر الاخبار',
     'reports' => 'التقارير',
-    'about' => 'عنا',
+    'contactus' => 'تواصل معنا',
     'more' => 'المزيد',
     'morelinks' => 'المزيد من الروابط',
     'partenership' => 'شركائنا',
