@@ -13,5 +13,6 @@ return [
     'beapartner' => 'Be a partner',
     'news' => 'News',
     'hotstory' => 'Hot Story',
-    'hotproject' => 'Hot Project'
+    'hotproject' => 'Hot Project',
+    'copyrights' => 'All Rights Reserved 2020'
 ];

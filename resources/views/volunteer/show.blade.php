@@ -23,7 +23,7 @@
 
                     <div class="flex flex-wrap my-2">
                         <label for="full_name" class="w-full mb-1">{{ __('volunteerpage.fullname') }}</label>
-                        <input type="text" name="full_name" id="full_name" class="w-full border rounded @error('full_name') border-red-700 @enderror">
+                        <input type="text" name="full_name" id="full_name" value="{{ old('full_name') }}" class="w-full border rounded @error('full_name') border-red-700 @enderror" required>
                         @error('full_name')
                             <small class="text-red-700 font-bold mt-1">
                                 {{ $message }}
@@ -33,7 +33,7 @@
 
                     <div class="flex flex-wrap my-2">
                         <label for="work_place" class="w-full mb-1">{{ __('volunteerpage.workplace') }}</label>
-                        <input type="text" name="work_place" id="work_place" class="w-full border rounded @error('full_name') border-red-700 @enderror">
+                        <input type="text" name="work_place" id="work_place" value="{{ old('work_place') }}" class="w-full border rounded @error('full_name') border-red-700 @enderror" required>
                         @error('work_place')
                         <small class="text-red-700 font-bold mt-1">
                             {{ $message }}
@@ -43,7 +43,7 @@
 
                     <div class="flex flex-wrap my-2">
                         <label for="email" class="w-full mb-1">{{ __('volunteerpage.email') }}</label>
-                        <input type="email" name="email" id="email" class="w-full border rounded @error('full_name') border-red-700 @enderror">
+                        <input type="email" name="email" id="email" value="{{ old('email') }}" class="w-full border rounded @error('full_name') border-red-700 @enderror" required>
                         @error('email')
                         <small class="text-red-700 font-bold mt-1">
                             {{ $message }}
@@ -53,7 +53,7 @@
 
                     <div class="flex flex-wrap my-2">
                         <label for="phone" class="w-full mb-1">{{ __('volunteerpage.phonenumber') }}</label>
-                        <input type="phone" name="phone" id="phone" class="w-full border rounded @error('full_name') border-red-700 @enderror">
+                        <input type="phone" name="phone" id="phone" value="{{ old('phone') }}" class="w-full border rounded @error('full_name') border-red-700 @enderror" required>
                         @error('phone')
                         <small class="text-red-700 font-bold mt-1">
                             {{ $message }}
@@ -63,7 +63,7 @@
 
                     <div class="flex flex-wrap my-2">
                         <label for="age" class="w-full mb-1">{{ __('volunteerpage.age') }}</label>
-                        <input type="date" name="age" id="age" class="w-full border rounded @error('full_name') border-red-700 @enderror">
+                        <input type="date" name="age" id="age" value="{{ old('age') }}" class="w-full border rounded @error('full_name') border-red-700 @enderror" required>
                         @error('age')
                         <small class="text-red-700 font-bold mt-1">
                             {{ $message }}
@@ -73,8 +73,9 @@
 
                     <div class="flex flex-wrap my-2">
                         <label for="gender" class="w-full mb-1">{{ __('volunteerpage.gender') }}</label>
-                        <div class="w-6/12"><input type="radio" name="gender" value="male" id="gender"> {{ __('volunteerpage.male') }}</div>
-                        <div class="w-6/12"><input type="radio" name="gender" value="female" id="gender"> {{ __('volunteerpage.female') }}</div>
+                        <div class="w-4/12"><input required type="radio" name="gender" value="male" id="gender"> {{ __('volunteerpage.male') }}</div>
+                        <div class="w-4/12"><input required type="radio" name="gender" value="female" id="gender"> {{ __('volunteerpage.female') }}</div>
+                        <div class="w-4/12"><input required type="radio" name="gender" value="other" id="gender"> {{ __('volunteerpage.other') }}</div>
                         @error('gender')
                         <small class="text-red-700 font-bold mt-1">
                             {{ $message }}
@@ -84,7 +85,11 @@
 
                     <div class="flex flex-wrap my-2">
                         <label for="qualification" class="w-full mb-1">{{ __('volunteerpage.qualification') }}</label>
-                        <textarea class="rounded border w-full @error('full_name') border-red-700 @enderror" name="qualification" id="qualification"></textarea>
+                        <select id="qualification" required class="rounded border w-full @error('full_name') border-red-700 @enderror" name="qualification">
+                            <option value="high school">High school</option>
+                            <option value="undergraduate">Undergraduate</option>
+                            <option value="graduate">Graduate</option>
+                        </select>
                         @error('qualification')
                         <small class="text-red-700 font-bold mt-1">
                             {{ $message }}

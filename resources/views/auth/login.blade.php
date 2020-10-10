@@ -43,6 +43,12 @@
                     {{ __('Login') }}
                 </x-jet-button>
             </div>
+
+            <div class="flex items-center justify-center mt-4">
+                <span class="text-gray-400">Doesn't have an account?</span>
+                <a href="/register" class="text-gray-900 border-b border-dotted border-black mx-2">Resgister</a>
+            </div>
+
         </form>
     </x-jet-authentication-card>
 </x-guest-layout>

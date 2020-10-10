@@ -1,6 +1,5 @@
 <div class="container mx-auto px-4">
-    <div class="flex flex-wrap mx-auto justify-center lg:divide-x lg:divide-gray-400 xl:divide-x xl:divide-gray-400">
-        {{--<x-jet-application-mark class="m-5 block h-12 w-full sm:w-full md:w-full lg:w2/12 xl:w-2/12" />--}}
+    <div class="flex flex-wrap mx-auto justify-center lg:divide-x lg:divide-gray-400 xl:divide-x xl:divide-gray-400"
 
         <div class="text-center w-full p-1 sm:w-full sm:p-1 md:w-6/12 md:p-1 lg:w-3/12 lg:p-5 xl:w-3/12 xl:p-5">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class="h-3 w-3 text-gray-500 inline">

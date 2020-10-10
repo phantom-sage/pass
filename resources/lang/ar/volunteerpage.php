@@ -11,5 +11,6 @@ return [
     'qualification' => 'المؤهل',
     'send' => 'إرسال',
     'male' => 'ذكر',
-    'female' => 'انثى'
+    'female' => 'انثى',
+    'other' => 'آخر'
 ];

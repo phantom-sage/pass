@@ -45,6 +45,11 @@
                             <div class="font-bold text-xl mb-2 text-white font-bold">{{ $project->name }}</div>
                             <p class="text-base text-white">{{ $project->description }}</p>
                         </div>
+                        <div class="flex flex-wrap">
+                            <a class="border border-white px-3 py-2 mb-2 mx-2 rounded text-white transition ease-in-out duration-500 hover:border-white hover:bg-white hover:text-blue-700 font-black" href="{{route('project.show',['locale'=>app()->getLocale(),'project'=>$project->id])}}">
+                                {{ __('projectpage.seemore') }}
+                            </a>
+                        </div>
                         <div class="@if(app()->getLocale() === 'ar') mr-2 @endif mt-2 ml-2 rounded-md bg-blue-400 text-xl font-semibold absolute top-0 p-2">
                             <span>{{ $project->id }}</span>
                         </div>
@@ -99,13 +104,13 @@
     <div class="container mx-auto"><hr class="my-3"></div>
     <section @if(app()->getLocale() === 'ar') style="direction: rtl;" @endif class="@if(app()->getLocale() === 'ar') cairo-font @endif py-5">
         <div class="container mx-auto">
-            <div class="flex flex-wrap justify-between">
-                <button class="px-5 ml-2 bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
+            <div class="flex flex-wrap justify-center">
+                <button class="px-5 mx-3 bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
                     <a href="{{ route('volunteers',app()->getLocale()) }}">
                         {{ __('welcomepage.becomeavolunteer') }}
                     </a>
                 </button>
-                <button class="px-5 mr-2 bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
+                <button class="px-5 mx-3 bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
                     <a href="{{ route('partners',app()->getLocale()) }}">
                         {{ __('welcomepage.beapartner') }}
                     </a>

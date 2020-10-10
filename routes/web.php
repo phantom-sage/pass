@@ -33,8 +33,8 @@ Route::post('/re', function (Request $request) {
     return $request->all();
 })->name('re');
 
-Route::get('set-locale/{locale}', function($locale) {
-    app()->setLocale($locale);
+Route::post('set-locale', function(Request $request) {
+    app()->setLocale($request->input('locale'));
     return redirect(app()->getLocale());
 })->name('set-locale');
 

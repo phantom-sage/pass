@@ -5,7 +5,7 @@ return [
     'stories' => 'Stories',
     'news' => 'News',
     'reports' => 'Reports',
-    'about' => 'About',
+    'contactus' => 'Contact us',
     'more' => 'More',
     'morelinks' => 'More Links',
     'partenership' => 'Partenership',
