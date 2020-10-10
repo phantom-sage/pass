@@ -77,7 +77,7 @@
                         @endif
                     </p>
                     @if(app()->getLocale() === 'ar') <div class="clearfix"></div> @endif
-                    @if($project->video)
+                    <!-- @if($project->video)
                     @php  $download = (json_decode($project->video))[0]->download_link; @endphp
 
                         <hr class="my-3 bg-gray-400">
@@ -87,7 +87,7 @@
                             </div>
                         </div>
 
-                    @endif
+                    @endif -->
                 </div>
             </div>
         </div>

@@ -86,7 +86,7 @@
                                 <video class="rounded w-full h-auto block mx-auto my-3" src="{{ Voyager::image($download) }}" type="video/mp4" controls></video>
                             </div>
                         </div>
-                      
+
                 @endif
                 </div>
             </div>
