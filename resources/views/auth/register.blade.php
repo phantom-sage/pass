@@ -1,7 +1,19 @@
 <x-guest-layout>
     <x-jet-authentication-card>
         <x-slot name="logo">
-            <img src="{{ asset('img/pass_logo.jpg') }}" class="block h-20 w-auto" alt="pass logo" />
+{{--            <img src="{{ asset('img/pass_logo.jpg') }}" class="block h-20 w-auto" alt="pass logo" />--}}
+            <div class="flex flex-wrap">
+                <div class="w-3/12">
+                    <img src="{{ asset('img/pass_logo.svg') }}" class="inline w-auto h-20" alt="pass logo" />
+                </div>
+                <div class="w-9/12">
+                    <p class="text-custom-blue font-semibold">
+                        <span class="uppercase text-4xl font-black">pass</span><span class="uppercase">sudan</span><br>
+                        <span class="uppercase">paralegals association</span><br>
+                        <span class="text-custom-red">For equal access to justice and development</span>
+                    </p>
+                </div>
+            </div>
         </x-slot>
 
         <x-jet-validation-errors class="mb-4" />

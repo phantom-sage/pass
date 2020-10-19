@@ -5,3 +5,9 @@
 .cairo-font {
     font-family: 'Cairo', sans-serif !important;
 }
+
+.bg-custom-blue { background-color: #1b9aca; }
+.bg-custom-red { background-color: #ff0004; }
+
+.text-custom-blue { color: #1b9aca; }
+.text-custom-red { color: #ff0004; }

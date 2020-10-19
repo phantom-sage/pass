@@ -28,8 +28,17 @@
         <section class="shadow-md">
             <div class="container mx-auto mb-5">
                 <div class="flex flex-wrap">
-                    <div class="w-full sm:w-6/12"><img src="{{ asset('img/pass_logo.jpg') }}" class="block w-auto h-64" alt="pass logo" /></div>
-                    <div class="w-full sm:w-6/12 hidden md:block lg:block xl:block"><img src="{{ asset('img/header_bg.png') }}" class="block w-auto h-64" alt="header background" /></div>
+                    <div class="w-full sm:w-3/12">
+                        <img src="{{ asset('img/pass_logo.svg') }}" class="inline w-auto h-64" alt="pass logo" />
+                    </div>
+                    <div class="w-full sm:w-6/12">
+                        <p class="text-custom-blue font-semibold" style="margin-top: 81px; margin-left: -66px;">
+                            <span class="uppercase text-4xl font-black">pass</span><span class="uppercase">sudan</span><br>
+                            <span class="uppercase">paralegals association</span><br>
+                            <span class="text-custom-red">For equal access to justice and development</span>
+                        </p>
+                    </div>
+                    <div class="w-full sm:w-3/12 hidden md:block lg:block xl:block"><img src="{{ asset('img/header_bg.png') }}" class="block w-auto h-64" alt="header background" /></div>
                 </div>
             </div>
         </section>
