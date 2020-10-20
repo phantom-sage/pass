@@ -6,6 +6,12 @@
     font-family: 'Cairo', sans-serif !important;
 }
 
+@media(min-width: 640px) {
+    .mt-7 {
+        margin-top: 7.25rem !important;
+    }
+}
+
 .bg-custom-blue { background-color: #1b9aca; }
 .bg-custom-red { background-color: #ff0004; }
 

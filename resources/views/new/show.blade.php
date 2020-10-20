@@ -12,6 +12,39 @@
         </div>
     </header>
 @endsection
+@section('upper-header')
+    <!-- logo -->
+    <section class="shadow-md pb-3 relative">
+        <section>
+            <div class="container mx-auto mb-5">
+                <div class="flex flex-wrap">
+                    <div class="w-full sm:w-2/12">
+                        <img src="{{ asset('img/pass_logo.svg') }}" class="block mx-auto sm:inline md:inline lg:inline xl:inline w-auto h-64" alt="pass logo" />
+                    </div>
+                    <div class="w-full sm:w-4/12">
+                        <p class="mt-7 text-custom-blue font-semibold text-center sm:mt-5 sm:text-left md:text-left md:mt-5 @if(app()->getLocale() === 'ar') md:text-right @endif lg:text-left @if(app()->getLocale() === 'ar') lg:text-right @endif lg:mt-5 xl:text-left @if(app()->getLocale() === 'ar') xl:text-right @endif">
+                            <span class="uppercase text-4xl font-black">pass</span><span class="uppercase">sudan</span><br>
+                            <span class="uppercase">paralegals association</span><br>
+                            <span class="text-custom-red">For equal access to justice and development</span>
+                        </p>
+                    </div>
+                    <div style="background-image: url('{{ asset('img/header_bg.png') }}'); background-size: cover; background-position: center center;" class="w-full sm:w-6/12 hidden md:block lg:block xl:block">
+{{--                        <img src="{{ asset('img/header_bg.png') }}" class="block w-auto h-64" alt="header background" />style="margin-top: 81px; margin-left: -66px;"--}}
+                        <div class="text-center" style="margin-top: 5.75rem;">
+                            <form id="localeForm" action="{{ route('set-locale') }}" method="POST" enctype="multipart/form-data">
+                                @csrf
+                                <select class="border rounded-full @if(app()->getLocale() === 'en') p-1 @endif text-blue-600 shadow-sm" onchange="document.querySelector('#localeForm').submit();" name="locale">
+                                    <option value="ar" @if(app()->getLocale() === 'ar') selected @endif>{{ __('navbarlayout.ar') }}</option>
+                                    <option value="en" @if(app()->getLocale() === 'en') selected @endif>{{ __('navbarlayout.en') }}</option>
+                                </select>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+@endsection
 @section('content')
     <div class="container mx-auto">
         <div class="flex flex-wrap">
@@ -86,8 +119,8 @@
                                 <video class="rounded w-full h-auto block mx-auto my-3" src="{{ Voyager::image($download) }}" type="video/mp4" controls></video>
                             </div>
                         </div>
-                      
-                @endif
+
+                    @endif
                 </div>
             </div>
         </div>
