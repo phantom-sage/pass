@@ -47,14 +47,14 @@
                             <x-jet-nav-link href="{{ route('files',app()->getLocale()) }}" :active="request()->routeIs('files',app()->getLocale())">
                                 {{ __('navbarlayout.reports') }}
                             </x-jet-nav-link>
-                            <x-jet-nav-link href="{{ route('contacts',app()->getLocale()) }}" :active="request()->routeIs('contacts',app()->getLocale())">
-                                {{ __('navbarlayout.contactus') }}
-                            </x-jet-nav-link>
                             <x-jet-nav-link href="{{ route('volunteers',app()->getLocale()) }}" :active="request()->routeIs('volunteers',app()->getLocale())">
                                 {{ __('navbarlayout.volunteer') }}
                             </x-jet-nav-link>
                             <x-jet-nav-link href="{{ route('partners',app()->getLocale()) }}" :active="request()->routeIs('partners',app()->getLocale())">
                                 {{ __('navbarlayout.partenership') }}
+                            </x-jet-nav-link>
+                            <x-jet-nav-link href="{{ route('contacts',app()->getLocale()) }}" :active="request()->routeIs('contacts',app()->getLocale())">
+                                {{ __('navbarlayout.contactus') }}
                             </x-jet-nav-link>
                         </div>
                     </div>

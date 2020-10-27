@@ -1,55 +1,8 @@
-@extends('layouts.welcome')
-@section('page_header')
-    <header class="bg-white shadow">
-        <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-            <h2 @if(app()->getLocale() === 'ar') style="direction: rtl;" @endif class="font-black text-xl text-gray-800 leading-tight @if(app()->getLocale() === 'ar') cairo-font float-right @endif">
-                {{ __('newspage.header') }}
-            </h2>
-            @if(app()->getLocale() === 'ar') <div class="clearfix"></div> @endif
-        </div>
-    </header>
-@endsection
-@section('upper-header')
-    <!-- logo -->
-    <section class="shadow-md pb-3 relative">
-        <section>
-            <div class="container mx-auto mb-5">
-                <div class="flex flex-wrap">
-                    <div class="w-full sm:w-2/12">
-                        <img src="{{ asset('img/pass_logo.svg') }}" class="block mx-auto sm:inline md:inline lg:inline xl:inline w-auto h-64" alt="pass logo" />
-                    </div>
-                    <div class="w-full sm:w-4/12">
-                        <p class="mt-7 text-custom-blue font-semibold text-center sm:mt-5 sm:text-left md:text-left md:mt-5 @if(app()->getLocale() === 'ar') md:text-right @endif lg:text-left @if(app()->getLocale() === 'ar') lg:text-right @endif lg:mt-5 xl:text-left @if(app()->getLocale() === 'ar') xl:text-right @endif">
-                            <span class="uppercase text-4xl font-black">pass</span><span class="uppercase">sudan</span><br>
-                            <span class="uppercase">paralegals association</span><br>
-                            <span class="text-custom-red">For equal access to justice and development</span>
-                        </p>
-                    </div>
-                    <div style="background-image: url('{{ asset('img/header_bg.png') }}'); background-size: cover; background-position: center center;" class="w-full sm:w-6/12 hidden md:block lg:block xl:block">
-{{--                        <img src="{{ asset('img/header_bg.png') }}" class="block w-auto h-64" alt="header background" />style="margin-top: 81px; margin-left: -66px;"--}}
-                        <div class="text-center" style="margin-top: 5.75rem;">
-                            <form id="localeForm" action="{{ route('set-locale') }}" method="POST" enctype="multipart/form-data">
-                                @csrf
-                                <select class="border rounded-full @if(app()->getLocale() === 'en') p-1 @endif text-blue-600 shadow-sm" onchange="document.querySelector('#localeForm').submit();" name="locale">
-                                    <option value="ar" @if(app()->getLocale() === 'ar') selected @endif>{{ __('navbarlayout.ar') }}</option>
-                                    <option value="en" @if(app()->getLocale() === 'en') selected @endif>{{ __('navbarlayout.en') }}</option>
-                                </select>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </section>
-@endsection
-@section('content')
-    <!-- search -->
-    <section>
-        <div class="container mx-auto py-5 my-4">
-            <livewire:search-news />
-        </div>
-    </section>
-    {{-- <div class="container mx-auto">
+<div>
+    <input class="w-8/12 p-1 border rounded font-black block mx-auto mb-3" wire:model="newName" type="search"
+    placeholder="@if(app()->getLocale() === 'en') Type here... @elseif(app()->getLocale() === 'ar') اكتب هنا... @endif">
+    <hr>
+    <div class="container mx-auto">
         @if(count($news) > 0)
             <div class="flex flex-wrap">
                 @foreach($news as $new)
@@ -108,12 +61,24 @@
             </div>
         @else
             <div class="my-5 shadow-lg bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
-                <strong class="font-bold">No Projects!</strong>
-                <span class="block sm:inline">Coming soon.</span>
+                <strong class="font-bold">
+                    @if (app()->getLocale() === 'en')
+                    No News!
+                    @elseif(app()->getLocale() === 'ar')
+                    لا اخبار !
+                    @endif
+                </strong>
+                <span class="block sm:inline">
+                    @if(app()->getLocale() === 'en')
+                    Coming soon.
+                    @elseif(app()->getLocale() === 'ar')
+                    قادمة قريباّ
+                    @endif
+                </span>
                 <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
-                {{--<svg class="fill-current h-6 w-6 text-red-500" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><title>Close</title><path d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z"/></svg>
+                {{--<svg class="fill-current h-6 w-6 text-red-500" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><title>Close</title><path d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z"/></svg>--}}
               </span>
             </div>
         @endif
-    </div> --}}
-@endsection
+    </div>
+</div>
