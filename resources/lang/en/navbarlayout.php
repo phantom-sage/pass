@@ -2,7 +2,7 @@
 return [
     'home' => "Home",
     'projects' => 'Projects',
-    'stories' => 'Stories',
+    'stories' => 'Success Stories',
     'news' => 'News',
     'reports' => 'Reports',
     'contactus' => 'Contact us',
