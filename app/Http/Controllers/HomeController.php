@@ -15,7 +15,7 @@ class HomeController extends Controller
     public function index(Request $request)
     {
 
-
+    
 
       $locale = app()->getLocale();
 
