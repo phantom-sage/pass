@@ -143,7 +143,7 @@
                         <p class="font-bold text-sm uppercase">{{ __('welcomepage.news') }}</p>
                         <p class="text-3xl font-bold">{{ $first_hot_news->name }}</p>
                         <p class="text-2xl mb-10 leading-none">{{ $first_hot_news->description }}</p>
-                        <a href="{{ route('news',app()->getLocale()) }}" class="@if(app()->getLocale() === 'ar') cairo-font @endif bg-purple-800 py-4 px-8 text-white font-bold uppercase text-xs rounded hover:bg-gray-200 hover:text-gray-800">
+                        <a href="{{route('news.show',['locale'=>app()->getLocale(),'news'=>$first_hot_news->id])}}" class="@if(app()->getLocale() === 'ar') cairo-font @endif bg-purple-800 py-4 px-8 text-white font-bold uppercase text-xs rounded hover:bg-gray-200 hover:text-gray-800">
                             {{ __('welcomepage.readmore') }}
                         </a>
                     </div>
@@ -157,7 +157,7 @@
                     <p class="font-bold text-sm uppercase">{{ __('welcomepage.news') }}</p>
                     <p class="text-3xl font-bold">{{ $second_hot_news->name }}</p>
                     <p class="text-2xl mb-10 leading-none">{{ $second_hot_news->description }}</p>
-                    <a href="{{ route('news',app()->getLocale()) }}" class="@if(app()->getLocale() === 'ar') cairo-font @endif bg-purple-800 py-4 px-8 text-white font-bold uppercase text-xs rounded hover:bg-gray-200 hover:text-gray-800">
+                    <a href="{{route('news.show',['locale'=>app()->getLocale(),'news'=>$second_hot_news->id])}}" class="@if(app()->getLocale() === 'ar') cairo-font @endif bg-purple-800 py-4 px-8 text-white font-bold uppercase text-xs rounded hover:bg-gray-200 hover:text-gray-800">
                         {{ __('welcomepage.readmore') }}
                     </a>
                 </div> <!-- container -->

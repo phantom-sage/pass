@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Vistor;
-use DB;
+use Illuminate\Support\Facades\DB;
 class HomeController extends Controller
 {
     /**
@@ -21,31 +21,28 @@ class HomeController extends Controller
 
       $projects = DB::table('projects')
           ->select('id', 'name_'.$locale.' as name', 'description_'.$locale.' as description','video','image')
+          ->latest('created_at')
           ->limit(3)
           ->get();
 
       $first_hot_news = DB::table('news')
           ->select('id', 'name_'.$locale.' as name', 'description_'.$locale.' as description','video','image')
-          ->where('id', '=', 1)
-          ->limit(1)
+          ->latest('created_at')
           ->first();
 
       $second_hot_news = DB::table('news')
           ->select('id', 'name_'.$locale.' as name', 'description_'.$locale.' as description','video','image')
-          ->where('id', '=', 1)
-          ->limit(1)
+          ->latest('created_at')
           ->first();
 
       $hot_story = DB::table('stories')
           ->select('id', 'story_'.$locale.' as name', 'description_'.$locale.' as description','video','image')
-          ->where('id', '=', 1)
-          ->limit(1)
+          ->latest('created_at')
           ->first();
 
       $hot_project = DB::table('projects')
           ->select('id', 'name_'.$locale.' as name', 'description_'.$locale.' as description','video','image')
-          ->where('id', '=', 1)
-          ->limit(1)
+          ->latest('created_at')
           ->first();
 
       return view('welcome', [
