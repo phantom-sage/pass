@@ -23,12 +23,12 @@ class StoryFactory extends Factory
     public function definition()
     {
       return [
-        
+
         "story_en"        =>$this->faker->word,
         "story_ar"        =>'القصة بالعربي',
         "description_en" =>$this->faker->paragraph(1),
-        "description_ar" =>'وصف القصة بالعربي',
-          'video' => 'C:\Users\phantomsage\Downloads\Video\The amazing world of Gumball\S05\The Amazing World of Gumball S05E01.mp4'
+        "description_ar" =>'وصف القصة بالعربي'
+          // 'video' => asset('storage/stories/September2020/BKnauKnkA7H8XLSoKlZY.mp4')
       ];
     }
 }

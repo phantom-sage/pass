@@ -26,8 +26,8 @@ class ProjectFactory extends Factory
           "name_en"        =>$this->faker->word,
           "name_ar"        =>'اسم المشروع بالعربي',
           "description_en" =>$this->faker->paragraph(1),
-          "description_ar" =>'محتوى المشروع بالعربي',
-          'video' => 'C:\Users\phantomsage\Downloads\Video\The amazing world of Gumball\S05\The Amazing World of Gumball S05E01.mp4'
+          "description_ar" =>'محتوى المشروع بالعربي'
+          // 'video' => asset('storage/projects/September2020/BKnauKnkA7H8XLSoKlZY.mp4')
        ];
     }
 }

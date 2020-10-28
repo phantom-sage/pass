@@ -120,11 +120,8 @@
                             </div>
                         </div>
 
-<<<<<<< HEAD
+
                 @endif
-=======
-                    @endif
->>>>>>> 91a084dd89c14b2bda054d3229daa72e3eb11c38
                 </div>
             </div>
         </div>
