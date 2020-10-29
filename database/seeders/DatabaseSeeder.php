@@ -31,7 +31,7 @@ class DatabaseSeeder extends Seeder
         Story::factory(constant('NUMBER_OF_MODELS_CREATED'))->create();
         News::factory(constant('NUMBER_OF_MODELS_CREATED'))->create();
         Partner::factory(constant('NUMBER_OF_MODELS_CREATED'))->create();
-        File::factory(constant('NUMBER_OF_MODELS_CREATED'))->create();
+        // File::factory(constant('NUMBER_OF_MODELS_CREATED'))->create();
         Contact::factory(constant('NUMBER_OF_MODELS_CREATED'))->create();
         Volunteer::factory(constant('NUMBER_OF_MODELS_CREATED'))->create();
     }
