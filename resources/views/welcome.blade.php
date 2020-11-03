@@ -6,15 +6,8 @@
         <section>
             <div class="container mx-auto mb-5">
                 <div class="flex flex-wrap">
-                    <div class="w-full sm:w-2/12">
+                    <div class="w-full sm:w-8/12 mx-auto">
                         <img src="{{ asset('img/pass_logo.svg') }}" class="block mx-auto sm:inline md:inline lg:inline xl:inline w-auto h-64" alt="pass logo" />
-                    </div>
-                    <div class="w-full sm:w-6/12">
-                        <p class="text-custom-blue font-semibold mt-7 text-center @if(app()->getLocale() === 'en')sm:text-left md:text-left lg:text-left xl:text-left @elseif(app()->getLocale() === 'ar') sm:text-right md:text-right lg:text-right xl:text-right @endif">
-                            <span class="uppercase text-4xl font-black">pass</span><span class="uppercase">sudan</span><br>
-                            <span class="uppercase">paralegals association</span><br>
-                            <span class="text-custom-red">For equal access to justice and development</span>
-                        </p>
                     </div>
                     <div class="w-full sm:w-4/12 hidden md:block lg:block xl:block"><img src="{{ asset('img/header_bg.png') }}" class="block w-auto h-64" alt="header background" /></div>
                 </div>
