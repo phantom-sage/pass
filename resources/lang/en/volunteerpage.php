@@ -12,5 +12,6 @@ return [
     'send' => 'Send',
     'male' => 'Male',
     'female' => 'Female',
-    'other' => 'Other'
+    'other' => 'Other',
+    'endat' => 'End at:',
 ];

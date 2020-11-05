@@ -37,10 +37,13 @@ class CommentController extends Controller
             $comment->body = $request->input('body');
 
             $project->comments()->save($comment);
+
+            $commentSavedMessage = app()->getLocale() === 'ar' ? 'تم حفظ الكومنت بنجاح' : 'comment saved successfully.';
+
             return redirect()->route('project.show', [
                 'locale' => $locale,
                 'project' => $project->id
-            ])->with('commentSaveStatus', 'comment saved successfully.');
+            ])->with('commentSaveStatus', $commentSavedMessage);
     }
 
     /**

@@ -6,10 +6,22 @@
         <section>
             <div class="container mx-auto mb-5">
                 <div class="flex flex-wrap">
-                    <div class="w-full sm:w-8/12 mx-auto">
+                    <div class="w-full sm:w-6/12 mx-auto">
                         <img src="{{ asset('img/pass_logo.svg') }}" class="block mx-auto sm:inline md:inline lg:inline xl:inline w-auto h-64" alt="pass logo" />
                     </div>
-                    <div class="w-full sm:w-4/12 hidden md:block lg:block xl:block"><img src="{{ asset('img/header_bg.png') }}" class="block w-auto h-64" alt="header background" /></div>
+                    <div class="w-full sm:w-6/12 hidden md:block lg:block xl:block relative md:mt-0">
+                        <div class="flex flex-wrap justify-center items-center my-auto h-full">
+                            <div class="w-3/12 md:w-4/12 hidden md:block lg:block xl:block">
+                                <form id="localeForm" action="{{ route('set-locale') }}" method="POST" enctype="multipart/form-data">
+                                    @csrf
+                                    <select class="border rounded-full @if(app()->getLocale() === 'en') p-1 @endif text-blue-600 shadow-sm" onchange="document.querySelector('#localeForm').submit();" name="locale">
+                                        <option value="ar" @if(app()->getLocale() === 'ar') selected @endif>{{ __('navbarlayout.ar') }}</option>
+                                        <option value="en" @if(app()->getLocale() === 'en') selected @endif>{{ __('navbarlayout.en') }}</option>
+                                    </select>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -43,19 +55,23 @@
                                         <path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/>
                                     </svg>
                                 </div>
-                                <div class="w-3/12 md:w-4/12">
-                                    <a class="text-blue-600 font-semibold text-xl" href="/login">
+                                <div class="w-3/12 md:w-4/12" style="z-index: 9999;">
+                                    @guest
+                                    <a class="text-blue-600 font-semibold text-xl" href="{{ url('/login') }}">
                                         {{ __('navbarlayout.login') }}
                                     </a>
-                                </div>
-                                <div class="absolute top-2 @if(app()->getLocale() === 'en')right-3 @elseif(app()->getLocale() === 'ar')left-1 @endif w-3/12 md:w-4/12 hidden md:block lg:block xl:block">
-                                    <form style="margin-left: 12.25rem; margin-top: 10.25rem;" id="localeForm" action="{{ route('set-locale') }}" method="POST" enctype="multipart/form-data">
+                                    @endguest
+                                    @auth
+                                    <form method="POST" action="{{ route('logout') }}">
                                         @csrf
-                                        <select class="border rounded-full @if(app()->getLocale() === 'en') p-1 @endif text-blue-600 shadow-sm" onchange="document.querySelector('#localeForm').submit();" name="locale">
-                                            <option value="ar" @if(app()->getLocale() === 'ar') selected @endif>{{ __('navbarlayout.ar') }}</option>
-                                            <option value="en" @if(app()->getLocale() === 'en') selected @endif>{{ __('navbarlayout.en') }}</option>
-                                        </select>
+
+                                        <a href="{{ route('logout') }}" class="text-blue-600 font-semibold text-xl"
+                                                             onclick="event.preventDefault();
+                                                                    this.closest('form').submit();">
+                                            {{ __('Logout') }}
+                                        </a>
                                     </form>
+                                    @endauth
                                 </div>
                             </div>
                         </div>
@@ -74,9 +90,9 @@
                 <div class="bg-cover bg-center  h-auto text-white py-24 px-10 object-fill" style="background-image: url(https://images.unsplash.com/photo-1544427920-c49ccfb85579?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1422&q=80)">
                     <div class="md:w-1/2">
                         <p class="font-bold text-sm uppercase">{{ __('welcomepage.hotstory') }}</p>
-                        <p class="text-3xl font-bold">{{ $hot_story->name }}</p>
-                        <p class="text-2xl mb-10 leading-none">{{ $hot_story->description }}</p>
-                        <a href="{{route('story.show',['locale'=>app()->getLocale(),'story'=>$hot_story->id])}}" class="bg-purple-800 py-4 px-8 text-white font-bold uppercase text-xs rounded hover:bg-gray-200 hover:text-gray-800">
+                        <p class="text-3xl font-bold">Story name{{-- $hot_story->name --}}</p>
+                        <p class="text-2xl mb-10 leading-none">Story description{{-- $hot_story->description --}}</p>
+                        <a href="#{{--route('story.show',['locale'=>app()->getLocale(),'story'=>$hot_story->id])--}}" class="bg-purple-800 py-4 px-8 text-white font-bold uppercase text-xs rounded hover:bg-gray-200 hover:text-gray-800">
                             {{ __('welcomepage.readmore') }}
                         </a>
                     </div>
@@ -88,9 +104,9 @@
                 <div class="bg-cover bg-top  h-auto text-white py-24 px-10 object-fill" style="background-image: url(https://images.unsplash.com/photo-1544144433-d50aff500b91?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80)">
 
                     <p class="font-bold text-sm uppercase">{{ __('welcomepage.hotproject') }}</p>
-                    <p class="text-3xl font-bold">{{ $hot_project->name }}</p>
-                    <p class="text-2xl mb-10 leading-none">{{ $hot_project->description }}</p>
-                    <a href="{{route('project.show',['locale'=>app()->getLocale(),'project'=>$hot_project->id])}}" class="bg-purple-800 py-4 px-8 text-white font-bold uppercase text-xs rounded hover:bg-gray-200 hover:text-gray-800">
+                    <p class="text-3xl font-bold">Project name{{-- $hot_project->name --}}</p>
+                    <p class="text-2xl mb-10 leading-none">Project description{{-- $hot_project->description --}}</p>
+                    <a href="#{{--route('project.show',['locale'=>app()->getLocale(),'project'=>$hot_project->id])--}}" class="bg-purple-800 py-4 px-8 text-white font-bold uppercase text-xs rounded hover:bg-gray-200 hover:text-gray-800">
                         {{ __('welcomepage.readmore') }}
                     </a>
                 </div> <!-- container -->
@@ -108,8 +124,8 @@
                     <div class="w-full mx-3 m-3 rounded overflow-hidden shadow-lg relative hover:shadow-2xl transition ease-in-out duration-500 sm:w-full md:w-6/12 lg:w-4/12 xl:w-3/12">
                         <img class="w-full" src="https://images.unsplash.com/photo-1544427920-c49ccfb85579?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1422&q=80" alt="Sunset in the mountains">
                         <div class="px-6 py-4">
-                            <div class="font-bold text-xl mb-2 text-white font-bold">{{ $project->name }}</div>
-                            <p class="text-base text-white">{{ $project->description }}</p>
+                            <div class="font-bold text-xl mb-2 text-white font-bold">Project name{{-- $project->name --}}</div>
+                            <p class="text-base text-white">Project description{{-- $project->description --}}</p>
                         </div>
                         <div class="flex flex-wrap">
                             <a class="border border-white px-3 py-2 mb-2 mx-2 rounded text-white transition ease-in-out duration-500 hover:border-white hover:bg-white hover:text-blue-700 font-black" href="{{route('project.show',['locale'=>app()->getLocale(),'project'=>$project->id])}}">
@@ -117,7 +133,7 @@
                             </a>
                         </div>
                         <div class="@if(app()->getLocale() === 'ar') mr-2 @endif mt-2 ml-2 rounded-md bg-blue-400 text-xl font-semibold absolute top-0 p-2">
-                            <span>{{ $project->id }}</span>
+                            <span>1{{-- $project->id --}}</span>
                         </div>
                     </div>
                 @endforeach
@@ -134,9 +150,9 @@
                 <div class="bg-cover bg-center  h-auto text-white py-24 px-10 object-fill" style="background-image: url(https://images.unsplash.com/photo-1544427920-c49ccfb85579?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1422&q=80)">
                     <div class="md:w-1/2">
                         <p class="font-bold text-sm uppercase">{{ __('welcomepage.news') }}</p>
-                        <p class="text-3xl font-bold">{{ $first_hot_news->name }}</p>
-                        <p class="text-2xl mb-10 leading-none">{{ $first_hot_news->description }}</p>
-                        <a href="{{route('news.show',['locale'=>app()->getLocale(),'news'=>$first_hot_news->id])}}" class="@if(app()->getLocale() === 'ar') cairo-font @endif bg-purple-800 py-4 px-8 text-white font-bold uppercase text-xs rounded hover:bg-gray-200 hover:text-gray-800">
+                        <p class="text-3xl font-bold">New name{{-- $first_hot_news->name --}}</p>
+                        <p class="text-2xl mb-10 leading-none">new description {{-- $first_hot_news->description --}}</p>
+                        <a href="#{{--route('news.show',['locale'=>app()->getLocale(),'news'=>$first_hot_news->id])--}}" class="@if(app()->getLocale() === 'ar') cairo-font @endif bg-purple-800 py-4 px-8 text-white font-bold uppercase text-xs rounded hover:bg-gray-200 hover:text-gray-800">
                             {{ __('welcomepage.readmore') }}
                         </a>
                     </div>
@@ -148,9 +164,9 @@
                 <div class="bg-cover bg-top h-auto text-white py-24 px-10 object-fill" style="background-image: url(https://images.unsplash.com/photo-1544144433-d50aff500b91?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80)">
 
                     <p class="font-bold text-sm uppercase">{{ __('welcomepage.news') }}</p>
-                    <p class="text-3xl font-bold">{{ $second_hot_news->name }}</p>
-                    <p class="text-2xl mb-10 leading-none">{{ $second_hot_news->description }}</p>
-                    <a href="{{route('news.show',['locale'=>app()->getLocale(),'news'=>$second_hot_news->id])}}" class="@if(app()->getLocale() === 'ar') cairo-font @endif bg-purple-800 py-4 px-8 text-white font-bold uppercase text-xs rounded hover:bg-gray-200 hover:text-gray-800">
+                    <p class="text-3xl font-bold">New name{{-- $second_hot_news->name --}}</p>
+                    <p class="text-2xl mb-10 leading-none">New description{{-- $second_hot_news->description --}}</p>
+                    <a href="#{{--route('news.show',['locale'=>app()->getLocale(),'news'=>$second_hot_news->id])--}}" class="@if(app()->getLocale() === 'ar') cairo-font @endif bg-purple-800 py-4 px-8 text-white font-bold uppercase text-xs rounded hover:bg-gray-200 hover:text-gray-800">
                         {{ __('welcomepage.readmore') }}
                     </a>
                 </div> <!-- container -->
@@ -182,6 +198,84 @@
                     </a>
                 </button>
             </div>
+        </div>
+    </section>
+
+    <!-- forms and bottom links -->
+    <section style="background: #24739e;" class="py-4">
+        <div class="container mx-auto">
+
+                <!-- form -->
+                <form class="w-full">
+
+                    <div class="flex flex-wrap">
+                        <!-- first name -->
+                        <div class="w-9/12 md:w-6/12 mx-auto">
+                            <input type="text" style="background: #3578a3;" class="text-white @error('first_name') border-red-500 focus:outline-none focus:shadow-outline-red focus:border-red-500 @enderror text-white mt-1 form-input block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5" placeholder="{{ __('welcomepage.firstname') }}">
+                            <p class="mt-2 text-sm text-red-500">
+                                @error('first_name') <span class="error">{{ $message }}</span> @enderror
+                            </p>
+                        </div>
+                        <div class="w-full"></div>
+                        <hr style="height: 2px;" class="bg-white w-9/12 md:w-6/12 mx-auto mb-1">
+                        <div class="w-full"></div>
+
+                        <!-- last name -->
+                        <div class="w-9/12 md:w-6/12 mx-auto">
+                            <input type="text" style="background: #3578a3;" class="text-white @error('last_name') border-red-500 focus:outline-none focus:shadow-outline-red focus:border-red-500 @enderror text-white mt-1 form-input block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5" placeholder="{{ __('welcomepage.lastname') }}">
+                            <p class="mt-2 text-sm text-red-500">
+                                @error('last_name') <span class="error">{{ $message }}</span> @enderror
+                            </p>
+                        </div>
+                        <div class="w-full"></div>
+                        <hr style="height: 2px;" class="bg-white w-9/12 md:w-6/12 mx-auto mb-1">
+                        <div class="w-full"></div>
+
+                        <!-- Email -->
+                        <div class="w-9/12 md:w-6/12 mx-auto">
+                            <input type="email" style="background: #3578a3;" class="text-white @error('email') border-red-500 focus:outline-none focus:shadow-outline-red focus:border-red-500 @enderror text-white mt-1 form-input block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5" placeholder="{{ __('welcomepage.email') }}">
+                            <p class="mt-2 text-sm text-red-500">
+                                @error('email') <span class="error">{{ $message }}</span> @enderror
+                            </p>
+                        </div>
+                        <div class="w-full"></div>
+                        <hr style="height: 2px;" class="bg-white w-9/12 md:w-6/12 mx-auto mb-1">
+                        <div class="w-full"></div>
+
+                        <!-- Password -->
+                        <div class="w-9/12 md:w-6/12 mx-auto">
+                            <input type="password" style="background: #3578a3;" class="text-white @error('password') border-red-500 focus:outline-none focus:shadow-outline-red focus:border-red-500 @enderror text-white mt-1 form-input block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5" placeholder="{{ __('welcomepage.password') }}">
+                            <p class="mt-2 text-sm text-red-500">
+                                @error('password') <span class="error">{{ $message }}</span> @enderror
+                            </p>
+                        </div>
+                        <div class="w-full"></div>
+
+                        <!-- Submit button -->
+                        <div class="w-4/12 md:w-2/12 mx-auto">
+                            <button type="submit" style="background: #3578a3; color: #105888;" class="mt-1 form-input block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out font-black sm:text-xl sm:leading-5">{{ __('welcomepage.signin') }}</button>
+                        </div>
+
+                    </div>
+
+                </form>
+
+                <hr class="my-3 bg-gray-400 mx-auto w-10/12">
+
+                <div class="flex flex-wrap text-white text-center">
+
+                    <div class="w-full sm:w-6/12 md:w-3/12 my-2 sm:my-2 md:my-0"><a class="@if(request()->routeIs('home',app()->getLocale())) border-b @endif" href="{{ route('home', app()->getLocale()) }}">{{ __('navbarlayout.home') }}</a></div>
+                    <div class="w-full sm:w-6/12 md:w-3/12 my-2 sm:my-2 md:my-0"><a href="{{ route('files',app()->getLocale()) }}">{{ __('navbarlayout.reports') }}</a></div>
+                    <div class="w-full sm:w-6/12 md:w-3/12 my-2 sm:my-2 md:my-0"><a href="{{ route('story',app()->getLocale()) }}">{{ __('navbarlayout.stories') }}</a></div>
+                    <div class="w-full sm:w-6/12 md:w-3/12 my-2 sm:my-2 md:my-0"><a href="{{ route('contacts',app()->getLocale()) }}">{{ __('navbarlayout.contactus') }}</a></div>
+
+                    <div class="w-full sm:w-6/12 md:w-3/12 my-2 sm:my-2 md:my-0 md:mt-4"><a href="{{ route('projects',app()->getLocale()) }}">{{ __('navbarlayout.projects') }}</a></div>
+                    <div class="w-full sm:w-6/12 md:w-3/12 my-2 sm:my-2 md:my-0 md:mt-4"><a href="{{ route('contacts',app()->getLocale()) }}">{{ __('navbarlayout.contactus') }}</a></div>
+                    <div class="w-full sm:w-6/12 md:w-3/12 my-2 sm:my-2 md:my-0 md:mt-4"><a href="{{ route('partners',app()->getLocale()) }}">{{ __('navbarlayout.partenership') }}</a></div>
+                    <div class="w-full sm:w-6/12 md:w-3/12 my-2 sm:my-2 md:my-0 md:mt-4"><a href="{{ route('volunteers',app()->getLocale()) }}">{{ __('navbarlayout.volunteer') }}</a></div>
+
+                </div>
+
         </div>
     </section>
 @endsection

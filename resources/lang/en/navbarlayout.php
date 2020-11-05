@@ -9,7 +9,7 @@ return [
     'more' => 'More',
     'morelinks' => 'More Links',
     'partenership' => 'Partenership',
-    'volunteer' => 'Volunteer',
+    'volunteer' => 'Volunteer with us',
     'login' => 'Login',
     'register' => 'Register',
     'language' => 'Language',

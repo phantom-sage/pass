@@ -14,5 +14,11 @@ return [
     'news' => 'News',
     'hotstory' => 'Hot Story',
     'hotproject' => 'Hot Project',
-    'copyrights' => 'All Rights Reserved 2020'
+    'copyrights' => 'All Rights Reserved 2020',
+    // bottom register form
+    'firstname' => 'First name:',
+    'lastname' => 'Last name:',
+    'email' => 'Email Address:',
+    'password' => 'Password:',
+    'signin' => 'Sing in',
 ];

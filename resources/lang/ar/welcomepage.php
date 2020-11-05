@@ -14,5 +14,11 @@ return [
     'news' => 'آخبار',
     'hotstory' => 'قصة ساخنة',
     'hotproject' => 'مشروع ساخن',
-    'copyrights' => 'جميع الحقوق محفوظة 2020'
+    'copyrights' => 'جميع الحقوق محفوظة 2020',
+    // bottom register form
+    'firstname' => 'الاسم الاول:',
+    'lastname' => 'الاسم الاخير:',
+    'email' => 'عنوان الايميل:',
+    'password' => 'كلمة المرور:',
+    'signin' => 'تسجيل',
 ];

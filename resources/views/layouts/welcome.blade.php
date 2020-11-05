@@ -111,9 +111,9 @@
                 <div class="pt-4 pb-1 border-t border-gray-700">
                     <div class="mt-3 space-y-1">
                         @if(\Illuminate\Support\Facades\Auth::user())
-                            <x-jet-responsive-nav-link href="/dashboard">
+                            {{-- <x-jet-responsive-nav-link href="/dashboard">
                                 {{ __('Dashboard') }}
-                            </x-jet-responsive-nav-link>
+                            </x-jet-responsive-nav-link> --}}
                             <form method="POST" action="{{ route('logout') }}">
                                 @csrf
 

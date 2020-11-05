@@ -1,5 +1,5 @@
-<div>
-    <input class="w-8/12 p-1 border rounded font-black block mx-auto mb-3" wire:model="newName" type="search"
+<div :news="news">
+    <input class="w-8/12 p-1 border rounded font-black block mx-auto mb-3" wire:keydown="searchingNews" wire:model="newName" type="search"
     placeholder="@if(app()->getLocale() === 'en') Type here... @elseif(app()->getLocale() === 'ar') اكتب هنا... @endif">
     <hr>
     <div class="container mx-auto">
@@ -26,9 +26,21 @@
                                     @endif
                                 </p>
                                 @if(\App::getLocale() === 'ar') <div class="clearfix"></div> @endif
+                                <div class="px-6 pt-4 pb-2 mx-auto text-center mb-1">
+                                    <a class="@if(app()->getLocale() === 'ar') cairo-font @endif bg-blue-600 text-white px-4 py-2 border rounded shadow-sm" href="{{route('news.show',['locale'=>app()->getLocale(),'news'=>$new->id])}}">
+                                        {{ __('newspage.seemore') }}
+                                    </a>
+                                </div>
                             </div>
                             <hr class="my-1">
                             <div @if(app()->getLocale() === 'ar') style="direction: rtl;" @endif class="px-6 pt-4 pb-2 mx-auto text-center">
+                                <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
+                                    {{ count($new->views) }}
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 inline-block mb-1 ml-2">
+                                        <path d="M10 12C11.1046 12 12 11.1046 12 10C12 8.89543 11.1046 8 10 8C8.89544 8 8.00001 8.89543 8.00001 10C8.00001 11.1046 8.89544 12 10 12Z" fill="#4A5568"/>
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M0.457764 10C1.73202 5.94291 5.52232 3 9.99997 3C14.4776 3 18.2679 5.94288 19.5422 9.99996C18.2679 14.0571 14.4776 17 9.99995 17C5.52232 17 1.73204 14.0571 0.457764 10ZM14 10C14 12.2091 12.2091 14 10 14C7.79087 14 6.00001 12.2091 6.00001 10C6.00001 7.79086 7.79087 6 10 6C12.2091 6 14 7.79086 14 10Z" fill="#4A5568"/>
+                                    </svg>
+                                </span>
                                 <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
                                     {{ count($new->comments) }}
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-5 h-5 inline-block mb-1 ml-2">
@@ -48,12 +60,6 @@
                                         </svg>
                                     </a>
                                 </span>
-                            </div>
-                            <hr class="my-2">
-                            <div class="px-6 pt-4 pb-2 mx-auto text-center mb-2">
-                                <a class="@if(app()->getLocale() === 'ar') cairo-font @endif bg-blue-600 text-white px-4 py-2 border rounded shadow-sm" href="{{route('news.show',['locale'=>app()->getLocale(),'news'=>$new->id])}}">
-                                    {{ __('newspage.seemore') }}
-                                </a>
                             </div>
                         </div>
                     </div>
