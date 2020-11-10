@@ -15,6 +15,7 @@ use App\Models\Vistor;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\SendMessage;
 use App\Http\Requests\StoreMessage;
+use App\Mail\VolunteerReply;
 
 class VoyagerSiteController extends Controller
 {
@@ -62,7 +63,7 @@ class VoyagerSiteController extends Controller
                              'work_place','replay')
                              ->where('replay','=',null)
                              ->orderBy('replay')->get();
-                             ddd($volunteersRequests);
+
       return view('requests.volunteer-request',compact('volunteersRequests'));
     }
 
@@ -76,7 +77,33 @@ class VoyagerSiteController extends Controller
     {
       return view("emails.user");
     }
+    public function createVolunteer(VolunteerRequest $volunteerRequest)
+    {
+      return view("emails.volunteerReply",compact('volunteerRequest'));
+    }
 
+    public function replyVolunteer(StoreMessage $request,VolunteerRequest $volunteerRequest)
+    {
+      $validated = $request->only('message');
+      $message=Message::create($validated);
+        Mail::to($volunteerRequest->email)->send(new VolunteerReply($message));
+
+      return back()->with('message','the message has been sent successfly!');
+    }
+
+    public function createPartner(PartnerRequest $partnerRequest)
+    {
+      return view("emails.partnerReply",compact('partnerRequest'));
+    }
+
+    public function replypartner(StoreMessage $request,PartnerRequest $partnerRequest)
+    {
+      $validated = $request->only('message');
+      $message=Message::create($validated);
+        Mail::to($volunteerRequest->email)->send(new PartnerReply($message));
+
+      return back()->with('message','the message has been sent successfly!');
+    }
     public function sendUserEmail(StoreMessage $request)
     {
       $validated = $request->only('message','email');

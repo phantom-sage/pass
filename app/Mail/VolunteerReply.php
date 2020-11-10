@@ -16,11 +16,11 @@ class VolunteerReply extends Mailable
      *
      * @return void
      */
-     public $PartnerRequest;
+     public $subject;
 
-     public function __construct($PartnerRequest){
+     public function __construct($message){
 
-         $this->PartnerRequest = $PartnerRequest;
+         $this->subject = $message;
 
      }
 

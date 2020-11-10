@@ -16,11 +16,11 @@ class PartnerReply extends Mailable
      *
      * @return void
      */
-     public $user;
+     public $subject;
 
-     public function __construct($user){
+     public function __construct($message){
 
-         $this->user = $user;
+         $this->subject = $message;
 
      }
 
@@ -32,6 +32,7 @@ class PartnerReply extends Mailable
     public function build()
     {
       return $this->from('example@example.com')
-             ->view('emails.aprtner');
+                  ->subject('Pass-Sudan')
+             ->view('emails.partner');
     }
 }

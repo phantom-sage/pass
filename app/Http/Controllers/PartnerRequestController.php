@@ -39,6 +39,7 @@ class PartnerRequestController extends Controller
     public function store(StorePartnerRequest $request)
     {
         $validated = $request->validated();
+      
         $partner =  PartnerRequest::create($validated);
 
         // This is lines added by 'phantom-sage'

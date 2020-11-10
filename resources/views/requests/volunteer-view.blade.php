@@ -14,14 +14,14 @@
                 <div class="dimmer"></div>
                   <div class="panel-content">
                   <i class="voyager-smile"></i>
-                  <p> <strong>Volunteer Name</strong>{{ $volunteerRequest->full_name}}</p>
-                  <p> <strong>Work Place</strong>{{ $volunteerRequest->work_place}}</p>
-                  <p> <strong>age</strong>{{ $volunteerRequest->age}}</p>
-                  <p> <strong>E-Mail Address</strong>{{ $volunteerRequest->email}}</p>
-                  <p> <strong>Phone Number</strong>{{ $volunteerRequest->phone}}</p>
+                  <p> <strong>Volunteer Name </strong>{{ $volunteerRequest->full_name}}</p>
+                  <p> <strong>Work Place </strong>{{ $volunteerRequest->work_place}}</p>
+                  <p> <strong>age </strong>{{ $volunteerRequest->age}}</p>
+                  <p> <strong>E-Mail Address </strong>{{ $volunteerRequest->email}}</p>
+                  <p> <strong>Phone Number </strong>{{ $volunteerRequest->phone}}</p>
                   <!-- qualifications must be changed to an ordinary texxt -->
-                  <p> <strong>qualifications</strong>{!! $volunteerRequest->qualification!!}</p>
-                    <button type="button" name="reply"  class="btn  btn-success"><a href="{{route('voyager.createUserEmail')}}">Reply</a></button>
+                  <p> <strong>qualifications </strong>{!! $volunteerRequest->qualification!!}</p>
+                    <button type="button" name="reply"  class="btn  btn-success"><a href="{{route('voyager.replay',$volunteerRequest->id)}}">Reply</a></button>
                 </div>
            </div>
 

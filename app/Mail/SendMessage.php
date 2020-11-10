@@ -18,7 +18,7 @@ class SendMessage extends Mailable
      */
      public $subject;
 
-     public function __construct(  $message){
+     public function __construct($message){
 
          $this->subject = $message;
      }
@@ -33,8 +33,6 @@ class SendMessage extends Mailable
     {
 
       return $this->from('example@example.com')
-                 ->view('emails.send')->with([
-                        'msg' => $this->subject->message,
-                    ]); ;
+                 ->view('emails.send'); 
     }
 }
