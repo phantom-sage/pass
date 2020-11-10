@@ -6,7 +6,7 @@
   </head>
   <body>
 <p class="text-muted"> {{"Hello You Have a New Partner Request" }}</p>
-<button type="button" name="view"  class="btn  btn-warnning"><a class="" href="{{route('voyager.partnerRequestView',$subject)}}">view</a></button>
+<button type="button" name="view"  class="btn  btn-warnning"><a  href="{{route('voyager.partnerRequestView',$subject->id)}}">view</a></button>
 
   </body>
 </html>
