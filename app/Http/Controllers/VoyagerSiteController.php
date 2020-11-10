@@ -104,7 +104,6 @@ class VoyagerSiteController extends Controller
         Mail::to($volunteerRequest->email)->send(new PartnerReply($message));
         $partnerRequest->replay='replyed';
         $partnerRequest->save();
-        ddd($partnerRequest);
       return back()->with('message','the message has been sent successfly!');
     }
     public function sendUserEmail(StoreMessage $request)
