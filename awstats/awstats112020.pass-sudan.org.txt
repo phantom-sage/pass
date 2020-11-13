@@ -1,0 +1,450 @@
+AWSTATS DATA FILE 7.6 (build 20161204)
+# If you remove this file, all statistics for date 202011 will be lost/reset.
+# Last config file used to build this data file was /etc/awstats/awstats.pass-sudan.org.conf.
+
+# Position (offset in bytes) in this file for beginning of each section for
+# direct I/O access. If you made changes somewhere in this file, you should
+# also remove completely the MAP section (AWStats will rewrite it at next
+# update).
+BEGIN_MAP 30
+POS_GENERAL 2067                
+POS_TIME 2738                
+POS_VISITOR 7745                
+POS_DAY 10234               
+POS_DOMAIN 3504                
+POS_LOGIN 3795                
+POS_ROBOT 3950                
+POS_WORMS 4270                
+POS_EMAILSENDER 4401                
+POS_EMAILRECEIVER 4544                
+POS_SESSION 10557               
+POS_SIDER 10764               
+POS_FILETYPES 4679                
+POS_DOWNLOADS 4860                
+POS_OS 4908                
+POS_BROWSER 5054                
+POS_SCREENSIZE 5506                
+POS_UNKNOWNREFERER 5580                
+POS_UNKNOWNREFERERBROWSER 5667                
+POS_ORIGIN 5749                
+POS_SEREFERRALS 5885                
+POS_PAGEREFS 6048                
+POS_SEARCHWORDS 6196                
+POS_KEYWORDS 6348                
+POS_MISC 2401                
+POS_ERRORS 6407                
+POS_CLUSTER 3651                
+POS_SIDER_400 7436                
+POS_SIDER_404 6577                
+POS_SIDER_403 7354                
+END_MAP
+
+# LastLine    = Date of last record processed - Last record line number in last log - Last record offset in last log - Last record signature value
+# FirstTime   = Date of first visit for history file
+# LastTime    = Date of last visit for history file
+# LastUpdate  = Date of last update - Nb of parsed records - Nb of parsed old records - Nb of parsed new records - Nb of parsed corrupted - Nb of parsed dropped
+# TotalVisits = Number of visits
+# TotalUnique = Number of unique visitors
+# MonthHostsKnown   = Number of hosts known
+# MonthHostsUnKnown = Number of hosts unknown
+BEGIN_GENERAL 8
+LastLine 20201112090136 335 71826 11766533336788
+FirstTime 0
+LastTime 20201112090131
+LastUpdate 20201112110201 335 304 31 0 0
+TotalVisits 56                  
+TotalUnique 54                  
+MonthHostsKnown 11                  
+MonthHostsUnknown 43                  
+END_GENERAL
+
+# Misc ID - Pages - Hits - Bandwidth
+BEGIN_MISC 10
+JavascriptDisabled 0 0 0
+AddToFavourites 0 45 0
+DirectorSupport 0 0 0
+TotalMisc 0 0 0
+RealPlayerSupport 0 0 0
+JavaEnabled 0 0 0
+PDFSupport 0 0 0
+FlashSupport 0 0 0
+QuickTimeSupport 0 0 0
+WindowsMediaPlayerSupport 0 0 0
+END_MISC
+
+# Hour - Pages - Hits - Bandwidth - Not viewed Pages - Not viewed Hits - Not viewed Bandwidth
+BEGIN_TIME 24
+0 0 0 0 68 81 4985136
+1 2 2 18130 43 47 933847
+2 0 0 0 8 8 4341253
+3 0 0 0 19 30 1420789
+4 0 0 0 3 3 5380
+5 0 0 0 1 2 4280
+6 4 4 39203 24 28 2010326
+7 21 50 5880876 21 36 4497905
+8 105 117 5608671 33 38 5696882
+9 100 118 10726391 35 50 3483537
+10 20 20 163716 22 28 3839190
+11 19 27 3765590 23 26 1317852
+12 65 98 6912051 24 29 1452643
+13 112 135 4879948 51 56 1422675
+14 44 62 5470027 38 47 3440401
+15 11 19 940178 25 32 2562944
+16 0 0 0 2 3 603806
+17 11 11 102649 21 22 669457
+18 15 21 745636 83 93 1202458
+19 3 3 35868 31 42 2903239
+20 36 51 4489140 23 34 4618276
+21 4 8 674997 11 19 747905
+22 1 1 6647 6 6 21043
+23 1 1 6700 7 7 637840
+END_TIME
+
+# Domain - Pages - Hits - Bandwidth
+# The 10 first Pages must be first (order not required for others)
+BEGIN_DOMAIN 5
+ip 540 699 47927286
+eu 17 24 1057060
+com 8 16 1457096
+ru 6 6 16649
+net 3 3 8327
+END_DOMAIN
+
+# Cluster ID - Pages - Hits - Bandwidth
+BEGIN_CLUSTER 0
+END_CLUSTER
+
+# Login - Pages - Hits - Bandwidth - Last visit
+# The 10 first Pages must be first (order not required for others)
+BEGIN_LOGIN 0
+END_LOGIN
+
+# Robot ID - Hits - Bandwidth - Last visit - Hits on robots.txt
+# The 10 first Hits must be first (order not required for others)
+BEGIN_ROBOT 5
+Googlebot/ 120 3893049 20201112065643 7
+dataprovider\.com 61 4129269 20201110182023 8
+bingbot/ 9 687431 20201108072213 4
+netcraft 1 32196 20201101140839 0
+favicon 1 10063 20201103074245 0
+END_ROBOT
+
+# Worm ID - Hits - Bandwidth - Last visit
+# The 5 first Hits must be first (order not required for others)
+BEGIN_WORMS 0
+END_WORMS
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first Hits must be first (order not required for others)
+BEGIN_EMAILSENDER 0
+END_EMAILSENDER
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first hits must be first (order not required for others)
+BEGIN_EMAILRECEIVER 0
+END_EMAILRECEIVER
+
+# Files type - Hits - Bandwidth - Bandwidth without compression - Bandwidth after compression
+BEGIN_FILETYPES 6
+svg 26 744838 0 0
+png 29 399875 0 0
+Unknown 574 30019964 0 0
+js 43 5623670 0 0
+css 24 8927206 0 0
+jpg 52 4750865 0 0
+END_FILETYPES
+
+# Downloads - Hits - Bandwidth
+BEGIN_DOWNLOADS 0
+END_DOWNLOADS
+
+# OS ID - Hits
+BEGIN_OS ID - Hits - Pages 6
+winlong 17 17
+win10 232 192
+win8 2 2
+winxp 6 6
+linux 343 276
+linuxandroid 148 81
+END_OS
+
+# Browser ID - Hits - Pages
+BEGIN_BROWSER 17
+chrome79.0.3945.136 9 2
+chrome80.0.3987.122 1 1
+chrome85.0.4183.81 89 56
+chrome68.0.3440.106 2 2
+chrome35.0.2117.157 6 6
+chrome85.0.4183.121 10 2
+chrome34.0.1847.116 4 4
+chrome73.0.3683.90 24 14
+chrome41.0.2272.89 1 1
+chrome81.0.4044.138 24 17
+firefox34.0 12 12
+firefox81.0 301 257
+chrome86.0.4240.111 192 166
+chrome85.0.4183.127 24 7
+chrome86.0.4240.183 15 8
+chrome45.0.2454.94 2 2
+firefox68.0 32 17
+END_BROWSER
+
+# Screen size - Hits
+BEGIN_SCREENSIZE 0
+END_SCREENSIZE
+
+# Unknown referer OS - Last visit date
+BEGIN_UNKNOWNREFERER 0
+END_UNKNOWNREFERER
+
+# Unknown referer Browser - Last visit date
+BEGIN_UNKNOWNREFERERBROWSER 0
+END_UNKNOWNREFERERBROWSER
+
+# Origin - Pages - Hits 
+BEGIN_ORIGIN 6
+From0 68 68
+From1 0 0
+From2 1 3
+From3 0 0
+From4 505 677
+From5 0 0
+END_ORIGIN
+
+# Search engine referers ID - Pages - Hits
+BEGIN_SEREFERRALS 1
+www_google_com 1 3
+END_SEREFERRALS
+
+# External page referers - Pages - Hits
+# The 10 first Pages must be first (order not required for others)
+BEGIN_PAGEREFS 0
+END_PAGEREFS
+
+# Search keyphrases - Number of search
+# The 10 first number of search must be first (order not required for others)
+BEGIN_SEARCHWORDS 0
+END_SEARCHWORDS
+
+# Search keywords - Number of search
+# The 10 first number of search must be first (order not required for others)
+BEGIN_KEYWORDS 0
+END_KEYWORDS
+
+# Errors - Hits - Bandwidth
+BEGIN_ERRORS 7
+421 3 10971
+206 2 34935
+302 373 826243
+404 55 454957
+500 81 42626105
+419 2 18928
+301 14 39158
+END_ERRORS
+
+# URL with 404 errors - Hits - Last URL referrer
+BEGIN_SIDER_404 15
+/admin//reports/vistors 1 https://pass-sudan.org/admin/partner-requests
+/storage/projects/November2020/5Vxvu8Hcp2uCzdoUvTkX.jpg 5 https://pass-sudan.org/admin/projects
+/wp-login.php 4 -
+/storage/video 1 https://pass-sudan.org/admin/projects/3
+/dashboard 1 https://pass-sudan.org/en
+/wp-admin 4 https://pass-sudan.org/wp-login.php
+/en/projects 1 -
+/administrator/index.php 5 http://pass-sudan.org/administrator/index.php
+/admin.php 4 -
+/storage/projects/November2020/NnyUntmQWxfaAFJ3Krne.mp4 7 https://pass-sudan.org/admin/media
+/ads.txt 8 -
+/sitemap.xml 8 -
+/storage/img/01.jpg 1 https://pass-sudan.org/admin/partners
+/administrator 4 -
+/admin/index.php 1 http://pass-sudan.org/admin/index.php
+END_SIDER_404
+
+# URL with 403 errors - Hits - Last URL referrer
+BEGIN_SIDER_403 0
+END_SIDER_403
+
+# URL with 400 errors - Hits - Last URL referrer
+BEGIN_SIDER_400 0
+END_SIDER_400
+
+# Host - Pages - Hits - Bandwidth - Last visit date - [Start date of last visit] - [Last page of last visit]
+# [Start date of last visit] and [Last page of last visit] are saved only if session is not finished
+# The 10 first Hits must be first (order not required for others)
+BEGIN_VISITOR 54
+41.95.17.213 149 171 9583744 20201103143332
+213.108.105.212 89 97 4288828 20201103103312
+23.106.56.11 79 84 6483315 20201103092219
+41.209.119.25 31 44 1475158 20201105203945
+51.ip-213-32-21.eu 17 24 1057060 20201102123324
+197.252.14.183 14 20 704694 20201102121523
+197.252.19.171 13 13 92195 20201102124651
+23.106.56.21 11 12 2915711 20201103090830
+197.209.153.106 11 19 938183 20201102171215
+213.108.110.57 10 10 58847 20201103110136
+spider-01.dataprovider.com 1 1 34224 20201110182001
+ec2-18-191-111-159.us-east-2.compute.amazonaws.com 1 5 655505 20201112090131 20201112090131 /en
+41.67.53.161 8 15 947218 20201104125428
+185.94.190.7 8 13 1023873 20201102134246
+41.67.53.165 2 4 174479 20201108130801
+216.12.174.124 1 1 8176 20201108105425
+pool-77-222-106-22.is74.ru 3 3 8325 20201110183609
+206.41.174.94 1 1 9955 20201109011830
+159.65.24.22 4 4 39203 20201106065536
+155.244.82.185.rightside.ru 3 3 8324 20201110183036
+154.103.239.6 5 13 1024247 20201103120927
+188-163-12-78.broadband.kyivstar.net 3 3 8327 20201110174641
+198.16.74.205 1 1 2817 20201102152301
+ec2-18-184-195-200.eu-central-1.compute.amazonaws.com 1 1 6647 20201106221521
+154.97.146.149 10 14 3059499 20201110091159
+41.95.19.76 10 16 903012 20201102090349
+102.126.200.32 1 5 658656 20201105141834
+23.106.56.19 2 7 273376 20201103073336
+154.98.141.94 1 4 577653 20201105143026
+spider-10.dataprovider.com 1 1 34224 20201105194725
+197.252.15.198 1 6 685768 20201102123524
+41.209.124.161 6 6 72779 20201107102414
+41.95.30.88 4 8 674997 20201111212747
+45.61.164.241 1 1 8175 20201109011837
+unn-89-187-168-177.cdn77.com 2 2 61040 20201109114534
+41.95.110.2 1 3 79936 20201103141715
+178.176.75.10 3 3 8323 20201110182331
+197.208.168.235 4 9 601939 20201103073353
+154.101.34.185 1 6 810369 20201110073720
+23.106.56.53 1 1 6495 20201103084005
+197.252.19.54 7 7 93500 20201110172736
+105.238.38.40 1 5 577178 20201104080705
+ec2-3-139-91-175.us-east-2.compute.amazonaws.com 1 5 655505 20201106132315
+23.106.56.12 10 16 983159 20201103083042
+41.209.123.179 6 6 38773 20201103112431
+154.97.58.177 2 2 1644 20201102194140
+38.18.55.109 1 1 6700 20201107230422
+196.247.5.147 1 1 8172 20201108092118
+154.97.203.212 8 14 658912 20201108095208
+41.209.124.125 10 18 3700422 20201106204143
+162.210.194.10 1 4 617023 20201102140218
+173.0.52.249 1 1 9957 20201108105424
+172-245-241-142-host.colocrossing.com 1 1 9951 20201108092117
+41.95.66.65 9 13 3040226 20201104115256
+END_VISITOR
+
+# Date - Pages - Hits - Bandwidth - Visits
+BEGIN_DAY 11
+20201102 78 118 6026269 11
+20201103 367 429 26338370 12
+20201104 18 33 4564622 3
+20201105 34 54 2745691 5
+20201106 16 28 4401777 4
+20201107 7 7 79479 2
+20201108 14 22 869647 6
+20201109 4 4 79170 3
+20201110 31 40 4030891 8
+20201111 4 8 674997 1
+20201112 1 5 655505 1
+END_DAY
+
+# Session range - Number of visits
+BEGIN_SESSION 7
+5mn-15mn 6
+30mn-1h 2
+15mn-30mn 3
+0s-30s 26
+2mn-5mn 5
+30s-2mn 11
+1h+ 2
+END_SESSION
+
+# URL - Pages - Bandwidth - Entry - Exit
+# The 10 first Pages must be first (order not required for others)
+BEGIN_SIDER 89
+/admin/voyager-assets 96 24681262 2 6
+/en 59 503517 29 17
+/admin/menus/1/builder 28 437714 0 0
+/admin 27 372660 5 1
+/admin/projects 23 357120 0 0
+/admin/login 23 68090 8 7
+/admin/menus/1/order 21 30562 0 0
+/en/users/projects 18 135901 4 3
+/admin/database 12 188114 0 0
+/en/users/volunteers 12 75122 0 0
+/admin/volunteers 5 99754 0 0
+/admin/compass 2 151114 0 0
+/livewire/message/search-news 2 70351 0 0
+/ar/users/projects 1 7016 0 0
+/admin/projects/11/edit 2 26955 0 0
+/admin/volunteer-requests/2 3 37652 0 0
+/admin/volunteer-requests/2/edit 2 26500 0 0
+/admin/volunteer-requests 7 97949 0 0
+/en/users/stories/2/show 3 15087 0 0
+/en/users/projects/1/show 8 53605 0 2
+/admin/files/create 1 12605 0 0
+/admin/partners/create 1 12576 0 0
+/en/users/projects/10/show 2 9933 0 1
+/admin/media 6 72673 0 0
+/admin/bread/news/edit 3 61359 0 0
+/admin/volunteer-requests/create 1 13533 0 0
+/admin/bread/partner_requests/edit 1 20458 0 0
+/admin/bread/stories/edit 1 20591 0 0
+/admin/projects/create 3 39497 0 0
+/en/users/partners 10 61392 1 1
+/admin/requests/volunteer/view/3 1 12790 0 0
+/register 3 8076 0 0
+/admin/projects/3/edit 2 27316 0 0
+/admin/news/11/edit 1 13989 0 0
+/en/users/stories 10 75447 1 0
+/en/users/volunteers/1 5 24509 0 0
+/admin/news 8 117840 0 0
+/login 4 11432 0 2
+/admin/projects/3 3 37676 0 0
+/admin/stories/create 1 13503 0 0
+/admin/news/create 2 27212 0 0
+/en/users/files 8 47454 0 1
+/admin/users 6 98816 0 0
+/admin/volunteers/31 1 12768 0 0
+/admin/stories/11/edit 1 13616 0 0
+/admin/message/users/create 1 12228 0 0
+/admin/projects/4/edit 3 40232 0 0
+/admin/bread/files/edit 1 19373 0 0
+/admin/reports/news 1 12759 0 0
+/admin/projects/6 1 12729 0 0
+/admin/projects/2/edit 1 16903 0 0
+/ar 4 26727 0 0
+/admin/database/projects/edit 6 97795 0 0
+/admin/roles/create 1 14695 0 0
+/admin/requests/volunteers 3 206164 0 0
+/en/users/projects/8/show 1 5236 0 0
+/_ignition/health-check 3 2466 2 2
+/livewire/message/search-reports 4 19417 0 0
+/admin/menus/create 1 13332 0 0
+/admin/reports/vistors 7 92589 1 2
+/admin/requests/partners 1 12185 0 0
+/en/users/volunteers/2 1 4799 0 0
+/admin/partners 1 15097 0 0
+/admin/news/1/edit 1 12984 0 0
+/admin/projects/remove 1 1718 0 0
+/admin/contacts 1 13514 0 0
+/admin/partner-requests 4 55506 0 0
+/admin/requests/volunteer/view/1 1 12824 0 0
+/admin/bread 9 128103 0 0
+/en/users/volunteers/8 1 4800 0 0
+/en/users/projects/9/show 2 9837 0 1
+/admin/message/create 5 62865 0 0
+/admin/files 7 107481 0 0
+/en/users/news 5 28489 0 0
+/admin/stories 9 136005 0 0
+/admin/stories/7/edit 2 27938 0 0
+/en/users/projects/2/show 1 5192 0 0
+/en/users/stories/11/show 2 16730 0 0
+/en/users/contacts 10 86415 3 6
+/admin/settings 2 31764 0 0
+/admin/projects/1/edit 1 13546 0 0
+/admin/volunteers/create 3 39085 0 0
+/admin/bread/projects/edit 5 100699 0 1
+/admin/media/files 8 10612 0 1
+/admin/menus 6 78638 0 0
+/admin/roles 3 42418 0 1
+/admin/projects/5/edit 1 13582 0 0
+/admin/volunteer-requests/1 3 38241 0 0
+/admin/contacts/create 1 13146 0 0
+END_SIDER

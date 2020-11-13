@@ -32,6 +32,7 @@ class VolunteerReply extends Mailable
      public function build()
      {
        return $this->from('example@example.com')
-              ->view('emails.volunteers');
+       				->subject("volunteer request")
+                    ->view('emails.volunteers');
      }
 }

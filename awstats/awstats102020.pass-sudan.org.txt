@@ -1,0 +1,360 @@
+AWSTATS DATA FILE 7.6 (build 20161204)
+# If you remove this file, all statistics for date 202010 will be lost/reset.
+# Last config file used to build this data file was /etc/awstats/awstats.pass-sudan.org.conf.
+
+# Position (offset in bytes) in this file for beginning of each section for
+# direct I/O access. If you made changes somewhere in this file, you should
+# also remove completely the MAP section (AWStats will rewrite it at next
+# update).
+BEGIN_MAP 30
+POS_GENERAL 2067                
+POS_TIME 2754                
+POS_VISITOR 7036                
+POS_DAY 9202                
+POS_DOMAIN 3486                
+POS_LOGIN 3776                
+POS_ROBOT 3931                
+POS_WORMS 4176                
+POS_EMAILSENDER 4307                
+POS_EMAILRECEIVER 4450                
+POS_SESSION 9394                
+POS_SIDER 9600                
+POS_FILETYPES 4585                
+POS_DOWNLOADS 4805                
+POS_OS 4853                
+POS_BROWSER 4992                
+POS_SCREENSIZE 5358                
+POS_UNKNOWNREFERER 5432                
+POS_UNKNOWNREFERERBROWSER 5706                
+POS_ORIGIN 5788                
+POS_SEREFERRALS 5926                
+POS_PAGEREFS 6070                
+POS_SEARCHWORDS 6218                
+POS_KEYWORDS 6370                
+POS_MISC 2417                
+POS_ERRORS 6429                
+POS_CLUSTER 3632                
+POS_SIDER_404 6727                
+POS_SIDER_403 6563                
+POS_SIDER_400 6645                
+END_MAP
+
+# LastLine    = Date of last record processed - Last record line number in last log - Last record offset in last log - Last record signature value
+# FirstTime   = Date of first visit for history file
+# LastTime    = Date of last visit for history file
+# LastUpdate  = Date of last update - Nb of parsed records - Nb of parsed old records - Nb of parsed new records - Nb of parsed corrupted - Nb of parsed dropped
+# TotalVisits = Number of visits
+# TotalUnique = Number of unique visitors
+# MonthHostsKnown   = Number of hosts known
+# MonthHostsUnKnown = Number of hosts unknown
+BEGIN_GENERAL 8
+LastLine 20201101013923 1074 228169 12000551966659
+FirstTime 20201026091521
+LastTime 20201030133645
+LastUpdate 20201101110201 1074 1072 1 0 0
+TotalVisits 61                  
+TotalUnique 43                  
+MonthHostsKnown 14                  
+MonthHostsUnknown 29                  
+END_GENERAL
+
+# Misc ID - Pages - Hits - Bandwidth
+BEGIN_MISC 10
+JavascriptDisabled 0 0 0
+RealPlayerSupport 0 0 0
+DirectorSupport 0 0 0
+FlashSupport 0 0 0
+TotalMisc 0 0 0
+QuickTimeSupport 0 0 0
+JavaEnabled 0 0 0
+PDFSupport 0 0 0
+WindowsMediaPlayerSupport 0 0 0
+AddToFavourites 0 98 0
+END_MISC
+
+# Hour - Pages - Hits - Bandwidth - Not viewed Pages - Not viewed Hits - Not viewed Bandwidth
+BEGIN_TIME 24
+0 0 0 0 0 0 0
+1 0 0 0 2 2 2940
+2 0 0 0 0 0 0
+3 18 27 1513287 12 28 2532358
+4 2 6 225460 0 1 286
+5 0 0 0 8 9 2493773
+6 14 28 1996449 15 18 3758984
+7 16 39 3318174 7 12 29899
+8 17 40 3004327 11 16 1182316
+9 26 54 5410534 16 22 4412053
+10 34 78 6354536 46 63 4405987
+11 69 111 8778873 55 70 8284417
+12 10 12 1268030 10 10 41189
+13 22 88 9368304 33 39 4983344
+14 3 3 16370 15 25 97693
+15 2 8 850361 12 16 76911
+16 22 46 3425698 14 25 286929
+17 30 44 2150902 33 40 177804
+18 15 38 3494145 10 13 43173
+19 1 1 6493 1 1 5213
+20 5 16 1828313 10 14 1896525
+21 0 0 0 1 1 5177
+22 1 6 656975 0 1 286
+23 0 0 0 2 3 3242
+END_TIME
+
+# Domain - Pages - Hits - Bandwidth
+# The 10 first Pages must be first (order not required for others)
+BEGIN_DOMAIN 5
+ip 272 595 49016527
+com 27 42 3999135
+org 5 5 1495
+net 2 2 17109
+de 1 1 632965
+END_DOMAIN
+
+# Cluster ID - Pages - Hits - Bandwidth
+BEGIN_CLUSTER 0
+END_CLUSTER
+
+# Login - Pages - Hits - Bandwidth - Last visit
+# The 10 first Pages must be first (order not required for others)
+BEGIN_LOGIN 0
+END_LOGIN
+
+# Robot ID - Hits - Bandwidth - Last visit - Hits on robots.txt
+# The 10 first Hits must be first (order not required for others)
+BEGIN_ROBOT 3
+dataprovider\.com 20 1029779 20201030100448 3
+Wget/ 1 29338 20201028171430 0
+TelegramBot 1 6419 20201026134518 0
+END_ROBOT
+
+# Worm ID - Hits - Bandwidth - Last visit
+# The 5 first Hits must be first (order not required for others)
+BEGIN_WORMS 0
+END_WORMS
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first Hits must be first (order not required for others)
+BEGIN_EMAILSENDER 0
+END_EMAILSENDER
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first hits must be first (order not required for others)
+BEGIN_EMAILRECEIVER 0
+END_EMAILRECEIVER
+
+# Files type - Hits - Bandwidth - Bandwidth without compression - Bandwidth after compression
+BEGIN_FILETYPES 8
+jpg 36 4050669 0 0
+svg 61 1058827 0 0
+Unknown 300 5340643 0 0
+png 62 1648564 0 0
+css 63 22565473 0 0
+js 116 15543801 0 0
+map 2 221138 0 0
+php 5 3238116 0 0
+END_FILETYPES
+
+# Downloads - Hits - Bandwidth
+BEGIN_DOWNLOADS 0
+END_DOWNLOADS
+
+# OS ID - Hits
+BEGIN_OS ID - Hits - Pages 5
+macosx12 1 1
+linuxandroid 143 49
+Unknown 28 28
+win10 136 94
+linux 337 135
+END_OS
+
+# Browser ID - Hits - Pages
+BEGIN_BROWSER 14
+chrome76.0.3809.71 6 1
+chrome85.0.4183.81 42 13
+chrome86.0.4240.111 130 93
+chrome79.0.3945.136 39 14
+firefox52.0 1 1
+chrome70.0.3538.110 10 2
+mozilla 28 28
+chrome79.0.3945.116 6 1
+chrome85.0.4183.121 6 1
+firefox68.0 41 22
+chrome86.0.4240.75 25 13
+chrome40.0.2214.109 20 5
+firefox81.0 290 112
+chrome45.0.2454.94 1 1
+END_BROWSER
+
+# Screen size - Hits
+BEGIN_SCREENSIZE 0
+END_SCREENSIZE
+
+# Unknown referer OS - Last visit date
+BEGIN_UNKNOWNREFERER 2
+Mozilla/5.0_(compatible;_MxToolbox/Beta7;_http://www.mxtoolbox.com/) 20201026091529
+Mozilla/5.0_(compatible;_Let's_Encrypt_validation_server;__https://www.letsencrypt.org) 20201029102607
+END_UNKNOWNREFERER
+
+# Unknown referer Browser - Last visit date
+BEGIN_UNKNOWNREFERERBROWSER 0
+END_UNKNOWNREFERERBROWSER
+
+# Origin - Pages - Hits 
+BEGIN_ORIGIN 6
+From0 113 114
+From1 4 4
+From2 0 0
+From3 0 0
+From4 190 527
+From5 0 0
+END_ORIGIN
+
+# Search engine referers ID - Pages - Hits
+BEGIN_SEREFERRALS 0
+END_SEREFERRALS
+
+# External page referers - Pages - Hits
+# The 10 first Pages must be first (order not required for others)
+BEGIN_PAGEREFS 0
+END_PAGEREFS
+
+# Search keyphrases - Number of search
+# The 10 first number of search must be first (order not required for others)
+BEGIN_SEARCHWORDS 0
+END_SEARCHWORDS
+
+# Search keywords - Number of search
+# The 10 first number of search must be first (order not required for others)
+BEGIN_KEYWORDS 0
+END_KEYWORDS
+
+# Errors - Hits - Bandwidth
+BEGIN_ERRORS 4
+404 22 158377
+206 6 354028
+302 185 431444
+500 96 32614802
+END_ERRORS
+
+# URL with 403 errors - Hits - Last URL referrer
+BEGIN_SIDER_403 0
+END_SIDER_403
+
+# URL with 400 errors - Hits - Last URL referrer
+BEGIN_SIDER_400 0
+END_SIDER_400
+
+# URL with 404 errors - Hits - Last URL referrer
+BEGIN_SIDER_404 0
+END_SIDER_404
+
+# Host - Pages - Hits - Bandwidth - Last visit date - [Start date of last visit] - [Last page of last visit]
+# [Start date of last visit] and [Last page of last visit] are saved only if session is not finished
+# The 10 first Hits must be first (order not required for others)
+BEGIN_VISITOR 43
+102.121.134.95 46 78 7010654 20201029174122
+41.209.119.68 45 88 6108414 20201029083101
+82.223.12.233 41 48 1169947 20201029120941
+207.244.89.166 34 92 7318110 20201028160300
+102.123.175.102 15 71 8723145 20201026135804
+41.95.31.107 14 23 1460302 20201029034528
+102.123.161.93 11 15 662974 20201028061702
+102.122.24.25 9 25 2469159 20201027100639
+102.123.152.137 8 21 1837625 20201028172444
+102.123.191.156 8 24 2720088 20201028204736
+ec2-3-128-26-105.us-east-2.compute.amazonaws.com 5 5 1501 20201027081159
+102.122.11.197 3 8 671768 20201027104736
+li696-144.members.linode.com 1 6 687371 20201030133645
+102.120.136.151 1 6 667150 20201028102954
+ec2-3-22-70-135.us-east-2.compute.amazonaws.com 2 2 600 20201027074642
+102.121.174.154 1 5 620557 20201027070521
+server77-68-40-191.live-servers.net 2 2 17109 20201029163958
+usve267345.serverprofi24.de 1 1 632965 20201026113438
+197.208.81.34 6 12 881708 20201029185815
+198.98.55.233 1 5 278977 20201029184130
+keeper-us-east-1b.mxtoolbox.com 2 2 1971992 20201026091529
+197.209.68.107 2 6 225460 20201028040143
+102.123.152.111 1 3 257437 20201029083121
+185.220.101.18 1 5 648106 20201029183514
+ec2-52-28-236-88.eu-central-1.compute.amazonaws.com 3 3 901 20201027135739
+41.95.76.206 2 7 589254 20201030130910
+outbound1.letsencrypt.org 2 2 598 20201027080807
+ec2-18-223-210-246.us-east-2.compute.amazonaws.com 1 6 659046 20201027063213
+102.121.4.97 2 10 944780 20201028173958
+ec2-34-211-6-84.us-west-2.compute.amazonaws.com 1 1 299 20201026132307
+65.155.30.101 1 6 664610 20201029105158
+ec2-18-196-96-172.eu-central-1.compute.amazonaws.com 5 5 1499 20201027081044
+162.210.194.10 1 4 617238 20201029102423
+51.222.43.144 1 1 29116 20201030100434
+outbound2.letsencrypt.org 3 3 897 20201029102607
+82.165.103.33 8 8 63796 20201029165238
+g8.goodxgirls.com 2 7 674429 20201029062119
+ec2-34-209-232-166.us-west-2.compute.amazonaws.com 5 5 1497 20201029102607
+198.16.66.99 4 4 52985 20201029033533
+207.244.71.82 1 4 617887 20201028160449
+197.208.72.221 2 8 827167 20201027072733
+179.43.160.237 2 2 221138 20201029185317
+102.123.127.66 1 6 656975 20201027225552
+END_VISITOR
+
+# Date - Pages - Hits - Bandwidth - Visits
+BEGIN_DAY 5
+20201026 21 77 11329001 7
+20201027 106 226 16325280 21
+20201028 62 134 10539284 11
+20201029 114 194 14167925 19
+20201030 4 14 1305741 3
+END_DAY
+
+# Session range - Number of visits
+BEGIN_SESSION 7
+30s-2mn 4
+1h+ 2
+30mn-1h 4
+0s-30s 35
+15mn-30mn 6
+5mn-15mn 7
+2mn-5mn 3
+END_SESSION
+
+# URL - Pages - Bandwidth - Entry - Exit
+# The 10 first Pages must be first (order not required for others)
+BEGIN_SIDER 37
+/en 93 648107 30 23
+/en/users/stories 30 201545 4 2
+/en/users/projects 22 137101 0 4
+/admin/voyager-assets 19 3763412 0 0
+/en/users/news 18 102303 1 2
+/en/users/partners 16 86161 0 0
+/admin/login 15 46754 2 2
+/en/users/volunteers 14 67941 1 1
+/en/users/contacts 12 76250 1 1
+/en/users/files 10 56738 3 2
+/en/users/projects/11/show 2 16680 1 1
+/.well-known/acme-challenge/PjOqv-wBBkLfhzjz9u8rnY0wtih7zkhP6jE8lSwf9tY 2 598 0 0
+/.well-known/acme-challenge/P31aCO8iuKs4tCZ_RNZE4rlCiZzyKYiGFdWBbwTWgAM 3 899 3 3
+/.well-known/acme-challenge/y74koxx6QBAl5aAjk_7Qf7sMTeyrLF3WBGyuOg-zWnc 2 600 0 2
+/.well-known/acme-challenge/MJ3d_uyaXbyzpp-BC44x7dd_bPzf-CP_3v-bqSLfNOM 3 899 2 2
+/en/users/stories/1/show 2 10276 0 1
+/.well-known/acme-challenge/NwqgdT9Ex8nSx8tTkUYy5js-GIUW_iYyqUvfLNRZbs4 3 899 2 1
+/.well-known/acme-challenge/5IGPY5iE7jvNTe4xCdbD11NCyzgZVINn-53HI3lJU7w 2 602 0 1
+/.well-known/acme-challenge/3Cx330htpT573OLweR5sQBCzekBDwOghwdiv9zl-MS0 2 598 0 1
+/.well-known/acme-challenge/XXINphRyvXL50sAmxZ2ERvDCpO7xJcp51TNE5cU0Lew 1 299 1 0
+/en/users/projects/13/show 1 5440 0 1
+/.well-known/acme-challenge/id6gM_0dUoN49G7GPe-wPs9G1kYNb7J7ydu5O8v50JI 1 301 0 0
+/.well-known/acme-challenge/v77HzmOFcdYZACjz43zpPznOBUPmGSQCUBsoYnOo9yk 2 600 2 2
+/admin/bread 2 27161 0 0
+/.well-known/acme-challenge/diPCQxtjXMXh4p1GKRomGMqUPsPyDrAHuGjbYz1yBfs 1 301 0 0
+/ar 3 19888 0 1
+/ar/users/partners 1 5317 0 0
+/en/users/volunteers/8 1 4955 0 1
+/livewire/livewire.js.map 2 221138 1 1
+/register 3 8479 0 0
+/en/users/volunteers/1 1 5025 0 0
+/ 5 3238116 3 3
+/login 7 19611 0 0
+/.well-known/acme-challenge/ZCsOuSVI6-e9RpXmOXwEUu-uoVYnmKJ99_0PjpIjvII 2 598 2 2
+/ar/users/stories 1 5894 0 1
+/.well-known/acme-challenge/s6_tgUuOp2NEFuDGGO-9nSKowyHp_YvgB2-Su_Dsvn4 2 598 2 0
+/admin/bread/files/create 1 17813 0 0
+END_SIDER

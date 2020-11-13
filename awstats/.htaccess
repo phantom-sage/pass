@@ -1,0 +1,4 @@
+AuthName "pass-sudan.org statistics"
+AuthType Basic
+AuthUserFile /home/pass-sudan/.awstats-htpasswd
+require valid-user

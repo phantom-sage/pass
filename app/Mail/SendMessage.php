@@ -33,6 +33,7 @@ class SendMessage extends Mailable
     {
 
       return $this->from('example@example.com')
+      				->subject("pass-sudan")
                  ->view('emails.send')->with([
                         'msg' => $this->subject->message,
                     ]); ;

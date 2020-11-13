@@ -32,6 +32,7 @@ class PartnerReply extends Mailable
     public function build()
     {
       return $this->from('example@example.com')
+      			->subject("Partner requests")
              ->view('emails.aprtner');
     }
 }

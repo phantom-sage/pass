@@ -20,5 +20,5 @@ return [
     'lastname' => 'Last name:',
     'email' => 'Email Address:',
     'password' => 'Password:',
-    'signin' => 'Sing in',
+    'signin' => 'Sign in',
 ];

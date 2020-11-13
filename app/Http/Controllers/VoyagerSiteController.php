@@ -62,7 +62,7 @@ class VoyagerSiteController extends Controller
                              'work_place','replay')
                              ->where('replay','=',null)
                              ->orderBy('replay')->get();
-                             ddd($volunteersRequests);
+                             
       return view('requests.volunteer-request',compact('volunteersRequests'));
     }
 
