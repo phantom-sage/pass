@@ -1,13 +1,14 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Mail;
 use App\Models\PartnerRequest;
 use Illuminate\Http\Request;
 use App\Http\Requests\StorePartnerRequest;
 use App\Mail\PartnerReply;
 use App\Models\Partner;
-
+use App\Mail\Requestpartner;
+use App\Models\User;
 class PartnerRequestController extends Controller
 {
     /**
@@ -39,8 +40,10 @@ class PartnerRequestController extends Controller
     public function store(StorePartnerRequest $request)
     {
         $validated = $request->validated();
-        $partner =  PartnerRequest::create($validated);
 
+        $partner =  PartnerRequest::create($validated);
+        $user = User::where('role_id','=',1)->first();
+        Mail::to($user->email)->send(new Requestpartner($partner));
         // This is lines added by 'phantom-sage'
         $message = '';
         $locale = app()->getLocale();

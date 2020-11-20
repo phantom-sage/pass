@@ -1,11 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Mail;
+use App\Mail\RequestVoluter;
 use App\Models\VolunteerRequest;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreVolunteerRequest;
 use App\Models\Volunteer;
+use App\Models\User;
 class VolunteerRequestController extends Controller
 {
     /**
@@ -38,9 +40,9 @@ class VolunteerRequestController extends Controller
     {
         $validated = $request->validated();
         $validated['volunteer_id'] = $volunteer->id;
-
-        VolunteerRequest::create($validated);
-
+        $volunteer=VolunteerRequest::create($validated);
+        $user = User::where('role_id','=',1)->first();
+        Mail::to($user->email)->send(new RequestVoluter($volunteer));
         $message = '';
         if ($locale === 'en')
         {

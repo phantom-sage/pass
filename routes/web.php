@@ -179,6 +179,10 @@ Route::group(['prefix' => 'admin'], function () {
     Route::post("/message",        [VoyagerSiteController::class,'sendUserEmail'])->name("voyager.sendUserEmail");
     Route::get("/message/users/create",[VoyagerSiteController::class,'createUsersEmail'])->name("voyager.createUsersEmail");
     Route::post("/message/users",  [VoyagerSiteController::class,'sendUsersEmail'])->name("voyager.sendUsersEmail");
+    Route::get("/message/reply/{volunteerRequest}",  [VoyagerSiteController::class,'createVolunteer'])->name("voyager.replay");
+    Route::post("/message/reply/{volunteerRequest}",  [VoyagerSiteController::class,'replyVolunteer'])->name("voyager.reply");
+    Route::get("/message/reply/{partnerRequest}",  [VoyagerSiteController::class,'createPartner'])->name("voyager.replaycreate");
+    Route::post("/message/reply/{partnerRequest}",  [VoyagerSiteController::class,'replyPartner'])->name("voyager.replyPartner");
     Route::get("/requests/partners",[VoyagerSiteController::class,'partnersRequests'])->name("voyager.partnersRequests");
     Route::get("/requests/partners/view/{partnerRequest}",[VoyagerSiteController::class,'partnerRequestView'])->name("voyager.partnerRequestView");
     Route::get("/requests/volunteers",[VoyagerSiteController::class,'volunteersRequests'])->name("voyager.volunteersRequests");

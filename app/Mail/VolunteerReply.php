@@ -16,11 +16,11 @@ class VolunteerReply extends Mailable
      *
      * @return void
      */
-     public $PartnerRequest;
+     public $subject;
 
-     public function __construct($PartnerRequest){
+     public function __construct($message){
 
-         $this->PartnerRequest = $PartnerRequest;
+         $this->subject = $message;
 
      }
 
@@ -31,8 +31,7 @@ class VolunteerReply extends Mailable
      */
      public function build()
      {
-       return $this->from('example@example.com')
-       				->subject("volunteer request")
+       return $this->subject("volunteer request")
                     ->view('emails.volunteers');
      }
 }

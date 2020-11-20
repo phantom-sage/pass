@@ -7,7 +7,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class PartnerReply extends Mailable
+class RequestVoluter extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -18,10 +18,9 @@ class PartnerReply extends Mailable
      */
      public $subject;
 
-     public function __construct($message){
+     public function __construct($volunteer){
 
-         $this->subject = $message;
-
+         $this->subject = $volunteer;
      }
 
     /**
@@ -31,9 +30,6 @@ class PartnerReply extends Mailable
      */
     public function build()
     {
-      return $this->subject("Partner requests")
-             ->view('emails.aprtner');
-                  ->subject('Pass-Sudan')
-             ->view('emails.partner');
+      return $this->view('emails.request-volunteer');
     }
 }
